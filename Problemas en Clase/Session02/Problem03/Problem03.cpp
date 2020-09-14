@@ -1,20 +1,56 @@
-// Problem03.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    // Declaración de variables y constantes
+    char workerFirstName[100];
+    char workerLastName[100];
+
+    unsigned short totalWorkedHours;
+    unsigned short week1WorkedHours;
+    unsigned short week2WorkedHours;
+    unsigned short week3WorkedHours;
+    unsigned short week4WorkedHours;
+    const unsigned short hourlyPayment = 35;
+    float anniversaryBonus;
+    float contributionDiscount;
+    float grossSalary; // Salario bruto
+    float netSalary; // Salario neto
+    // Entrada de datos
+
+    cout << "BIENVENIDO AL PROBLEMA #03" << endl;
+    cout << "Resuelto por el grupo #03" << endl << endl;
+
+    cout << "\tPor favor ingrese el nombre del trabajador (max. 100 caracteres):";
+    cin.getline(workerFirstName, 100);
+
+    cout << "\tPor favor ingrese el apellido del trabajador (max. 100 caracteres):";
+    cin.getline(workerLastName, 100);
+
+    cout << "\tPor favor ingrese la cantidad de horas trabajadas por " << workerFirstName << " " << workerLastName << " durante la primera semana (horas):";
+    cin >> week1WorkedHours;
+
+    cout << "\tPor favor ingrese la cantidad de horas trabajadas por " << workerFirstName << " " << workerLastName << " durante la segunda semana (horas):";
+    cin >> week2WorkedHours;
+
+    cout << "\tPor favor ingrese la cantidad de horas trabajadas por " << workerFirstName << " " << workerLastName << " durante la tercera semana (horas):";
+    cin >> week3WorkedHours;
+
+    cout << "\tPor favor ingrese la cantidad de horas trabajadas por " << workerFirstName << " " << workerLastName << " durante la cuarta semana (horas):";
+    cin >> week4WorkedHours;
+
+    // Proceso
+    totalWorkedHours = week1WorkedHours + week2WorkedHours + week3WorkedHours + week4WorkedHours;
+    grossSalary = totalWorkedHours * hourlyPayment;
+    anniversaryBonus = 18 * grossSalary / 100;
+    contributionDiscount = 2.3 * grossSalary / 100;
+    netSalary = grossSalary + anniversaryBonus - contributionDiscount;
+
+    // Salida de datos
+    cout << "El trabajador " << workerFirstName << " " << workerLastName << " recibira un sueldo de S/ " << netSalary << " por haber trabajado durante " << totalWorkedHours <<
+        " horas durante el mes, habiendo recibido una bonificación por aniversario de S/ " << anniversaryBonus << ", y un descuento por aportes de S/ " << contributionDiscount << ".";
+
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
