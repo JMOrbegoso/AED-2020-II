@@ -12,7 +12,8 @@ int main()
 
     // Entrada de datos
 
-    cout << "Bienvenido" << endl;
+    cout << "BIENVENIDO AL PROBLEMA #01" << endl;
+    cout << "Resuelto por el grupo #03" << endl;
 
     cout << "\tPor favor ingrese la velocidad inicial (m/s):";
     cin >> initialVelocity;
