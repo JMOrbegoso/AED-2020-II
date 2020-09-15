@@ -10,7 +10,7 @@ int main()
     double valueA; // double para mayor rango
     double valueB; // double para mayor rango
     double valueC; // double para mayor rango
-    const unsigned long valueG = 1.5;
+    const unsigned short valueG = 1.5;
 
     // Entrada de datos
 
