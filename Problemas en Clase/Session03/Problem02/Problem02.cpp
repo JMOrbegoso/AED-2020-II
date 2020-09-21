@@ -50,8 +50,10 @@ int main()
 
     average = (score1 + score2 + score3 - lowestScore) / 2;
 
-    if (age < 18) {
-        average = average + 1;
+    if (age < 20) {
+        if (18 < age) {
+            average = average + 1;
+        }
     }
     else if (20 <= age) {
         if (average < 19) {
