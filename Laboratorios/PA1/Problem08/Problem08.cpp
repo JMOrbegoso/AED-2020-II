@@ -62,8 +62,10 @@ unsigned short getChange(unsigned short amount, unsigned short unitChangeValue, 
     Sleep(500);
 
     if (bills != 0) {
+        // Escribe en pantalla la cantidad de billetes
         cout << "\t" << bills;
 
+        // Escribe en pantalla la denominación de la moneda de cambio
         if (bills == 1) {
             if (isBill) {
                 cout << " billete de S/";
@@ -81,6 +83,7 @@ unsigned short getChange(unsigned short amount, unsigned short unitChangeValue, 
             }
         }
 
+        // Escribe en pantalla la cantidad de la moneda de cambio
         cout << unitChangeValue << "." << endl;
     }
 
