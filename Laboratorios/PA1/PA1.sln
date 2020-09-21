@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Problem08", "Problem08\Prob
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Problem12", "Problem12\Problem12.vcxproj", "{676F0BC5-DF5A-424B-BD3F-B3F4037DFD30}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Problem16", "Problem16\Problem16.vcxproj", "{2553B488-4D05-4A7B-8FE1-29836BB2E605}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
