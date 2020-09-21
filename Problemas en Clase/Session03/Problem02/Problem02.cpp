@@ -12,6 +12,7 @@ int main()
     float score1;
     float score2;
     float score3;
+    float lowestScore;
     float average;
 
     // Entrada de datos
@@ -39,32 +40,15 @@ int main()
     // Proceso
     system("cls");
 
+    lowestScore = score1;
     if (score1 > score2) {
-        // Nota 1 es mayor a Nota 2
-        if (score2 > score3) {
-            // Nota 2 es mayor a Nota 3
-            // La menor nota es Nota 3
-            average = (score1 + score2) / 2;
-        }
-        else {
-            // Nota 3 es mayor a Nota 2
-            // La menor nota es Nota 2
-            average = (score1 + score3) / 2;
-        }
+        lowestScore = score2;
     }
-    else {
-        // Nota 2 es mayor a Nota 1
-        if (score1 > score3) {
-            // Nota 1 es mayor a Nota 3
-            // La menor nota es Nota 3
-            average = (score1 + score2) / 2;
-        }
-        else {
-            // Nota 3 es mayor a Nota 1
-            // La menor nota es Nota 1
-            average = (score2 + score3) / 2;
-        }
+    if (score3 > lowestScore) {
+        lowestScore = score3;
     }
+
+    average = (score1 + score2 + score3 - lowestScore) / 2;
 
     if (age < 18) {
         average = average + 1;
