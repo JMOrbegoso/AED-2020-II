@@ -67,13 +67,13 @@ int main()
     Sleep(1000);
 
     cout << "Tiene " << age << " años." << endl;
-    cout << "Obtubo " << score1 << " en su primera practica." << endl;
-    cout << "Obtubo " << score2 << " en su segunda practica." << endl;
-    cout << "Obtubo " << score3 << " en su tercera practica." << endl;
+    cout << "Obtuvo " << score1 << " en su primera practica." << endl;
+    cout << "Obtuvo " << score2 << " en su segunda practica." << endl;
+    cout << "Obtuvo " << score3 << " en su tercera practica." << endl;
 
     Sleep(1000);
 
-    cout << "Obtubo " << average << " en promedio." << endl;
+    cout << "Obtuvo un promedio final de " << average << "." << endl;
 
     system("pause");
 
