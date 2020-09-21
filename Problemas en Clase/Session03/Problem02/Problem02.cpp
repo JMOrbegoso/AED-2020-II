@@ -44,7 +44,7 @@ int main()
     if (score1 > score2) {
         lowestScore = score2;
     }
-    if (score3 > lowestScore) {
+    if (lowestScore > score3) {
         lowestScore = score3;
     }
 
