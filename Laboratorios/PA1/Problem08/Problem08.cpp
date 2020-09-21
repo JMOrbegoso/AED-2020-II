@@ -1,20 +1,88 @@
-// Problem08.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <math.h>
+#include <windows.h>
+
+using namespace std;
+
+// Forward declaration: Informa al compilador que la función existe
+unsigned short getChange(unsigned short amount, unsigned short unitChangeValue, bool isBill);
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    // Declaración de variables y constantes
+    unsigned short originalAmount, amount;
+
+    // Entrada de datos
+
+    cout << "BIENVENIDO AL PROBLEMA #08" << endl;
+    cout << "Resuelto por el grupo #03" << endl;
+
+    cout << "Por favor ingrese el monto entero de dinero (S/):";
+    cin >> originalAmount;
+
+    // Proceso
+
+    // Se limpia la pantalla
+    system("cls");
+
+    cout << "El cambio de S/" << originalAmount << " es de:" << endl;
+
+    amount = originalAmount;
+    amount = getChange(amount, 200, true);
+    amount = getChange(amount, 100, true);
+    amount = getChange(amount, 50, true);
+    amount = getChange(amount, 20, true);
+    amount = getChange(amount, 10, true);
+    amount = getChange(amount, 5, false);
+    amount = getChange(amount, 2, false);
+    amount = getChange(amount, 1, false);
+
+    system("pause");
+
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+/// <summary>
+/// Recibe el monto de dinero, el valor de la moneda unidad de cambio, imprime en pantalla la cantidad de unidades del cambio y retorna el remanente
+/// </summary>
+/// <param name="amount">Monto de dinero</param>
+/// <param name="moneyValue">Valor de la unidad de cambio</param>
+/// <param name="isBill">True si es billete, False si es moneda</param>
+/// <returns>Remanente</returns>
+unsigned short getChange(unsigned short amount, unsigned short unitChangeValue, bool isBill) {
+    // Declaración de las variables
+    div_t divResult;
+    unsigned short bills;
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    // Proceso
+    divResult = div(amount, unitChangeValue);
+
+    bills = divResult.quot; // quotient (cociente)
+
+    Sleep(500);
+
+    if (bills != 0) {
+        cout << "\t" << bills;
+
+        if (bills == 1) {
+            if (isBill) {
+                cout << " billete de S/";
+            }
+            else {
+                cout << " moneda de S/";
+            }
+        }
+        else {
+            if (isBill) {
+                cout << " billetes de S/";
+            }
+            else {
+                cout << " monedas de S/";
+            }
+        }
+
+        cout << unitChangeValue << "." << endl;
+    }
+
+    return divResult.rem; // Retorna el remanente de la división;
+}
