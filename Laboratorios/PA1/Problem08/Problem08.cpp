@@ -15,7 +15,7 @@ int main()
     // Entrada de datos
 
     cout << "BIENVENIDO AL PROBLEMA #08" << endl;
-    cout << "Resuelto por el grupo #03" << endl;
+    cout << "Resuelto por el grupo #03" << endl << endl << endl;
 
     cout << "Por favor ingrese el monto entero de dinero (S/):";
     cin >> originalAmount;
