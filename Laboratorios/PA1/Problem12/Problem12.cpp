@@ -1,20 +1,132 @@
-// Problem12.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <windows.h>
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    // Declaración de variables y constantes
+    char firstName[100];
+    char lastName[100];
+    char career[100];
+    unsigned short minimumPassScore, score;
+    const unsigned short baseCost = 300;
+    unsigned short accumulatedScore = 0;
+    unsigned short failsQuantity = 0;
+    float netAmount, averageScore;
+
+    // Entrada de datos
+
+    cout << "BIENVENIDO AL PROBLEMA #12" << endl;
+    cout << "Resuelto por el grupo #03" << endl;
+
+    cout << "Por favor ingrese el nombre del alumno (max. 100 caracteres): ";
+    fflush(stdin);
+    cin.getline(firstName, 100);
+
+    cout << "Por favor ingrese el apellido del alumno (max. 100 caracteres): ";
+    fflush(stdin);
+    cin.getline(lastName, 100);
+
+    cout << "Por favor ingrese la carrera profesional del alumno (max. 100 caracteres): ";
+    fflush(stdin);
+    cin.getline(career, 100);
+
+    cout << "Por favor ingrese la nota mínima aprobatoria:";
+    cin >> minimumPassScore;
+
+    cout << "Por favor ingrese la primera nota de su primer examen:";
+    cin >> score;
+    accumulatedScore += score;
+    if (score < minimumPassScore) {
+        failsQuantity++;
+    }
+
+    cout << "Por favor ingrese la primera nota de su segundo examen:";
+    cin >> score;
+    accumulatedScore += score;
+    if (score < minimumPassScore) {
+        failsQuantity++;
+    }
+
+    cout << "Por favor ingrese la primera nota de su tercer examen:";
+    cin >> score;
+    accumulatedScore += score;
+    if (score < minimumPassScore) {
+        failsQuantity++;
+    }
+
+    cout << "Por favor ingrese la primera nota de su cuarto examen:";
+    cin >> score;
+    accumulatedScore += score;
+    if (score < minimumPassScore) {
+        failsQuantity++;
+    }
+
+    cout << "Por favor ingrese la primera nota de su quinto examen:";
+    cin >> score;
+    accumulatedScore += score;
+    if (score < minimumPassScore) {
+        failsQuantity++;
+    }
+
+    // Se limpia la pantalla
+    system("cls");
+    averageScore = accumulatedScore / 5;
+
+    switch (failsQuantity)
+    {
+    case 0:
+        netAmount = baseCost - baseCost * 10 / 100;
+        break;
+
+    case 1:
+        netAmount = baseCost + 50;
+        break;
+
+    case 2:
+        netAmount = baseCost + 80;
+        break;
+
+    case 3:
+        netAmount = baseCost + 120;
+        break;
+
+    case 4:
+        netAmount = baseCost + 180;
+        break;
+
+    case 5:
+        netAmount = baseCost + 250;
+        break;
+
+    default:
+        break;
+    }
+
+    // Datos de salida
+
+    cout << "Al estudiante " << lastName << " " << firstName << " de la carrera de " << career << " le corresponde un costo de matricula de S/" << netAmount << "." << endl;
+    cout << "Obtuvo una nota promedio de " << averageScore << "." << endl;
+
+    Sleep(1000);
+
+    if (failsQuantity == 0) {
+        cout << "Habiendo aprobado todos sus curso.";
+    }
+    else if (failsQuantity == 1) {
+        cout << "Habiendo desaprobado " << failsQuantity << " curso.";
+    }
+    else if (failsQuantity == 5) {
+        cout << "Habiendo desaprobado todos sus cursos.";
+    }
+    else {
+        cout << "Habiendo desaprobado " << failsQuantity << " cursos.";
+    }
+
+    cout << endl;
+
+    system("pause");
+
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
