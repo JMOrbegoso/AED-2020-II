@@ -18,7 +18,7 @@ int main()
     // Entrada de datos
 
     cout << "BIENVENIDO AL PROBLEMA #12" << endl;
-    cout << "Resuelto por el grupo #03" << endl;
+    cout << "Resuelto por el grupo #03" << endl << endl << endl;
 
     cout << "Por favor ingrese el nombre del alumno (max. 100 caracteres): ";
     fflush(stdin);
