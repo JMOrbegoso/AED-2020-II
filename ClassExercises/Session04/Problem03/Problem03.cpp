@@ -71,18 +71,18 @@ int main()
         break;
     }
 
-    grossAmount = grossAmount - discount;
+    igvAmount = (grossAmount - discount) * 18 / 100;
 
-    igvAmount = grossAmount * 18 / 100;
-
-    netAmount = grossAmount + igvAmount;
+    netAmount = grossAmount + igvAmount - discount;
 
     // Salida de datos
     cout << "El cliente " << fullName << "." << endl;
     Sleep(500);
-    cout << "Tiene un descuento de S/ " << discount << "." << endl;
+    cout << "Tuvo una compra de " << grossAmount << "." << endl;
     Sleep(500);
     cout << "Su IGV fue de S/ " << igvAmount << "." << endl;
+    Sleep(500);
+    cout << "Tuvo un descuento de S/ " << discount << "." << endl;
     Sleep(500);
     cout << "Por lo que debe de pagar S/" << netAmount << "." << endl;
 
