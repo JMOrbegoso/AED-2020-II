@@ -84,13 +84,13 @@ int main()
 
     // Salida de datos
     cout << "El cliente " << fullName << " con RUC " << ruc << endl;
-    Sleep(1000);
+    Sleep(500);
     cout << "Ha comprado " << quantity << " panes del tipo " << breadName << endl;
-    Sleep(1000);
+    Sleep(500);
     cout << "Por lo que debe de pagar S/" << netAmount << "." << endl;
-    Sleep(1000);
+    Sleep(500);
     cout << "Su IGV fue de S/" << igvAmount << "." << endl;
-    Sleep(1000);
+    Sleep(500);
     cout << "Su descuento fue de S/" << discount << "." << endl;
 
     system("pause");
