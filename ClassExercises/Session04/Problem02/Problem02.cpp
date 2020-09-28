@@ -72,13 +72,13 @@ int main()
     igvAmount = igv * grossAmount / 100;
     grossAmount = igvAmount + grossAmount;
 
-    if (20 <= grossAmount) {
+    if (grossAmount <= 20) {
         discount = 0;
     }
-    else if (20 < grossAmount && 35 < grossAmount) {
+    else if (20 < grossAmount && 35 <= grossAmount) {
         discount = 2 * grossAmount / 100;
     }
-    else if (35 < grossAmount && 50 < grossAmount) {
+    else if (35 < grossAmount && 50 <= grossAmount) {
         discount = 5 * grossAmount / 100;
     }
     else {
