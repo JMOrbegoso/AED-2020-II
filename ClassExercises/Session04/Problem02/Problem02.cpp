@@ -31,7 +31,7 @@ int main()
     fflush(stdin);
     cin.getline(ruc, 11);
 
-    cout << "\tPor favor ingrese el número del pan deseado [0: Pan Francés, 1: Panetón, 2: Croissant, 3: Ciabata]:";
+    cout << "\tPor favor ingrese el número del pan deseado [0: Pan Francés, 1: Panetón, 2:Marraqueta, 3: Croissant, 4: Ciabata]:";
     cin >> breadOption;
 
     cout << "\tPor favor ingrese la cantidad de panes deseado:";
