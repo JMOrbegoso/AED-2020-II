@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     // Declaración de variables y constantes
-    unsigned short breadOption; // 0: Pan Francés, 1: Panetón, 2: Croissant, 3: Ciabatta
+    unsigned short breadOption; // 0: Pan Francés, 1: Panetón, 2:Marraqueta, 3: Croissant, 4: Ciabatta
     unsigned short quantity;
     char fullName[100];
     char ruc[11];
@@ -15,6 +15,7 @@ int main()
     const short igv = 18;
     const float frenchBreadPrice = 0.30;
     const float panettonePrice = 15.50;
+    const float marraquetaPrice = 0.20;
     const float croissantPrice = 0.40;
     const float ciabattaPrice = 0.60;
 
@@ -49,10 +50,14 @@ int main()
         strcpy_s(breadName, "Panetón");
         break;
     case 2:
+        breadPrice = marraquetaPrice;
+        strcpy_s(breadName, "Marraqueta");
+        break;
+    case 3:
         breadPrice = croissantPrice;
         strcpy_s(breadName, "Croissant");
         break;
-    case 3:
+    case 4:
         breadPrice = ciabattaPrice;
         strcpy_s(breadName, "Ciabatta");
         break;
