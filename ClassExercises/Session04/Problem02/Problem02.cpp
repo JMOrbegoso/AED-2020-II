@@ -6,10 +6,11 @@ using namespace std;
 int main()
 {
     // Declaración de variables y constantes
-    unsigned short breadOption; // 0: Pan Frances, 1: Panetón, 2: Croissant, 3: Ciabata
+    unsigned short breadOption; // 0: Pan Francés, 1: Panetón, 2: Croissant, 3: Ciabatta
     unsigned short quantity;
     char fullName[100];
     char ruc[11];
+    char breadName[20];
     float breadPrice, igvAmount, discount, grossAmount, netAmount;
     const short igv = 18;
     const float frenchBreadPrice = 0.30;
@@ -41,15 +42,19 @@ int main()
     switch (breadOption) {
     case 0:
         breadPrice = frenchBreadPrice;
+        strcpy_s(breadName, "Pan Francés");
         break;
     case 1:
         breadPrice = panettonePrice;
+        strcpy_s(breadName, "Panetón");
         break;
     case 2:
         breadPrice = croissantPrice;
+        strcpy_s(breadName, "Croissant");
         break;
     case 3:
         breadPrice = ciabattaPrice;
+        strcpy_s(breadName, "Ciabatta");
         break;
     default:
         cout << "\tEl tipo de pan no es válido, intente otra vez.";
@@ -80,7 +85,7 @@ int main()
     // Salida de datos
     cout << "El cliente " << fullName << " con RUC " << ruc << endl;
     Sleep(1000);
-    cout << "Ha comprado " << quantity << " panes del tipo " << breadOption << endl;
+    cout << "Ha comprado " << quantity << " panes del tipo " << breadName << endl;
     Sleep(1000);
     cout << "Por lo que debe de pagar S/" << netAmount << "." << endl;
     Sleep(1000);
