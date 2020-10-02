@@ -34,25 +34,25 @@ int main()
 
     cout << "BIENVENIDO AL SISTEMA DE VENTA DE LA TIENDA DE ARTEFACTOS" << endl;
 
-    cout << "\tPor favor ingrese el día de hoy [0: Lunes, 1: Martes, 2:Miercoles, 3: Jueves, 4: Viernes, 5: Sabado, 6: Domingo]:";
-    cin >> weekDay;
-
     cout << "\tPor favor ingrese los nombres y apellidos completos del cliente (max. 100 letras):";
     fflush(stdin);
     cin.getline(clientFullName, 100);
 
-    cout << "\tPor favor ingrese la edad del cliente (años):";
-    cin >> clientAge;
-
     cout << "\tPor favor ingrese el RUC de cliente (max. 10 numeros):";
     fflush(stdin);
     cin.getline(clientRuc, 11);
+
+    cout << "\tPor favor ingrese la edad del cliente (años):";
+    cin >> clientAge;
 
     cout << "\tPor favor ingrese el monto bruto de la compra (S/):";
     cin >> grossAmount;
 
     cout << "\tPor favor ingrese el tipo de artefacto comprado [0: Refrigerador, 1: Televisor, 2:Cocina, 3: Lavadora]:";
     cin >> productType;
+
+    cout << "\tPor favor ingrese el día de hoy [0: Lunes, 1: Martes, 2:Miercoles, 3: Jueves, 4: Viernes, 5: Sabado, 6: Domingo]:";
+    cin >> weekDay;
 
     // Proceso
     system("cls"); // Limpia la pantalla de la consola
