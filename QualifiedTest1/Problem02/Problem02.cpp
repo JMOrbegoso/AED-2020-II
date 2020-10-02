@@ -16,7 +16,7 @@
 using namespace std;
 
 //// Forward declaration: Informa al compilador que la función existe
-float getBonus(unsigned short childAge);
+float getBonus(short childAge);
 
 int main()
 {
@@ -118,7 +118,7 @@ int main()
 /// <summary>
 /// Get the product type name and copied on the parameter char array.
 /// </summary>
-float getBonus(unsigned short childAge)
+float getBonus(short childAge)
 {
     if (0 < childAge && childAge < 1) {
         return 180;
