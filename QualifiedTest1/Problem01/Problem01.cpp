@@ -62,44 +62,6 @@ int main()
         return 0;
     }
 
-    // Se calcula el descuento por aniversario
-    discountedAmount = anniversaryDiscount * grossAmount;
-
-    switch (weekDay) {
-    case 0:
-    case 1:
-        if (productType == 0 && grossAmount > 3000) {
-            // Se calcula el descuento adicional
-            discountedAmount = discountedAmount + 5 * (grossAmount - discountedAmount) / 100;
-        }
-        break;
-    case 2:
-    case 3:
-        if (productType == 1 && grossAmount > 3500) {
-            // Se calcula el descuento adicional
-            discountedAmount = discountedAmount + 8 * (grossAmount - discountedAmount) / 100;
-        }
-        break;
-    case 4:
-        if ((productType == 2 || productType == 3) && grossAmount > 4000) {
-            // Se calcula el descuento adicional
-            discountedAmount = discountedAmount + 6 * (grossAmount - discountedAmount) / 100;
-        }
-        break;
-    case 5:
-    case 6:
-        if (grossAmount > 5000) {
-            // Se calcula el descuento adicional
-            discountedAmount = discountedAmount + 2 * (grossAmount - discountedAmount) / 100;
-        }
-        break;
-
-    default:
-        cout << "\tIngresó un día de la semana no válido, intente nuevamente.";
-        return 0;
-        break;
-    }
-
     // Se calcula el nombre del producto
     switch (productType)
     {
@@ -146,6 +108,44 @@ int main()
         break;
 
     default:
+        break;
+    }
+
+    // Se calcula el descuento por aniversario
+    discountedAmount = anniversaryDiscount * grossAmount;
+
+    switch (weekDay) {
+    case 0:
+    case 1:
+        if (productType == 0 && grossAmount > 3000) {
+            // Se calcula el descuento adicional
+            discountedAmount = discountedAmount + 5 * (grossAmount - discountedAmount) / 100;
+        }
+        break;
+    case 2:
+    case 3:
+        if (productType == 1 && grossAmount > 3500) {
+            // Se calcula el descuento adicional
+            discountedAmount = discountedAmount + 8 * (grossAmount - discountedAmount) / 100;
+        }
+        break;
+    case 4:
+        if ((productType == 2 || productType == 3) && grossAmount > 4000) {
+            // Se calcula el descuento adicional
+            discountedAmount = discountedAmount + 6 * (grossAmount - discountedAmount) / 100;
+        }
+        break;
+    case 5:
+    case 6:
+        if (grossAmount > 5000) {
+            // Se calcula el descuento adicional
+            discountedAmount = discountedAmount + 2 * (grossAmount - discountedAmount) / 100;
+        }
+        break;
+
+    default:
+        cout << "\tIngresó un día de la semana no válido, intente nuevamente.";
+        return 0;
         break;
     }
 
