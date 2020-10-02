@@ -26,7 +26,7 @@ int main()
     char clientRuc[10];
     unsigned short clientAge;
     float grossAmount, discountedAmount, igvAmount, netAmount;
-    const float anniversaryDiscount = 10 / 100;
+    const float anniversaryDiscountPercentage = 10;
     char productName[20];
     char weekDayName[20];
 
@@ -112,7 +112,7 @@ int main()
     }
 
     // Se calcula el descuento por aniversario
-    discountedAmount = anniversaryDiscount * grossAmount;
+    discountedAmount = anniversaryDiscountPercentage * grossAmount / 100;
 
     switch (weekDay) {
     case 0:
