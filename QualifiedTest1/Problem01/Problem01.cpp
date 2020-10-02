@@ -17,10 +17,6 @@
 
 using namespace std;
 
-// Forward declaration: Informa al compilador que la función existe
-void getProductName(unsigned short productType, char* productNameArray);
-void getWeekDayName(unsigned short weekDay, char* weekDayNameArray);
-
 int main()
 {
     // Declaración de variables y constantes
@@ -103,8 +99,54 @@ int main()
         break;
     }
 
-    getProductName(productType, productName);
-    getWeekDayName(weekDay, weekDayName);
+    // Se calcula el nombre del producto
+    switch (productType)
+    {
+    case 0:
+        strcpy_s(productName, "un refrigerador");
+        break;
+    case 1:
+        strcpy_s(productName, "un televisor");
+        break;
+    case 2:
+        strcpy_s(productName, "una cocina");
+        break;
+    case 3:
+        strcpy_s(productName, "una lavadora");
+        break;
+
+    default:
+        break;
+    }
+
+    // Se calcula el nombre del dia de la semana
+    switch (weekDay)
+    {
+    case 0:
+        strcpy_s(weekDayName, "Lunes");
+        break;
+    case 1:
+        strcpy_s(weekDayName, "Martes");
+        break;
+    case 2:
+        strcpy_s(weekDayName, "Miercoles");
+        break;
+    case 3:
+        strcpy_s(weekDayName, "Jueves");
+        break;
+    case 4:
+        strcpy_s(weekDayName, "Viernes");
+        break;
+    case 5:
+        strcpy_s(weekDayName, "Sabado");
+        break;
+    case 6:
+        strcpy_s(weekDayName, "Domingo");
+        break;
+
+    default:
+        break;
+    }
 
     igvAmount = (grossAmount - discountedAmount) * 18 / 100;
 
@@ -130,63 +172,4 @@ int main()
     system("pause");
 
     return 0;
-}
-
-/// <summary>
-/// Get the product type name and copied on the parameter char array.
-/// </summary>
-void getProductName(unsigned short productType, char* productNameArray)
-{
-    switch (productType)
-    {
-    case 0:
-        sprintf(productNameArray, "un refrigerador");
-        break;
-    case 1:
-        sprintf(productNameArray, "un televisor");
-        break;
-    case 2:
-        sprintf(productNameArray, "una cocina");
-        break;
-    case 3:
-        sprintf(productNameArray, "una lavadora");
-        break;
-
-    default:
-        break;
-    }
-}
-
-/// <summary>
-/// Get the week day name and copied on the parameter char array.
-/// </summary>
-void getWeekDayName(unsigned short weekDay, char* weekDayNameArray)
-{
-    switch (weekDay)
-    {
-    case 0:
-        sprintf(weekDayNameArray, "Lunes");
-        break;
-    case 1:
-        sprintf(weekDayNameArray, "Martes");
-        break;
-    case 2:
-        sprintf(weekDayNameArray, "Miercoles");
-        break;
-    case 3:
-        sprintf(weekDayNameArray, "Jueves");
-        break;
-    case 4:
-        sprintf(weekDayNameArray, "Viernes");
-        break;
-    case 5:
-        sprintf(weekDayNameArray, "Sabado");
-        break;
-    case 6:
-        sprintf(weekDayNameArray, "Domingo");
-        break;
-
-    default:
-        break;
-    }
 }
