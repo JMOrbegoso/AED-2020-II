@@ -41,11 +41,12 @@ int main()
     fflush(stdin);
     cin.getline(clientFullName, 100);
 
-    cout << "\tPor favor ingrese el RUC de cliente (max. 10 letras):";
-    cin.getline(clientRuc, 10);
-
     cout << "\tPor favor ingrese la edad del cliente (años):";
     cin >> clientAge;
+
+    cout << "\tPor favor ingrese el RUC de cliente (max. 10 numeros):";
+    fflush(stdin);
+    cin.getline(clientRuc, 10);
 
     cout << "\tPor favor ingrese el monto bruto de la compra (S/):";
     cin >> grossAmount;
