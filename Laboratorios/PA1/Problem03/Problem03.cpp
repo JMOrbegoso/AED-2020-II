@@ -18,13 +18,13 @@ int main()
     if (year > 10) {
         montobon = 0.45 * sueldo;
     }
-    else if (year >= 7 && year <= 10) {
+    else if (7 <= year && year <= 10) {
         montobon = 0.35 * sueldo;
     }
-    else if (year >= 4 && year <= 8) {
+    else if (4 <= year && year <= 8) {
         montobon = 0.25 * sueldo;
     }
-    else if (year >= 1 && year <= 3) {
+    else if (1 <= year && year <= 3) {
         montobon = 0.15 * sueldo;
     }
     else {
