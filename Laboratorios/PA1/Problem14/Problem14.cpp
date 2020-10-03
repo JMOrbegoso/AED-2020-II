@@ -33,5 +33,5 @@ int main()
 
 	cout << "El total a pagar es de: " << pension << endl;
 
-	return (0);
+	return 0;
 }
