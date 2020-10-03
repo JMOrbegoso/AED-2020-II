@@ -35,35 +35,35 @@ int main()
     cout << "Por favor ingrese la nota mínima aprobatoria:";
     cin >> minimumPassScore;
 
-    cout << "Por favor ingrese la primera nota de su primer examen:";
+    cout << "Por favor ingrese la nota de su primer examen:";
     cin >> score;
     accumulatedScore += score;
     if (score < minimumPassScore) {
         failsQuantity++;
     }
 
-    cout << "Por favor ingrese la primera nota de su segundo examen:";
+    cout << "Por favor ingrese la nota de su segundo examen:";
     cin >> score;
     accumulatedScore += score;
     if (score < minimumPassScore) {
         failsQuantity++;
     }
 
-    cout << "Por favor ingrese la primera nota de su tercer examen:";
+    cout << "Por favor ingrese la nota de su tercer examen:";
     cin >> score;
     accumulatedScore += score;
     if (score < minimumPassScore) {
         failsQuantity++;
     }
 
-    cout << "Por favor ingrese la primera nota de su cuarto examen:";
+    cout << "Por favor ingrese la nota de su cuarto examen:";
     cin >> score;
     accumulatedScore += score;
     if (score < minimumPassScore) {
         failsQuantity++;
     }
 
-    cout << "Por favor ingrese la primera nota de su quinto examen:";
+    cout << "Por favor ingrese la nota de su quinto examen:";
     cin >> score;
     accumulatedScore += score;
     if (score < minimumPassScore) {
