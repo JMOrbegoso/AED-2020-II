@@ -33,5 +33,7 @@ int main()
 
 	cout << "El total a pagar es de: " << pension << endl;
 
+	system("pause"); // Pausa la ejecución para que la ventana no se cierre inmediatamente
+
 	return 0;
 }
