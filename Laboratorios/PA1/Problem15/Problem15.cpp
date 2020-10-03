@@ -7,23 +7,24 @@ int main()
     short puntaje1 = 0, puntaje2 = 0, puntaje3 = 0, puntaje4 = 0, puntaje5 = 0, puntajetotal;
     char alternativa1, alternativa2, alternativa3, alternativa4, alternativa5;
 
-    cout << "BIENVENIDO AL PROGRAMA INTELECTO PERUANO";
-    cout << "Para las preguntas planteadas debes responder con una sola alternativa SI(S)o NO(N)";
-    cout << "Empecemos con tu intelecto peruano";
+    cout << "BIENVENIDO AL PROGRAMA INTELECTO PERUANO" << endl << endl;
+    cout << "Instrucciones:" << endl;
+    cout << "Para las preguntas planteadas debes responder con una sola alternativa => S: Verdadero, N: Falso" << endl;
+    cout << "Empecemos con tu intelecto peruano" << endl << endl;
 
-    cout << "/t/La moneda nacional del PERU es el dolar (SI o NO).";
+    cout << "\t1) La moneda nacional del PERU es el dolar:";
     cin >> alternativa1;
 
-    cout << "/t/En Arequipa nace el rio Amazonas(SI o NO).";
+    cout << "\t2) En Arequipa nace el rio Amazonas:";
     cin >> alternativa2;
 
-    cout << "/t/El territorio peruano constituye de 25 departamentos(SI o NO).";
+    cout << "\t3) El territorio peruano constituye de 25 departamentos:";
     cin >> alternativa3;
 
-    cout << "/t/El 28 de julio se celebra la Batalla de Angamos(SI o NO).";
+    cout << "\t4) El 28 de julio se celebra la Batalla de Angamos:";
     cin >> alternativa4;
 
-    cout << "/t/En el escudo nacional se encuentra el arbol de la quina(SI o NO)";
+    cout << "\t5) En el escudo nacional se encuentra el arbol de la quina:";
     cin >> alternativa5;
 
     if (alternativa1 == 'S') {
@@ -78,7 +79,7 @@ int main()
 
     puntajetotal = (puntaje1 + puntaje2 + puntaje3 + puntaje4 + puntaje5);
 
-    cout << "El puntaje total del jugador es: " << puntajetotal << endl;
+    cout << "Su puntaje total es: " << puntajetotal << endl;
 
     return 0;
 }
