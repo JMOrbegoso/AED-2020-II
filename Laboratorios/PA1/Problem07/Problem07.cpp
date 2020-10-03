@@ -25,10 +25,10 @@ int main()
     if (kilometraje < 100) {
         interes = 0;
     }
-    else if (kilometraje > 100 & kilometraje <= 200) {
+    else if (100 < kilometraje && kilometraje <= 200) {
         interes = 0.05;
     }
-    else if (kilometraje > 200 & kilometraje <= 300) {
+    else if (200 < kilometraje && kilometraje <= 300) {
         interes = 0.15;
     }
     else {
