@@ -1,20 +1,41 @@
-// Problem11.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    // Declaración de Variables
+    float num1, num2, num3, num4, limite1, limite2, promedio;
+
+    // Datos de entrada
+    cout << "Ingrese Numero 1" << endl;
+    cin >> num1;
+
+    cout << "Ingrese el primer limite" << endl;
+    cin >> limite1;
+
+    cout << "Ingrese el segundo limite" << endl;
+    cin >> limite2;
+
+    // Proceso
+
+    if (limite1 < num1 && num1 < limite2) {
+        cout << "Ingrese Numero 2" << endl;
+        cin >> num2;
+
+        cout << "Ingrese Numero 3" << endl;
+        cin >> num3;
+
+        cout << "Ingrese Numero 4" << endl;
+        cin >> num4;
+
+        promedio = (num1 + num2 + num3 + num4) / 4;
+
+        cout << "El promedio es de " << promedio;
+    }
+    else {
+        cout << "El numero original es  " << num1 << " y no está en los limites establecidos de " << limite1 << " y " << limite2;
+    }
+
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
