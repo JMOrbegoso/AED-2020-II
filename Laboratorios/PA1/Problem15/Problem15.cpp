@@ -81,5 +81,7 @@ int main()
 
     cout << "Su puntaje total es: " << puntajetotal << endl;
 
+    system("pause"); // Pausa la ejecución para que la ventana no se cierre inmediatamente
+
     return 0;
 }

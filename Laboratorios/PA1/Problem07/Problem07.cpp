@@ -44,5 +44,7 @@ int main()
     cout << "La dirección es:" << direccion << endl;
     cout << "La distancia recorrida es:" << kilometraje << endl;
 
+    system("pause"); // Pausa la ejecución para que la ventana no se cierre inmediatamente
+
     return 0;
 }

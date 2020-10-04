@@ -37,5 +37,7 @@ int main()
         cout << "El numero original es  " << num1 << " y no está en los limites establecidos de " << limite1 << " y " << limite2;
     }
 
+    system("pause"); // Pausa la ejecución para que la ventana no se cierre inmediatamente
+
     return 0;
 }

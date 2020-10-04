@@ -36,5 +36,7 @@ int main()
     cout << "El monto de bonificación es S/" << montobon << endl;
     cout << "El monto total a pagar al empleado es S/" << montototal << endl;
 
+    system("pause"); // Pausa la ejecución para que la ventana no se cierre inmediatamente
+
     return 0;
 }
