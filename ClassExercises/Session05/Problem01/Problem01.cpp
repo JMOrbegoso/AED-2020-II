@@ -9,7 +9,7 @@ float requestHourlyPay();
 float requestTax(bool firstTax);
 float getGrossSalary(unsigned short workedHoursQuantity, float hourlyPay);
 float getNetSalary(float grossSalary, float tax1, float tax2);
-void showResults(unsigned short workedHoursQuantity, float grossSalary, float tax1, float tax2, float netSalary);
+void showResult(const char firstMessage[], float numericValue, const char lastMessage[]);
 
 int main()
 {
@@ -36,7 +36,12 @@ int main()
     netSalary = getNetSalary(grossSalary, tax1, tax2);
 
     // Salida de datos
-    showResults(workedHoursQuantity, grossSalary, tax1, tax2, netSalary);
+    showResult("El empleado trabajó ", workedHoursQuantity, " horas.");
+    showResult("Las que generaron S/ ", grossSalary, ".");
+    cout << "Tuvo dos impuestos:" << endl;
+    showResult("\tEl primero de S/ ", tax1, ".");
+    showResult("\tEl segundo de S/ ", tax2, ".");
+    showResult("Por lo que le corresponde un salario de S/ ", netSalary, ".");
 
     system("pause");
 
@@ -95,12 +100,7 @@ float getNetSalary(float grossSalary, float tax1, float tax2) {
     return grossSalary - tax1 - tax2;
 }
 
-void showResults(unsigned short workedHoursQuantity, float grossSalary, float tax1, float tax2, float netSalary) {
-    cout << "El empleado trabajó " << workedHoursQuantity << " horas." << endl;
+void showResult(const char firstMessage[], float numericValue, const char lastMessage[]) {
     Sleep(500);
-    cout << "Las que generaron S/ " << grossSalary << "." << endl;
-    Sleep(500);
-    cout << "Tuvo dos impuestos, el primero de S/ " << tax1 << " y el segundo de S/ " << tax2 << "." << endl;
-    Sleep(500);
-    cout << "Por lo que le corresponde un salario de S/" << netSalary << "." << endl;
+    cout << firstMessage << numericValue << lastMessage << endl;
 }
