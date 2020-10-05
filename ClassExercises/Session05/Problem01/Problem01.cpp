@@ -7,6 +7,8 @@ using namespace std;
 unsigned short requestWorkedHoursQuantity();
 float requestHourlyPay();
 float requestTax(bool firstTax);
+float getGrossSalary(unsigned short workedHoursQuantity, float hourlyPay);
+float getNetSalary(float grossSalary, float tax1, float tax2);
 
 int main()
 {
@@ -29,8 +31,8 @@ int main()
     // Proceso
     system("cls");
 
-    grossSalary = workedHoursQuantity * hourlyPay;
-    netSalary = grossSalary - tax1 - tax2;
+    grossSalary = getGrossSalary(workedHoursQuantity, hourlyPay);
+    netSalary = getNetSalary(grossSalary, tax1, tax2);
 
     // Salida de datos
     cout << "El empleado trabajó " << workedHoursQuantity << " horas." << endl;
@@ -88,4 +90,12 @@ float requestTax(bool firstTax) {
     cin >> tax;
 
     return tax;
+}
+
+float getGrossSalary(unsigned short workedHoursQuantity, float hourlyPay) {
+    return workedHoursQuantity * hourlyPay;
+}
+
+float getNetSalary(float grossSalary, float tax1, float tax2) {
+    return grossSalary - tax1 - tax2;
 }
