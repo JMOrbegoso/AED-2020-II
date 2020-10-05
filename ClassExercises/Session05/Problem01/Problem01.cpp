@@ -6,8 +6,7 @@ using namespace std;
 // Forward declarations
 unsigned short requestWorkedHoursQuantity();
 float requestHourlyPay();
-float requestTax1();
-float requestTax2();
+float requestTax(bool firstTax);
 
 int main()
 {
@@ -24,8 +23,8 @@ int main()
 
     workedHoursQuantity = requestWorkedHoursQuantity();
     hourlyPay = requestHourlyPay();
-    tax1 = requestTax1();
-    tax2 = requestTax2();
+    tax1 = requestTax(true);
+    tax2 = requestTax(false);
 
     // Proceso
     system("cls");
@@ -73,24 +72,19 @@ float requestHourlyPay() {
 }
 
 /// <summary>
-/// Request the user to enter the first tax
+/// Request the user to enter the tax
 /// </summary>
-float requestTax1() {
+/// <param name="firstTax">True if is the first Tax, or False if is the second</param>
+float requestTax(bool firstTax) {
     float tax;
 
-    cout << "\tPor favor ingrese el primer impuesto (S/):";
-    cin >> tax;
+    if (firstTax) {
+        cout << "\tPor favor ingrese el primer impuesto (S/):";
+    }
+    else {
+        cout << "\tPor favor ingrese el segundo impuesto (S/):";
+    }
 
-    return tax;
-}
-
-/// <summary>
-/// Request the user to enter the second tax
-/// </summary>
-float requestTax2() {
-    float tax;
-
-    cout << "\tPor favor ingrese el segundo impuesto (S/):";
     cin >> tax;
 
     return tax;
