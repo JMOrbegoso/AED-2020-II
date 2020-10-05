@@ -3,13 +3,15 @@
 
 using namespace std;
 
-// forward declaration
-float requestMoney();
+// Forward declarations
+unsigned short requestWorkedHoursQuantity();
+float requestHourlyPay();
+float requestTax1();
+float requestTax2();
 
 int main()
 {
     // Declaración de variables y constantes
-    char fullName[100];
     unsigned short workedHoursQuantity;
     float hourlyPay;
     float tax1 = 0;
@@ -18,23 +20,12 @@ int main()
 
     // Entrada de datos
 
-    cout << "BIENVENIDO A LA LICORERÍA" << endl;
+    cout << "CALCULADOR DE SUELDO" << endl;
 
-    cout << "\tPor favor ingrese el nombre y apellidos completos del trabajador (max. 100 letras):";
-    fflush(stdin);
-    cin.getline(fullName, 100);
-
-    cout << "\tPor favor la cantidad de horas trabajadas (horas):";
-    cin >> workedHoursQuantity;
-
-    cout << "\tPor favor ingrese el pago por hora (S/):";
-    hourlyPay = requestMoney();
-
-    cout << "\tPor favor ingrese el primer impuesto (S/):";
-    tax1 = requestMoney();
-
-    cout << "\tPor favor ingrese el segundo impuesto (S/):";
-    tax2 = requestMoney();
+    workedHoursQuantity = requestWorkedHoursQuantity();
+    hourlyPay = requestHourlyPay();
+    tax1 = requestTax1();
+    tax2 = requestTax2();
 
     // Proceso
     system("cls");
@@ -43,9 +34,7 @@ int main()
     netSalary = grossSalary - tax1 - tax2;
 
     // Salida de datos
-    cout << "El trabajador " << fullName << "." << endl;
-    Sleep(500);
-    cout << "Trabajó " << workedHoursQuantity << " horas." << endl;
+    cout << "El empleado trabajó " << workedHoursQuantity << " horas." << endl;
     Sleep(500);
     cout << "Las que generaron S/ " << grossSalary << "." << endl;
     Sleep(500);
@@ -58,10 +47,51 @@ int main()
     return 0;
 }
 
-float requestMoney() {
-    float moneyValue;
+/// <summary>
+/// Request the user to enter a worked hours quantity
+/// </summary>
+unsigned short requestWorkedHoursQuantity() {
+    unsigned short workedHoursQuantity;
 
-    cin >> moneyValue;
+    cout << "\tPor favor la cantidad de horas trabajadas (horas):";
 
-    return moneyValue;
+    cin >> workedHoursQuantity;
+
+    return workedHoursQuantity;
+}
+
+/// <summary>
+/// Request the user to enter a hourly pay value
+/// </summary>
+float requestHourlyPay() {
+    float hourlyPay;
+
+    cout << "\tPor favor ingrese el pago por hora (S/):";
+    cin >> hourlyPay;
+
+    return hourlyPay;
+}
+
+/// <summary>
+/// Request the user to enter the first tax
+/// </summary>
+float requestTax1() {
+    float tax;
+
+    cout << "\tPor favor ingrese el primer impuesto (S/):";
+    cin >> tax;
+
+    return tax;
+}
+
+/// <summary>
+/// Request the user to enter the second tax
+/// </summary>
+float requestTax2() {
+    float tax;
+
+    cout << "\tPor favor ingrese el segundo impuesto (S/):";
+    cin >> tax;
+
+    return tax;
 }
