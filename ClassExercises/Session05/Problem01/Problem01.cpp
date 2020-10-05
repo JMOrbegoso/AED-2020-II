@@ -1,20 +1,67 @@
-// Problem01.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <windows.h>
+
+using namespace std;
+
+// forward declaration
+float requestMoney();
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    // Declaración de variables y constantes
+    char fullName[100];
+    unsigned short workedHoursQuantity;
+    float hourlyPay;
+    float tax1 = 0;
+    float tax2 = 0;
+    float grossSalary, netSalary;
+
+    // Entrada de datos
+
+    cout << "BIENVENIDO A LA LICORERÍA" << endl;
+
+    cout << "\tPor favor ingrese el nombre y apellidos completos del trabajador (max. 100 letras):";
+    fflush(stdin);
+    cin.getline(fullName, 100);
+
+    cout << "\tPor favor la cantidad de horas trabajadas (horas):";
+    cin >> workedHoursQuantity;
+
+    cout << "\tPor favor ingrese el pago por hora (S/):";
+    hourlyPay = requestMoney();
+
+    cout << "\tPor favor ingrese el primer impuesto (S/):";
+    tax1 = requestMoney();
+
+    cout << "\tPor favor ingrese el segundo impuesto (S/):";
+    tax2 = requestMoney();
+
+    // Proceso
+    system("cls");
+
+    grossSalary = workedHoursQuantity * hourlyPay;
+    netSalary = grossSalary - tax1 - tax2;
+
+    // Salida de datos
+    cout << "El trabajador " << fullName << "." << endl;
+    Sleep(500);
+    cout << "Trabajó " << workedHoursQuantity << " horas." << endl;
+    Sleep(500);
+    cout << "Las que generaron S/ " << grossSalary << "." << endl;
+    Sleep(500);
+    cout << "Tuvo dos impuestos, el primero de S/ " << tax1 << " y el segundo de S/ " << tax2 << "." << endl;
+    Sleep(500);
+    cout << "Por lo que le corresponde un salario de S/" << netSalary << "." << endl;
+
+    system("pause");
+
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+float requestMoney() {
+    float moneyValue;
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    cin >> moneyValue;
+
+    return moneyValue;
+}
