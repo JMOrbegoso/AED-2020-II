@@ -3,6 +3,7 @@
 //entre ellos.
 
 #include <iostream>
+#include <windows.h>
 
 using namespace std;
 
@@ -41,6 +42,8 @@ int main()
             default:
                 break;
             }
+
+            Sleep(3000);
         }
 
     } while (!(seletectMenuOption == 0));
@@ -71,7 +74,7 @@ int getSeletectOption() {
         cin >> seletectOption;
     }
 
-    return 0;
+    return seletectOption;
 }
 
 void requestNumbers(short& firstNumber, short& secondNumber) {
