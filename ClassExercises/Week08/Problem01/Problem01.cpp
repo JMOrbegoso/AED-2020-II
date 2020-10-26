@@ -131,7 +131,13 @@ void showResults(int* studentsAges, int studentsQuantity) {
         }
     }
 
-    averageAge = (float)agesSum / (float)studentsQuantity;
+    if (studentsQuantity == 0) {
+        averageAge = 0;
+        minAge = 0;
+    }
+    else {
+        averageAge = (float)agesSum / (float)studentsQuantity;
+    }
 
     cout << "Tiene " << studentsQuantity << " estudiantes." << endl;
     cout << "El promedio de edades es de: " << averageAge << endl;
