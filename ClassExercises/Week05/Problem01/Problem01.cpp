@@ -11,39 +11,24 @@ float getGrossSalary(unsigned short workedHoursQuantity, float hourlyPay);
 float getNetSalary(float grossSalary, float tax1, float tax2);
 void showResult(const char firstMessage[], float numericValue, const char lastMessage[]);
 
+float requestFloat(const char* message);
+short requestShort(const char* message);
+void requestCharArray(const char* message, char* charArray, unsigned short maxLengh);
+
 int main()
 {
-    // Declaración de variables y constantes
-    unsigned short workedHoursQuantity;
-    float hourlyPay;
-    float tax1 = 0;
-    float tax2 = 0;
-    float grossSalary, netSalary;
+    char nombre[5];
+    float precio;
+    short dia;
 
-    // Entrada de datos
+    requestCharArray("hola", nombre, 5);
 
-    cout << "CALCULADOR DE SUELDO" << endl;
+    precio = requestFloat("float:");
+    dia = requestShort("short:");
 
-    workedHoursQuantity = requestWorkedHoursQuantity();
-    hourlyPay = requestHourlyPay();
-    tax1 = requestTax(true);
-    tax2 = requestTax(false);
-
-    // Proceso
-    system("cls");
-
-    grossSalary = getGrossSalary(workedHoursQuantity, hourlyPay);
-    netSalary = getNetSalary(grossSalary, tax1, tax2);
-
-    // Salida de datos
-    showResult("El empleado trabajó ", workedHoursQuantity, " horas.");
-    showResult("Las que generaron S/ ", grossSalary, ".");
-    cout << "Tuvo dos impuestos:" << endl;
-    showResult("\tEl primero de S/ ", tax1, ".");
-    showResult("\tEl segundo de S/ ", tax2, ".");
-    showResult("Por lo que le corresponde un salario de S/ ", netSalary, ".");
-
-    system("pause");
+    cout << "El nombre es: " << nombre << endl;
+    cout << "El precio es: " << precio << endl;
+    cout << "El dia es: " << dia << endl;
 
     return 0;
 }
@@ -103,4 +88,30 @@ float getNetSalary(float grossSalary, float tax1, float tax2) {
 void showResult(const char firstMessage[], float numericValue, const char lastMessage[]) {
     Sleep(500);
     cout << firstMessage << numericValue << lastMessage << endl;
+}
+
+
+
+float requestFloat(const char* message) {
+    float requestedValue;
+
+    cout << "\t" << message << endl;
+    cin >> requestedValue;
+
+    return requestedValue;
+}
+
+short requestShort(const char* message) {
+    short requestedValue;
+
+    cout << "\t" << message << endl;
+    cin >> requestedValue;
+
+    return requestedValue;
+}
+
+void requestCharArray(const char* message, char* charArray, unsigned short maxLengh) {
+    fflush(stdin);
+    cout << "\t" << message << " (max. " << maxLengh << " caracteres):" << endl;    
+    cin.getline(charArray, maxLengh);
 }
