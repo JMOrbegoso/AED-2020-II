@@ -19,7 +19,7 @@ void showCredits();
 int main()
 {
     unsigned short seletectMenuOption;
-    int studentsAges[1000];
+    int studentsAges[20];
     int studentsQuantity = 0;
 
     do {
@@ -75,7 +75,7 @@ int getSeletectOption() {
 
     cout << "Introduzca la opción deseada:" << endl;
     cin >> seletectOption;
-    while (!(0 <= seletectOption && seletectOption <= 3)) {
+    while (!(0 <= seletectOption && seletectOption <= 4)) {
         cout << "Introdujo una opción incorrecta, por favor seleccione una opción válida:";
         cin >> seletectOption;
     }
@@ -144,7 +144,7 @@ void showResults(int* studentsAges, int studentsQuantity) {
 }
 
 void showProblem() {
-    cout << "Leer las edades de un conjunto de estudiantes y" << endl;
+    cout << "Leer las edades de un conjunto de estudiantes y:" << endl;
     cout << "\t-> Calcular el promedio de edades." << endl;
     cout << "\t-> Calcular la edad del mayor." << endl;
     cout << "\t-> Calcucar la edad del menor." << endl;
