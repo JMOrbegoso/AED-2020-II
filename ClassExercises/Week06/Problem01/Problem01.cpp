@@ -1,20 +1,75 @@
-// Problem01.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <windows.h>
+
+using namespace std;
+
+// Forward declarations
+float requestScore(int studentNumber, const char* message);
+short requestShort(const char* message, bool positive);
+float getAverage(int studentNumber);
+void showStudentStatus(float average);
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    unsigned short studentsQuantity;
+    float average;
+
+    studentsQuantity = requestShort("Por favor ingrese la cantidad de estudiantes:", true);
+
+    for (int i = 0; i < studentsQuantity; i++) {
+        average = getAverage(i + 1);
+
+        showStudentStatus(average);
+    }
+
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+float requestScore(int studentNumber, const char* message) {
+    float requestedValue;
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    cout << "\t" << message << studentNumber << ":" << endl;
+    cin >> requestedValue;
+
+    while (!(0 <= requestedValue && requestedValue <= 20)) {
+        cout << "\tIntrodujo un valor incorrecto, por favor que la nota sea menor a 20 y mayor a 0:" << endl;
+        cin >> requestedValue;
+    }
+
+    return requestedValue;
+}
+
+short requestShort(const char* message, bool positive) {
+    short requestedValue;
+
+    cout << "\t" << message << endl;
+    cin >> requestedValue;
+
+    while (positive && !(0 < requestedValue)) {
+        cout << "\tIntrodujo un valor inválido, por favor que el valor sea mayor a 0:" << endl;
+        cin >> requestedValue;
+    }
+
+    return requestedValue;
+}
+
+float getAverage(int studentNumber) {
+    float accumulatedScores = 0;
+
+    accumulatedScores += requestScore(studentNumber, "Ingrese la primera nota del estudiante #");
+    accumulatedScores += requestScore(studentNumber, "Ingrese la segunda nota del estudiante #");
+    accumulatedScores += requestScore(studentNumber, "Ingrese la tercera nota del estudiante #");
+    accumulatedScores += requestScore(studentNumber, "Ingrese la cuarta nota del estudiante #");
+    accumulatedScores += requestScore(studentNumber, "Ingrese la quinta nota del estudiante #");
+
+    return accumulatedScores / 5;
+}
+
+void showStudentStatus(float average) {
+    if (11 < average) {
+        cout << "El estudiante está aprobado con una nota de " << average << endl;
+    }
+    else {
+        cout << "El estudiante está desaprobado con una nota de " << average << endl;
+    }
+}
