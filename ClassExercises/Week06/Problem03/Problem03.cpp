@@ -8,7 +8,7 @@ float requestScore(int studentNumber, const char* message);
 short requestShort(const char* message, bool positive);
 float getAverage(int studentNumber);
 void updateStudentStatus(float average, unsigned short& studentsApprovedQuantity, unsigned short& studentsDisapprovedQuantity);
-void showResults(unsigned short& studentsApprovedQuantity, unsigned  short& studentsDisapprovedQuantity);
+void showResults(unsigned short& studentsApprovedQuantity, unsigned short& studentsDisapprovedQuantity);
 
 int main()
 {
@@ -24,8 +24,9 @@ int main()
         updateStudentStatus(average, studentsApprovedQuantity, studentsDisapprovedQuantity);
     }
 
+    cout << "Deeel grupo de estudiantes: " << studentsApprovedQuantity << " estudiantes aprobaron, y " << studentsDisapprovedQuantity << " desaprobaron";
     showResults(studentsApprovedQuantity, studentsDisapprovedQuantity);
-
+    
     return 0;
 }
 
@@ -69,7 +70,7 @@ float getAverage(int studentNumber) {
     return accumulatedScores / 5;
 }
 
-void updateStudentStatus(float average, unsigned short& studentsApprovedQuantity, unsigned  short& studentsDisapprovedQuantity) {
+void updateStudentStatus(float average, unsigned short& studentsApprovedQuantity, unsigned short& studentsDisapprovedQuantity) {
     if (11 < average) {
         cout << "El estudiante está aprobado con una nota de " << average << endl;
         studentsApprovedQuantity++;
@@ -80,7 +81,6 @@ void updateStudentStatus(float average, unsigned short& studentsApprovedQuantity
     }
 }
 
-void showResults(unsigned short& studentsApprovedQuantity, unsigned  short& studentsDisapprovedQuantity) {
+void showResults(unsigned short& studentsApprovedQuantity, unsigned short& studentsDisapprovedQuantity) {
     cout << "Del grupo de estudiantes: " << studentsApprovedQuantity << " estudiantes aprobaron, y " << studentsDisapprovedQuantity << " desaprobaron";
-
 }
