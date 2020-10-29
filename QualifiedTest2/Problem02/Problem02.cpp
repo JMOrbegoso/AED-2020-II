@@ -140,7 +140,7 @@ void showResults(float& valueY, float& valueZ) {
     Sleep(500);
     cout << (valueY + valueZ) / 2 << endl;
 
-    Sleep(3000);
+    system("pause");
 }
 
 int getFactorialValue(int number) {
@@ -157,5 +157,5 @@ void showCredits() {
     cout << "Desarrollado por Juan Manuel Orbegoso" << endl;
     cout << "https://www.jmorbegoso.com" << endl;
 
-    Sleep(3000);
+    system("pause");
 }
