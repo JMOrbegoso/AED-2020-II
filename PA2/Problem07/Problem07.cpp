@@ -9,6 +9,8 @@ Se desea desarrollar un programa que mediante arreglos se pueda determinar:
 */
 
 #include <iostream>
+#include <string>
+#include <string.h>
 #include <windows.h>
 
 using namespace std;
@@ -21,6 +23,12 @@ void showCredits();
 int main()
 {
     unsigned short seletectMenuOption;
+
+    string firstNamesArray[100];
+    string lastNamesArray[100];
+    char genresArray[100];
+    int agesArray[100];
+    string citiesArray[100];
     int soldiersQuantity = 0;
 
     do {
