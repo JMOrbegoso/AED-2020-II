@@ -31,7 +31,7 @@ int main()
             {
             case 1:
 
-                Sleep(500);
+                Sleep(2000);
                 break;
 
             case 2:
@@ -86,10 +86,10 @@ int getSeletectOption() {
     cout << "-----------------------------------------" << endl;
 
     cout << "[1] Registrar infante" << endl;
-    cout << "[2] Calcular cuántos infantes son mujeres y cuantos hombres." << endl;
-    cout << "[3] Calcular cuántos infantes son mayores de edad." << endl;
-    cout << "[4] Calcular cuántos infantes son de la ciudad de Lima." << endl;
-    cout << "[5] Mostrar lista de infantes ordenados por nombre." << endl;
+    cout << "[2] Calcular cuántos infantes son mujeres y cuantos hombres" << endl;
+    cout << "[3] Calcular cuántos infantes son mayores de edad" << endl;
+    cout << "[4] Calcular cuántos infantes son de la ciudad de Lima" << endl;
+    cout << "[5] Mostrar lista de infantes ordenados por nombre" << endl;
     cout << "[6] Ver planteamiento del problema" << endl;
     cout << "[7] Ver Creditos" << endl;
     cout << "[0] Salir" << endl;
