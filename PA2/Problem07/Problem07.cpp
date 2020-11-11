@@ -21,6 +21,7 @@ void registerSoldier(string* firstNamesArray, string* lastNamesArray, char* genr
 string requestText(string message);
 char requestGenre();
 int requestAge(int minAge, int maxAge);
+void showSoldiersByGenre(char* genresArray, int soldiersQuantity);
 void showProblem();
 void showCredits();
 
@@ -47,8 +48,8 @@ int main()
                 break;
 
             case 2:
-
-                Sleep(1000);
+                showSoldiersByGenre(genresArray, soldiersQuantity);
+                Sleep(2000);
                 break;
 
             case 3:
@@ -183,6 +184,25 @@ int requestAge(int minAge, int maxAge) {
     }
 
     return age;
+}
+
+void showSoldiersByGenre(char* genresArray, int soldiersQuantity) {
+    int womenQuantity = 0;
+    int menQuantity = 0;
+
+    system("cls");
+
+    for (int i = 0; i < soldiersQuantity; i++) {
+        if (genresArray[i] == 'f') {
+            womenQuantity++;
+        }
+        else {
+            menQuantity++;
+        }
+    }
+
+    cout << "En total de infantes está compuesto de " << womenQuantity << " mujer/es y " << menQuantity << " hombre/s." << endl;
+
 }
 
 void showProblem() {
