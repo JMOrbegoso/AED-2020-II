@@ -23,6 +23,7 @@ char requestGenre();
 int requestAge(int minAge, int maxAge);
 void showSoldiersByGenre(char* genresArray, int soldiersQuantity);
 void showSoldiersByAgeStatus(int* agesArray, int soldiersQuantity);
+void showSoldiersInLimaCity(string* citiesArray, int soldiersQuantity);
 void showProblem();
 void showCredits();
 
@@ -59,7 +60,7 @@ int main()
                 break;
 
             case 4:
-
+                showSoldiersInLimaCity(citiesArray, soldiersQuantity);
                 Sleep(2000);
                 break;
 
@@ -220,6 +221,23 @@ void showSoldiersByAgeStatus(int* agesArray, int soldiersQuantity) {
     youngsQuantity = soldiersQuantity - adultsQuantity;
 
     cout << "En total de infantes está compuesto de " << adultsQuantity << " mayores de edad y " << youngsQuantity << " menores de edad." << endl;
+}
+
+void showSoldiersInLimaCity(string* citiesArray, int soldiersQuantity) {
+    int soldiersInLimaQuantity = 0;
+    int soldiersOutLimaQuantity = 0;
+
+    system("cls");
+
+    for (int i = 0; i < soldiersQuantity; i++) {
+        if (citiesArray[i] == "lima") {
+            soldiersInLimaQuantity++;
+        }
+    }
+
+    soldiersOutLimaQuantity = soldiersQuantity - soldiersInLimaQuantity;
+
+    cout << "En total hay" << soldiersInLimaQuantity << " infantes en Lima, y " << soldiersOutLimaQuantity << " fuera de Lima." << endl;
 }
 
 void showProblem() {
