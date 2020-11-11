@@ -17,6 +17,7 @@ using namespace std;
 
 // Forward declarations
 int getSeletectOption();
+void gotoxy(int x, int y);
 void registerSoldier(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int& soldiersQuantity);
 string requestText(string message);
 char requestGenre();
@@ -117,6 +118,15 @@ int getSeletectOption() {
     }
 
     return seletectOption;
+}
+
+void gotoxy(int x, int y) {
+    HANDLE hcon;
+    hcon = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD dwPos;
+    dwPos.X = x;
+    dwPos.Y = y;
+    SetConsoleCursorPosition(hcon, dwPos);
 }
 
 void registerSoldier(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int& soldiersQuantity) {
