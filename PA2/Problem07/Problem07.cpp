@@ -17,6 +17,10 @@ using namespace std;
 
 // Forward declarations
 int getSeletectOption();
+void registerSoldier(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int& soldiersQuantity);
+string requestText(string message);
+char requestGenre();
+int requestAge(int minAge, int maxAge);
 void showProblem();
 void showCredits();
 
@@ -38,7 +42,7 @@ int main()
             switch (seletectMenuOption)
             {
             case 1:
-
+                registerSoldier(firstNamesArray, lastNamesArray, genresArray, agesArray, citiesArray, soldiersQuantity);
                 Sleep(2000);
                 break;
 
@@ -110,6 +114,75 @@ int getSeletectOption() {
     }
 
     return seletectOption;
+}
+
+void registerSoldier(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int& soldiersQuantity) {
+    int age;
+
+    system("cls");
+
+    if (soldiersQuantity >= 100) {
+        cout << "Ya ingresó 100 infantes, no puede seguir registrando más." << endl;
+        Sleep(2000);
+        return;
+    }
+
+    cout << "\t\tRegistrará un nuevo infante" << endl << endl;
+
+    firstNamesArray[soldiersQuantity] = requestText("¿Cúal es el nombre del infante? (Mínimo 2 letras)");
+
+    lastNamesArray[soldiersQuantity] = requestText("¿Cúal es el apellido del infante? (Mínimo 2 letras)");
+
+    citiesArray[soldiersQuantity] = requestText("¿Cúal es su ciudad de procedencia? (Mínimo 2 letras)");
+
+    genresArray[soldiersQuantity] = requestGenre();
+
+    agesArray[soldiersQuantity] = requestAge(15, 60);
+
+    soldiersQuantity++;
+
+    cout << endl << "El infante fue añadido correctamente." << endl;
+}
+
+string requestText(string message) {
+    string text;
+
+    cout << message << ":" << endl;
+
+    do {
+        fflush(stdin);
+        getline(cin, text);
+    } while (!(2 <= text.length()));
+
+    return text;
+}
+
+char requestGenre() {
+    char genre;
+
+    cout << "¿Es de genero masculino (m) o femenino (f)?" << endl;
+    cin >> genre;
+
+    while (!(genre == 'm' || genre == 'f')) {
+        cout << "Por favor, solo ingrese 'm' o 'f':" << endl;
+        cin >> genre;
+    }
+
+    return genre;
+}
+
+int requestAge(int minAge, int maxAge) {
+    int age;
+
+    cout << "¿Qué edad tiene (Mínimo " << minAge << " años y máximo " << maxAge << ")?" << endl;
+    cin >> age;
+
+    while (!(15 <= age && age <= 60)) {
+        cout << "Por favor, ingrese una edad mínima de " << minAge << " años y máxima de " << maxAge << "." << endl;
+        cin >> age;
+    }
+
+    return age;
 }
 
 void showProblem() {
