@@ -22,6 +22,7 @@ string requestText(string message);
 char requestGenre();
 int requestAge(int minAge, int maxAge);
 void showSoldiersByGenre(char* genresArray, int soldiersQuantity);
+void showSoldiersByAgeStatus(int* agesArray, int soldiersQuantity);
 void showProblem();
 void showCredits();
 
@@ -53,7 +54,7 @@ int main()
                 break;
 
             case 3:
-
+                showSoldiersByAgeStatus(agesArray, soldiersQuantity);
                 Sleep(2000);
                 break;
 
@@ -202,7 +203,23 @@ void showSoldiersByGenre(char* genresArray, int soldiersQuantity) {
     }
 
     cout << "En total de infantes está compuesto de " << womenQuantity << " mujer/es y " << menQuantity << " hombre/s." << endl;
+}
 
+void showSoldiersByAgeStatus(int* agesArray, int soldiersQuantity) {
+    int adultsQuantity = 0;
+    int youngsQuantity = 0;
+
+    system("cls");
+
+    for (int i = 0; i < soldiersQuantity; i++) {
+        if (18 <= agesArray[i]) {
+            adultsQuantity++;
+        }
+    }
+
+    youngsQuantity = soldiersQuantity - adultsQuantity;
+
+    cout << "En total de infantes está compuesto de " << adultsQuantity << " mayores de edad y " << youngsQuantity << " menores de edad." << endl;
 }
 
 void showProblem() {
