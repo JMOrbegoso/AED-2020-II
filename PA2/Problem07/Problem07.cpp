@@ -10,7 +10,6 @@ Se desea desarrollar un programa que mediante arreglos se pueda determinar:
 
 #include <iostream>
 #include <string>
-#include <string.h>
 #include <windows.h>
 
 using namespace std;
