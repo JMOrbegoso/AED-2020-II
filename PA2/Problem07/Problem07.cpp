@@ -25,6 +25,12 @@ int requestAge(int minAge, int maxAge);
 void showSoldiersByGenre(char* genresArray, int soldiersQuantity);
 void showSoldiersByAgeStatus(int* agesArray, int soldiersQuantity);
 void showSoldiersInLimaCity(string* citiesArray, int soldiersQuantity);
+void showAllSoldiers(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int& soldiersQuantity);
+void orderSoldiers(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int soldiersQuantity);
+void mixNames(string* fullNamesArray, string* firstNamesArray, string* lastNamesArray, int soldiersQuantity);
+void swapValue(string* array, int i, int j);
+void swapValue(char* array, int i, int j);
+void swapValue(int* array, int i, int j);
 void showProblem();
 void showCredits();
 
@@ -66,8 +72,8 @@ int main()
                 break;
 
             case 5:
-
-                Sleep(2000);
+                showAllSoldiers(firstNamesArray, lastNamesArray, genresArray, agesArray, citiesArray, soldiersQuantity);
+                system("pause");
                 break;
 
             case 6:
@@ -247,7 +253,94 @@ void showSoldiersInLimaCity(string* citiesArray, int soldiersQuantity) {
 
     soldiersOutLimaQuantity = soldiersQuantity - soldiersInLimaQuantity;
 
-    cout << "En total hay" << soldiersInLimaQuantity << " infantes en Lima, y " << soldiersOutLimaQuantity << " fuera de Lima." << endl;
+    cout << "En total hay " << soldiersInLimaQuantity << " infantes en Lima, y " << soldiersOutLimaQuantity << " fuera de Lima." << endl;
+}
+
+void showAllSoldiers(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int& soldiersQuantity) {
+
+    system("cls");
+
+    if (!(0 < soldiersQuantity)) {
+        cout << "No se ha encontrado ningún infante." << endl;
+        return;
+    }
+
+    orderSoldiers(firstNamesArray, lastNamesArray, genresArray, agesArray, citiesArray, soldiersQuantity);
+
+    // Title
+    gotoxy(40, 0); cout << "\t\tRelación ordenada de infantes" << endl;
+
+    // Headers
+    gotoxy(0, 2); cout << "#" << endl;
+    gotoxy(5, 2); cout << "Apellidos y Nombres" << endl;
+    gotoxy(55, 2); cout << "Género" << endl;
+    gotoxy(65, 2); cout << "Edad" << endl;
+    gotoxy(75, 2); cout << "Ciudad" << endl;
+
+    // Rows
+    for (int i = 0; i < soldiersQuantity; i++) {
+        gotoxy(0, 4 + i); cout << (i + 1) << endl;
+        gotoxy(5, 4 + i); cout << lastNamesArray[i] << " " << firstNamesArray[i] << endl;
+        gotoxy(55, 4 + i); cout << genresArray[i] << endl;
+        gotoxy(65, 4 + i); cout << agesArray[i] << endl;
+        gotoxy(75, 4 + i); cout << citiesArray[i] << endl;
+    }
+}
+
+void orderSoldiers(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int soldiersQuantity) {
+
+    string fullNamesArray[100];
+    mixNames(fullNamesArray, firstNamesArray, lastNamesArray, soldiersQuantity);
+
+    int i, j;
+    for (i = 0; i < soldiersQuantity - 1; i++)
+    {
+        for (j = 0; j < soldiersQuantity - i - 1; j++)
+        {
+            if (fullNamesArray[j] > fullNamesArray[j + 1])
+            {
+                swapValue(fullNamesArray, i, j + 1);
+                swapValue(firstNamesArray, i, j + 1);
+                swapValue(lastNamesArray, i, j + 1);
+                swapValue(genresArray, i, j + 1);
+                swapValue(agesArray, i, j + 1);
+                swapValue(citiesArray, i, j + 1);
+            }
+        }
+    }
+}
+
+/// <summary>
+/// Mix firstName and lastNames
+/// </summary>
+void mixNames(string* fullNamesArray, string* firstNamesArray, string* lastNamesArray, int soldiersQuantity) {
+    for (int i = 0; i < soldiersQuantity; i++) {
+        fullNamesArray[i] = lastNamesArray[i] + " " + firstNamesArray[i];
+    }
+}
+
+void swapValue(string* array, int i, int j) {
+
+    string text = array[j];
+
+    array[j] = array[j + 1];
+    array[j + 1] = text;
+}
+
+void swapValue(char* array, int i, int j) {
+
+    char character = array[j];
+
+    array[j] = array[j + 1];
+    array[j + 1] = character;
+}
+
+void swapValue(int* array, int i, int j) {
+
+    int number = array[j];
+
+    array[j] = array[j + 1];
+    array[j + 1] = number;
 }
 
 void showProblem() {
