@@ -25,7 +25,7 @@ int requestAge(int minAge, int maxAge);
 void showSoldiersByGenre(char* genresArray, int soldiersQuantity);
 void showSoldiersByAgeStatus(int* agesArray, int soldiersQuantity);
 void showSoldiersInLimaCity(string* citiesArray, int soldiersQuantity);
-void showAllSoldiers(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int& soldiersQuantity);
+void showAllSoldiers(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int soldiersQuantity);
 void orderSoldiers(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int soldiersQuantity);
 void mixNames(string* fullNamesArray, string* firstNamesArray, string* lastNamesArray, int soldiersQuantity);
 void swapValue(string* array, int i, int j);
@@ -256,7 +256,7 @@ void showSoldiersInLimaCity(string* citiesArray, int soldiersQuantity) {
     cout << "En total hay " << soldiersInLimaQuantity << " infantes en Lima, y " << soldiersOutLimaQuantity << " fuera de Lima." << endl;
 }
 
-void showAllSoldiers(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int& soldiersQuantity) {
+void showAllSoldiers(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int soldiersQuantity) {
 
     system("cls");
 
@@ -323,24 +323,24 @@ void swapValue(string* array, int i, int j) {
 
     string text = array[j];
 
-    array[j] = array[j + 1];
-    array[j + 1] = text;
+    array[j] = array[i];
+    array[i] = text;
 }
 
 void swapValue(char* array, int i, int j) {
 
     char character = array[j];
 
-    array[j] = array[j + 1];
-    array[j + 1] = character;
+    array[j] = array[i];
+    array[i] = character;
 }
 
 void swapValue(int* array, int i, int j) {
 
     int number = array[j];
 
-    array[j] = array[j + 1];
-    array[j + 1] = number;
+    array[j] = array[i];
+    array[i] = number;
 }
 
 void showProblem() {
