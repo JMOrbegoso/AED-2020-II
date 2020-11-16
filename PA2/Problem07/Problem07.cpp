@@ -183,6 +183,7 @@ char requestGenre() {
 
     while (!(genre == 'm' || genre == 'f')) {
         cout << "Por favor, solo ingrese 'm' o 'f':" << endl;
+		fflush(stdin);
         cin >> genre;
     }
 
@@ -195,8 +196,9 @@ int requestAge(int minAge, int maxAge) {
     cout << "¿Qué edad tiene (Mínimo " << minAge << " años y máximo " << maxAge << ")?" << endl;
     cin >> age;
 
-    while (!(15 <= age && age <= 60)) {
+    while (!(minAge <= age && age <= maxAge)) {
         cout << "Por favor, ingrese una edad mínima de " << minAge << " años y máxima de " << maxAge << "." << endl;
+		fflush(stdin);
         cin >> age;
     }
 
