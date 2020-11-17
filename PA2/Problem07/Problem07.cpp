@@ -27,7 +27,7 @@ void mixNames(soldier* soldiers, string* fullNamesArray, int soldiersQuantity);
 
 int main()
 {
-    unsigned short seletectMenuOption;
+    int seletectMenuOption;
 
     soldier soldiers[100];
     int soldiersQuantity = 0;
@@ -129,7 +129,7 @@ void registerSoldier(soldier* soldiers, int& soldiersQuantity) {
 
     soldiers[soldiersQuantity].lastName = requestText("¿Cúal es el apellido del infante? (Mínimo 2 letras)");
 
-    soldiers[soldiersQuantity].city = requestText("¿Cúal es su ciudad de procedencia? (Mínimo 2 letras)");
+    soldiers[soldiersQuantity].city = requestText("¿Cúal es su ciudad de procedencia? (Mínimo 2 letras y solo en minúscula)");
 
     soldiers[soldiersQuantity].genre = requestGenre();
 
@@ -233,10 +233,7 @@ void orderSoldiers(soldier* soldiers, int soldiersQuantity) {
     {
         for (j = 0; j < soldiersQuantity - i - 1; j++)
         {
-            string first = fullNamesArray[j];
-            string second = fullNamesArray[j + 1];
-
-            if (first > second)
+            if (fullNamesArray[j] > fullNamesArray[j + 1])
             {
                 swapValue(fullNamesArray, j, j + 1);
 
