@@ -17,23 +17,19 @@ using namespace std;
 
 // Forward declarations
 int getSeletectOption();
-void registerSoldier(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int& soldiersQuantity);
-void showSoldiersByGenre(char* genresArray, int soldiersQuantity);
-void showSoldiersByAgeStatus(int* agesArray, int soldiersQuantity);
-void showSoldiersInLimaCity(string* citiesArray, int soldiersQuantity);
-void showAllSoldiers(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int soldiersQuantity);
-void orderSoldiers(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int soldiersQuantity);
-void mixNames(string* fullNamesArray, string* firstNamesArray, string* lastNamesArray, int soldiersQuantity);
+void registerSoldier(soldier* soldiers, int& soldiersQuantity);
+void showSoldiersByGenre(soldier* soldiers, int soldiersQuantity);
+void showSoldiersByAgeStatus(soldier* soldiers, int soldiersQuantity);
+void showSoldiersInLimaCity(soldier* soldiers, int soldiersQuantity);
+void orderAndShowAllSoldiers(soldier* soldiers, int soldiersQuantity);
+void orderSoldiers(soldier* soldiers, int soldiersQuantity);
+void mixNames(soldier* soldiers, string* fullNamesArray, int soldiersQuantity);
 
 int main()
 {
     unsigned short seletectMenuOption;
 
-    string firstNamesArray[100];
-    string lastNamesArray[100];
-    char genresArray[100];
-    int agesArray[100];
-    string citiesArray[100];
+    soldier soldiers[100];
     int soldiersQuantity = 0;
 
     do {
@@ -43,27 +39,27 @@ int main()
             switch (seletectMenuOption)
             {
             case 1:
-                registerSoldier(firstNamesArray, lastNamesArray, genresArray, agesArray, citiesArray, soldiersQuantity);
+                registerSoldier(soldiers, soldiersQuantity);
                 Sleep(2000);
                 break;
 
             case 2:
-                showSoldiersByGenre(genresArray, soldiersQuantity);
+                showSoldiersByGenre(soldiers, soldiersQuantity);
                 Sleep(2000);
                 break;
 
             case 3:
-                showSoldiersByAgeStatus(agesArray, soldiersQuantity);
+                showSoldiersByAgeStatus(soldiers, soldiersQuantity);
                 Sleep(2000);
                 break;
 
             case 4:
-                showSoldiersInLimaCity(citiesArray, soldiersQuantity);
+                showSoldiersInLimaCity(soldiers, soldiersQuantity);
                 Sleep(2000);
                 break;
 
             case 5:
-                showAllSoldiers(firstNamesArray, lastNamesArray, genresArray, agesArray, citiesArray, soldiersQuantity);
+                orderAndShowAllSoldiers(soldiers, soldiersQuantity);
                 system("pause");
                 break;
 
@@ -117,8 +113,7 @@ int getSeletectOption() {
     return seletectOption;
 }
 
-void registerSoldier(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int& soldiersQuantity) {
-    int age;
+void registerSoldier(soldier* soldiers, int& soldiersQuantity) {
 
     system("cls");
 
@@ -130,29 +125,29 @@ void registerSoldier(string* firstNamesArray, string* lastNamesArray, char* genr
 
     cout << "\t\tRegistrará un nuevo infante" << endl << endl;
 
-    firstNamesArray[soldiersQuantity] = requestText("¿Cúal es el nombre del infante? (Mínimo 2 letras)");
+    soldiers[soldiersQuantity].firstName = requestText("¿Cúal es el nombre del infante? (Mínimo 2 letras)");
 
-    lastNamesArray[soldiersQuantity] = requestText("¿Cúal es el apellido del infante? (Mínimo 2 letras)");
+    soldiers[soldiersQuantity].lastName = requestText("¿Cúal es el apellido del infante? (Mínimo 2 letras)");
 
-    citiesArray[soldiersQuantity] = requestText("¿Cúal es su ciudad de procedencia? (Mínimo 2 letras)");
+    soldiers[soldiersQuantity].city = requestText("¿Cúal es su ciudad de procedencia? (Mínimo 2 letras)");
 
-    genresArray[soldiersQuantity] = requestGenre();
+    soldiers[soldiersQuantity].genre = requestGenre();
 
-    agesArray[soldiersQuantity] = requestAge(15, 60);
+    soldiers[soldiersQuantity].age = requestAge(15, 60);
 
     soldiersQuantity++;
 
     cout << endl << "El infante fue añadido correctamente." << endl;
 }
 
-void showSoldiersByGenre(char* genresArray, int soldiersQuantity) {
+void showSoldiersByGenre(soldier* soldiers, int soldiersQuantity) {
     int womenQuantity = 0;
     int menQuantity = 0;
 
     system("cls");
 
     for (int i = 0; i < soldiersQuantity; i++) {
-        if (genresArray[i] == 'f') {
+        if (soldiers[i].genre == 'f') {
             womenQuantity++;
         }
         else {
@@ -163,14 +158,14 @@ void showSoldiersByGenre(char* genresArray, int soldiersQuantity) {
     cout << "En total de infantes está compuesto de " << womenQuantity << " mujer/es y " << menQuantity << " hombre/s." << endl;
 }
 
-void showSoldiersByAgeStatus(int* agesArray, int soldiersQuantity) {
+void showSoldiersByAgeStatus(soldier* soldiers, int soldiersQuantity) {
     int adultsQuantity = 0;
     int youngsQuantity = 0;
 
     system("cls");
 
     for (int i = 0; i < soldiersQuantity; i++) {
-        if (18 <= agesArray[i]) {
+        if (18 <= soldiers[i].age) {
             adultsQuantity++;
         }
     }
@@ -180,14 +175,14 @@ void showSoldiersByAgeStatus(int* agesArray, int soldiersQuantity) {
     cout << "En total de infantes está compuesto de " << adultsQuantity << " mayores de edad y " << youngsQuantity << " menores de edad." << endl;
 }
 
-void showSoldiersInLimaCity(string* citiesArray, int soldiersQuantity) {
+void showSoldiersInLimaCity(soldier* soldiers, int soldiersQuantity) {
     int soldiersInLimaQuantity = 0;
     int soldiersOutLimaQuantity = 0;
 
     system("cls");
 
     for (int i = 0; i < soldiersQuantity; i++) {
-        if (citiesArray[i] == "lima") {
+        if (soldiers[i].city == "lima") {
             soldiersInLimaQuantity++;
         }
     }
@@ -197,7 +192,7 @@ void showSoldiersInLimaCity(string* citiesArray, int soldiersQuantity) {
     cout << "En total hay " << soldiersInLimaQuantity << " infantes en Lima, y " << soldiersOutLimaQuantity << " fuera de Lima." << endl;
 }
 
-void showAllSoldiers(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int soldiersQuantity) {
+void orderAndShowAllSoldiers(soldier* soldiers, int soldiersQuantity) {
 
     system("cls");
 
@@ -206,7 +201,7 @@ void showAllSoldiers(string* firstNamesArray, string* lastNamesArray, char* genr
         return;
     }
 
-    orderSoldiers(firstNamesArray, lastNamesArray, genresArray, agesArray, citiesArray, soldiersQuantity);
+    orderSoldiers(soldiers, soldiersQuantity);
 
     // Title
     gotoxy(40, 0); cout << "\t\tRelación ordenada de infantes" << endl;
@@ -221,31 +216,31 @@ void showAllSoldiers(string* firstNamesArray, string* lastNamesArray, char* genr
     // Rows
     for (int i = 0; i < soldiersQuantity; i++) {
         gotoxy(0, 4 + i); cout << (i + 1) << endl;
-        gotoxy(5, 4 + i); cout << lastNamesArray[i] << " " << firstNamesArray[i] << endl;
-        gotoxy(55, 4 + i); cout << genresArray[i] << endl;
-        gotoxy(65, 4 + i); cout << agesArray[i] << endl;
-        gotoxy(75, 4 + i); cout << citiesArray[i] << endl;
+        gotoxy(5, 4 + i); cout << soldiers[i].lastName << " " << soldiers[i].firstName << endl;
+        gotoxy(55, 4 + i); cout << soldiers[i].genre << endl;
+        gotoxy(65, 4 + i); cout << soldiers[i].age << endl;
+        gotoxy(75, 4 + i); cout << soldiers[i].city << endl;
     }
 }
 
-void orderSoldiers(string* firstNamesArray, string* lastNamesArray, char* genresArray, int* agesArray, string* citiesArray, int soldiersQuantity) {
+void orderSoldiers(soldier* soldiers, int soldiersQuantity) {
 
     string fullNamesArray[100];
-    mixNames(fullNamesArray, firstNamesArray, lastNamesArray, soldiersQuantity);
+    mixNames(soldiers, fullNamesArray, soldiersQuantity);
 
     int i, j;
     for (i = 0; i < soldiersQuantity - 1; i++)
     {
         for (j = 0; j < soldiersQuantity - i - 1; j++)
         {
-            if (fullNamesArray[j] > fullNamesArray[j + 1])
+            string first = fullNamesArray[j];
+            string second = fullNamesArray[j + 1];
+
+            if (first > second)
             {
-                swapValue(fullNamesArray, i, j + 1);
-                swapValue(firstNamesArray, i, j + 1);
-                swapValue(lastNamesArray, i, j + 1);
-                swapValue(genresArray, i, j + 1);
-                swapValue(agesArray, i, j + 1);
-                swapValue(citiesArray, i, j + 1);
+                swapValue(fullNamesArray, j, j + 1);
+
+                swapValue(soldiers, j, j + 1);
             }
         }
     }
@@ -254,8 +249,8 @@ void orderSoldiers(string* firstNamesArray, string* lastNamesArray, char* genres
 /// <summary>
 /// Mix firstName and lastNames
 /// </summary>
-void mixNames(string* fullNamesArray, string* firstNamesArray, string* lastNamesArray, int soldiersQuantity) {
+void mixNames(soldier* soldiers, string* fullNamesArray, int soldiersQuantity) {
     for (int i = 0; i < soldiersQuantity; i++) {
-        fullNamesArray[i] = lastNamesArray[i] + " " + firstNamesArray[i];
+        fullNamesArray[i] = soldiers[i].lastName + " " + soldiers[i].firstName;
     }
 }

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <windows.h>
+#include "Structs.h"
 
 using namespace std;
 
@@ -58,26 +59,34 @@ int requestAge(int minAge, int maxAge) {
 
 void swapValue(string* array, int i, int j) {
 
-    string text = array[j];
+    string temp = array[j];
 
     array[j] = array[i];
-    array[i] = text;
+    array[i] = temp;
 }
 
 void swapValue(char* array, int i, int j) {
 
-    char character = array[j];
+    char temp = array[j];
 
     array[j] = array[i];
-    array[i] = character;
+    array[i] = temp;
 }
 
 void swapValue(int* array, int i, int j) {
 
-    int number = array[j];
+    int temp = array[j];
 
     array[j] = array[i];
-    array[i] = number;
+    array[i] = temp;
+}
+
+void swapValue(soldier* array, int i, int j) {
+
+    soldier temp = array[j];
+
+    array[j] = array[i];
+    array[i] = temp;
 }
 
 void showProblem() {
