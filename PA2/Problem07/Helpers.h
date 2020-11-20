@@ -11,9 +11,6 @@ string requestText(string message, int minLength);
 string requestText(string message, int minLength, int maxLength);
 char requestGenre();
 int requestAge(int minAge, int maxAge);
-void swapValue(string* array, int i, int j);
-void swapValue(char* array, int i, int j);
-void swapValue(int* array, int i, int j);
 void swapValue(soldier* array, int i, int j);
 bool soldiersArrayIsEmpty(int soldiersQuantity);
 void orderSoldiers(soldier* soldiers, int soldiersQuantity);
@@ -82,30 +79,6 @@ int requestAge(int minAge, int maxAge) {
     }
 
     return age;
-}
-
-void swapValue(string* array, int i, int j) {
-
-    string temp = array[j];
-
-    array[j] = array[i];
-    array[i] = temp;
-}
-
-void swapValue(char* array, int i, int j) {
-
-    char temp = array[j];
-
-    array[j] = array[i];
-    array[i] = temp;
-}
-
-void swapValue(int* array, int i, int j) {
-
-    int temp = array[j];
-
-    array[j] = array[i];
-    array[i] = temp;
 }
 
 void swapValue(soldier* array, int i, int j) {
