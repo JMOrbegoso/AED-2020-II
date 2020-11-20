@@ -10,7 +10,12 @@ void gotoxy(int x, int y);
 string requestText(string message, int minLength);
 string requestText(string message, int minLength, int maxLength);
 char requestGenre();
+int requestAge(int minAge);
 int requestAge(int minAge, int maxAge);
+string requestDNI();
+int requestMedicalSpeciality();
+float requestMoney(string message, int minAmount);
+float requestMoney(string message, int minAmount, int maxAmount);
 void swapValue(string* array, int i, int j);
 void swapValue(char* array, int i, int j);
 void swapValue(int* array, int i, int j);
@@ -66,6 +71,21 @@ char requestGenre() {
     return genre;
 }
 
+int requestAge(int minAge) {
+    int age;
+
+    cout << "¿Qué edad tiene (Mínimo " << minAge << " años)?" << endl;
+    cin >> age;
+
+    while (!(minAge <= age)) {
+        cout << "Por favor, ingrese una edad mínima de " << minAge << " años." << endl;
+        fflush(stdin);
+        cin >> age;
+    }
+
+    return age;
+}
+
 int requestAge(int minAge, int maxAge) {
     int age;
 
@@ -81,15 +101,12 @@ int requestAge(int minAge, int maxAge) {
     return age;
 }
 
-void requestDNI(char* dni) {
-    string text;
+string requestDNI() {
+    string dni;
 
-    text = requestText("¿Cúal es su DNI?", 8, 8);
+    dni = requestText("¿Cúal es su DNI?", 8, 8);
 
-    strcpy(dni, text.c_str());
-
-    for (int i = 0; i < 8; i++)
-        cout << dni[i];
+    return dni;
 }
 
 int requestMedicalSpeciality() {
@@ -109,6 +126,21 @@ int requestMedicalSpeciality() {
     } while (!(1 <= medicalSpeciality && medicalSpeciality <= 7));
 
     return medicalSpeciality;
+}
+
+float requestMoney(string message, int minAmount) {
+    float amount;
+
+    cout << message << "(Mínimo S/" << minAmount << ")" << endl;
+    cin >> amount;
+
+    while (!(minAmount <= amount)) {
+        cout << "Por favor, ingrese una cantidad mínima de S/" << minAmount << "." << endl;
+        fflush(stdin);
+        cin >> amount;
+    }
+
+    return amount;
 }
 
 float requestMoney(string message, int minAmount, int maxAmount) {
