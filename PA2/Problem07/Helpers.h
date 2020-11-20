@@ -88,17 +88,3 @@ void swapValue(soldier* array, int i, int j) {
     array[j] = array[i];
     array[i] = temp;
 }
-
-void showProblem() {
-    cout << "Una compañía de infantería tiene 100 cantidad de reclutas." << endl;
-    cout << "Se desea desarrollar un programa que mediante arreglos se pueda determinar:" << endl;
-    cout << "\t-> Cuántos infantes son mujeres y cuantos hombres." << endl;
-    cout << "\t-> Cuantos son mayores de edad." << endl;
-    cout << "\t-> Cuantos son de la ciudad de Lima." << endl;
-    cout << "\t-> Mostrar la lista ordenados por nombre." << endl;
-}
-
-void showCredits() {
-    cout << "Desarrollado por Juan Manuel Orbegoso" << endl;
-    cout << "https://www.jmorbegoso.com" << endl;
-}

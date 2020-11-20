@@ -24,6 +24,8 @@ void showSoldiersInLimaCity(soldier* soldiers, int soldiersQuantity);
 void orderAndShowAllSoldiers(soldier* soldiers, int soldiersQuantity);
 void orderSoldiers(soldier* soldiers, int soldiersQuantity);
 void mixNames(soldier* soldiers, string* fullNamesArray, int soldiersQuantity);
+void showProblem();
+void showCredits();
 
 int main()
 {
@@ -65,12 +67,12 @@ int main()
 
             case 6:
                 showProblem();
-                Sleep(3000);
+                system("pause");
                 break;
 
             case 7:
                 showCredits();
-                Sleep(3000);
+                system("pause");
                 break;
 
             default:
@@ -100,7 +102,7 @@ int getSeletectOption() {
     cout << "[4] Calcular cuántos infantes son de la ciudad de Lima" << endl;
     cout << "[5] Mostrar lista de infantes ordenados por nombre" << endl;
     cout << "[6] Ver planteamiento del problema" << endl;
-    cout << "[7] Ver Creditos" << endl;
+    cout << "[7] Ver Créditos" << endl;
     cout << "[0] Salir" << endl;
 
     cout << "Introduzca la opción deseada:" << endl;
@@ -250,4 +252,18 @@ void mixNames(soldier* soldiers, string* fullNamesArray, int soldiersQuantity) {
     for (int i = 0; i < soldiersQuantity; i++) {
         fullNamesArray[i] = soldiers[i].lastName + " " + soldiers[i].firstName;
     }
+}
+
+void showProblem() {
+    cout << "Una compañía de infantería tiene 100 cantidad de reclutas." << endl;
+    cout << "Se desea desarrollar un programa que mediante arreglos se pueda determinar:" << endl;
+    cout << "\t-> Cuántos infantes son mujeres y cuantos hombres." << endl;
+    cout << "\t-> Cuantos son mayores de edad." << endl;
+    cout << "\t-> Cuantos son de la ciudad de Lima." << endl;
+    cout << "\t-> Mostrar la lista ordenados por nombre." << endl;
+}
+
+void showCredits() {
+    cout << "Desarrollado por Juan Manuel Orbegoso" << endl;
+    cout << "https://www.jmorbegoso.com" << endl;
 }
