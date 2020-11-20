@@ -88,3 +88,11 @@ void swapValue(soldier* array, int i, int j) {
     array[j] = array[i];
     array[i] = temp;
 }
+
+bool soldiersArrayIsEmpty(int soldiersQuantity) {
+    if (!(0 < soldiersQuantity)) {
+        cout << "No se ha encontrado ningún infante." << endl;
+        return true;
+    }
+    return false;
+}

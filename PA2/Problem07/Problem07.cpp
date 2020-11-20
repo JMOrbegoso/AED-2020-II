@@ -148,6 +148,10 @@ void showSoldiersByGenre(soldier* soldiers, int soldiersQuantity) {
 
     system("cls");
 
+    if (soldiersArrayIsEmpty(soldiersQuantity)) {
+        return;
+    }
+
     for (int i = 0; i < soldiersQuantity; i++) {
         if (soldiers[i].genre == 'f') {
             womenQuantity++;
@@ -166,6 +170,10 @@ void showSoldiersByAgeStatus(soldier* soldiers, int soldiersQuantity) {
 
     system("cls");
 
+    if (soldiersArrayIsEmpty(soldiersQuantity)) {
+        return;
+    }
+
     for (int i = 0; i < soldiersQuantity; i++) {
         if (18 <= soldiers[i].age) {
             adultsQuantity++;
@@ -183,6 +191,10 @@ void showSoldiersInLimaCity(soldier* soldiers, int soldiersQuantity) {
 
     system("cls");
 
+    if (soldiersArrayIsEmpty(soldiersQuantity)) {
+        return;
+    }
+
     for (int i = 0; i < soldiersQuantity; i++) {
         if (soldiers[i].city == "lima") {
             soldiersInLimaQuantity++;
@@ -198,8 +210,7 @@ void orderAndShowAllSoldiers(soldier* soldiers, int soldiersQuantity) {
 
     system("cls");
 
-    if (!(0 < soldiersQuantity)) {
-        cout << "No se ha encontrado ningún infante." << endl;
+    if (soldiersArrayIsEmpty(soldiersQuantity)) {
         return;
     }
 
