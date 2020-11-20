@@ -16,9 +16,6 @@ string requestDNI();
 int requestMedicalSpeciality();
 float requestMoney(string message, int minAmount);
 float requestMoney(string message, int minAmount, int maxAmount);
-void swapValue(string* array, int i, int j);
-void swapValue(char* array, int i, int j);
-void swapValue(int* array, int i, int j);
 void swapValue(patient* array, int i, int j);
 
 void gotoxy(int x, int y) {
@@ -156,30 +153,6 @@ float requestMoney(string message, int minAmount, int maxAmount) {
     }
 
     return amount;
-}
-
-void swapValue(string* array, int i, int j) {
-
-    string temp = array[j];
-
-    array[j] = array[i];
-    array[i] = temp;
-}
-
-void swapValue(char* array, int i, int j) {
-
-    char temp = array[j];
-
-    array[j] = array[i];
-    array[i] = temp;
-}
-
-void swapValue(int* array, int i, int j) {
-
-    int temp = array[j];
-
-    array[j] = array[i];
-    array[i] = temp;
 }
 
 void swapValue(patient* array, int i, int j) {
