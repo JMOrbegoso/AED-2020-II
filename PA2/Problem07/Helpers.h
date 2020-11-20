@@ -96,3 +96,32 @@ bool soldiersArrayIsEmpty(int soldiersQuantity) {
     }
     return false;
 }
+
+void orderSoldiers(soldier* soldiers, int soldiersQuantity) {
+
+    string fullNamesArray[100];
+    mixNames(soldiers, fullNamesArray, soldiersQuantity);
+
+    int i, j;
+    for (i = 0; i < soldiersQuantity - 1; i++)
+    {
+        for (j = 0; j < soldiersQuantity - i - 1; j++)
+        {
+            if (fullNamesArray[j] > fullNamesArray[j + 1])
+            {
+                swapValue(fullNamesArray, j, j + 1);
+
+                swapValue(soldiers, j, j + 1);
+            }
+        }
+    }
+}
+
+/// <summary>
+/// Mix firstName and lastNames and save it in a string array called "fullNamesArray"
+/// </summary>
+void mixNames(soldier* soldiers, string* fullNamesArray, int soldiersQuantity) {
+    for (int i = 0; i < soldiersQuantity; i++) {
+        fullNamesArray[i] = soldiers[i].lastName + " " + soldiers[i].firstName;
+    }
+}
