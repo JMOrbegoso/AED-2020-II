@@ -1,0 +1,159 @@
+#include <iostream>
+#include <string>
+#include <windows.h>
+#include "Structs.h"
+
+using namespace std;
+
+// Forward declarations
+void gotoxy(int x, int y);
+string requestText(string message, int minLength);
+string requestText(string message, int minLength, int maxLength);
+char requestGenre();
+int requestAge(int minAge, int maxAge);
+void swapValue(string* array, int i, int j);
+void swapValue(char* array, int i, int j);
+void swapValue(int* array, int i, int j);
+void swapValue(patient* array, int i, int j);
+
+void gotoxy(int x, int y) {
+    HANDLE hcon;
+    hcon = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD dwPos;
+    dwPos.X = x;
+    dwPos.Y = y;
+    SetConsoleCursorPosition(hcon, dwPos);
+}
+
+string requestText(string message, int minLength) {
+    string text;
+
+    cout << message << " (Mínimo " << minLength << " caracteres)" << endl;
+
+    do {
+        fflush(stdin);
+        getline(cin, text);
+    } while (!(minLength <= text.length()));
+
+    return text;
+}
+
+string requestText(string message, int minLength, int maxLength) {
+    string text;
+
+    cout << message << " (Mínimo " << minLength << " y máximo " << maxLength << " caracteres)" << endl;
+
+    do {
+        fflush(stdin);
+        getline(cin, text);
+    } while (!(minLength <= text.length() && text.length() <= maxLength));
+
+    return text;
+}
+
+char requestGenre() {
+    char genre;
+
+    cout << "¿Es de genero masculino (m) o femenino (f)?" << endl;
+    cin >> genre;
+
+    while (!(genre == 'm' || genre == 'f')) {
+        cout << "Por favor, solo ingrese 'm' o 'f':" << endl;
+        fflush(stdin);
+        cin >> genre;
+    }
+
+    return genre;
+}
+
+int requestAge(int minAge, int maxAge) {
+    int age;
+
+    cout << "¿Qué edad tiene (Mínimo " << minAge << " años y máximo " << maxAge << ")?" << endl;
+    cin >> age;
+
+    while (!(minAge <= age && age <= maxAge)) {
+        cout << "Por favor, ingrese una edad mínima de " << minAge << " años y máxima de " << maxAge << "." << endl;
+        fflush(stdin);
+        cin >> age;
+    }
+
+    return age;
+}
+
+void requestDNI(char* dni) {
+    string text;
+
+    text = requestText("¿Cúal es su DNI?", 8, 8);
+
+    strcpy(dni, text.c_str());
+
+    for (int i = 0; i < 8; i++)
+        cout << dni[i];
+}
+
+int requestMedicalSpeciality() {
+    int medicalSpeciality;
+
+    do {
+        cout << "¿En qué especialidad está registrado?" << endl;
+        cout << "[1: Medicina General]" << endl;
+        cout << "[2: Otorrinolaringología]" << endl;
+        cout << "[3: Pediatría]" << endl;
+        cout << "[4: Oftalmología]" << endl;
+        cout << "[5: Cardiología]" << endl;
+        cout << "[6: Gastroenterología]" << endl;
+        cout << "[7: Medicina Interna]" << endl;
+
+        cin >> medicalSpeciality;
+    } while (!(1 <= medicalSpeciality && medicalSpeciality <= 7));
+
+    return medicalSpeciality;
+}
+
+float requestMoney(string message, int minAmount, int maxAmount) {
+    float amount;
+
+    cout << message << "(Mínimo S/" << minAmount << " y máximo S/" << maxAmount << ")" << endl;
+    cin >> amount;
+
+    while (!(minAmount <= amount && amount <= maxAmount)) {
+        cout << "Por favor, ingrese una cantidad mínima de S/" << minAmount << " y máxima de S/" << maxAmount << "." << endl;
+        fflush(stdin);
+        cin >> amount;
+    }
+
+    return amount;
+}
+
+void swapValue(string* array, int i, int j) {
+
+    string temp = array[j];
+
+    array[j] = array[i];
+    array[i] = temp;
+}
+
+void swapValue(char* array, int i, int j) {
+
+    char temp = array[j];
+
+    array[j] = array[i];
+    array[i] = temp;
+}
+
+void swapValue(int* array, int i, int j) {
+
+    int temp = array[j];
+
+    array[j] = array[i];
+    array[i] = temp;
+}
+
+void swapValue(patient* array, int i, int j) {
+
+    patient temp = array[j];
+
+    array[j] = array[i];
+    array[i] = temp;
+}
