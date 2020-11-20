@@ -7,7 +7,8 @@ using namespace std;
 
 // Forward declarations
 void gotoxy(int x, int y);
-string requestText(string message);
+string requestText(string message, int minLength);
+string requestText(string message, int minLength, int maxLength);
 char requestGenre();
 int requestAge(int minAge, int maxAge);
 void swapValue(string* array, int i, int j);
@@ -27,15 +28,28 @@ void gotoxy(int x, int y) {
     SetConsoleCursorPosition(hcon, dwPos);
 }
 
-string requestText(string message) {
+string requestText(string message, int minLength) {
     string text;
 
-    cout << message << ":" << endl;
+    cout << message << " (Mínimo " << minLength << " caracteres)" << endl;
 
     do {
         fflush(stdin);
         getline(cin, text);
-    } while (!(2 <= text.length()));
+    } while (!(minLength <= text.length()));
+
+    return text;
+}
+
+string requestText(string message, int minLength, int maxLength) {
+    string text;
+
+    cout << message << " (Mínimo " << minLength << " y máximo " << maxLength << " caracteres)" << endl;
+
+    do {
+        fflush(stdin);
+        getline(cin, text);
+    } while (!(minLength <= text.length() && text.length() <= maxLength));
 
     return text;
 }

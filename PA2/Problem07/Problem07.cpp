@@ -125,11 +125,11 @@ void registerSoldier(soldier* soldiers, int& soldiersQuantity) {
 
     cout << "\t\tRegistrará un nuevo infante" << endl << endl;
 
-    soldiers[soldiersQuantity].firstName = requestText("¿Cúal es el nombre del infante? (Mínimo 2 letras)");
+    soldiers[soldiersQuantity].firstName = requestText("¿Cúal es el nombre del infante?", 2);
 
-    soldiers[soldiersQuantity].lastName = requestText("¿Cúal es el apellido del infante? (Mínimo 2 letras)");
+    soldiers[soldiersQuantity].lastName = requestText("¿Cúal es el apellido del infante?", 2);
 
-    soldiers[soldiersQuantity].city = requestText("¿Cúal es su ciudad de procedencia? (Mínimo 2 letras y solo en minúscula)");
+    soldiers[soldiersQuantity].city = requestText("¿Cúal es su ciudad de procedencia? (Solo en minúscula)", 2);
 
     soldiers[soldiersQuantity].genre = requestGenre();
 
