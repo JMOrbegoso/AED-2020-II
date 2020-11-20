@@ -6,7 +6,7 @@ struct patient {
 	string firstName;
 	string lastName;
 	char genre;
-	char dni[8];
+	string dni;
 	int age;
 	float payment;
 	int medicalSpeciality;
