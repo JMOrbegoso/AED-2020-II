@@ -19,6 +19,7 @@ float requestMoney(string message, int minAmount);
 float requestMoney(string message, int minAmount, int maxAmount);
 void swapValue(patient* array, int i, int j);
 string toLowerCase(string text);
+bool containsString(string base, string toSearch);
 
 // Methods
 
@@ -177,4 +178,14 @@ string toLowerCase(string text) {
     });
 
     return text;
+}
+
+/// <summary>
+/// Return bool if found the "toSearch" text parameter on the "base" text parameter.
+/// </summary>
+bool containsString(string base, string toSearch) {
+    if (toLowerCase(base).find(toLowerCase(toSearch), 0) != string::npos) {
+        return true;
+    }
+    return false;
 }
