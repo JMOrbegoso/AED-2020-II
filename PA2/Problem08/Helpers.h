@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <windows.h>
+#include <algorithm>
 #include "Structs.h"
 
 using namespace std;
@@ -17,6 +18,9 @@ int requestMedicalSpeciality();
 float requestMoney(string message, int minAmount);
 float requestMoney(string message, int minAmount, int maxAmount);
 void swapValue(patient* array, int i, int j);
+string toLowerCase(string text);
+
+// Methods
 
 void gotoxy(int x, int y) {
     HANDLE hcon;
@@ -161,4 +165,16 @@ void swapValue(patient* array, int i, int j) {
 
     array[j] = array[i];
     array[i] = temp;
+}
+
+/// <summary>
+/// Receives a string and returns it in lowercase.
+/// </summary>
+string toLowerCase(string text) {
+
+    for_each(text.begin(), text.end(), [](char& c) {
+        c = ::tolower(c);
+    });
+
+    return text;
 }
