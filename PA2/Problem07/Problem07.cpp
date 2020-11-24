@@ -221,8 +221,10 @@ void orderAndShowAllSoldiers(soldier* soldiers, int soldiersQuantity) {
     showSoldiersListHeaders(2);
 
     // Rows
+    int row = 0;
     for (int i = 0; i < soldiersQuantity; i++) {
-        showSoldiersListElement(4 + i, soldiers, i);
+        showSoldiersListElement(4 + row, soldiers, i);
+        row++;
     }
 }
 
