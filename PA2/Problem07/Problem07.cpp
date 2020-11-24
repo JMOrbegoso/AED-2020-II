@@ -17,6 +17,7 @@ using namespace std;
 
 // Forward declarations
 int getSeletectOption();
+void initialize(soldier* soldiers, int& soldiersQuantity);
 void registerSoldier(soldier* soldiers, int& soldiersQuantity);
 void showSoldiersByGenre(soldier* soldiers, int soldiersQuantity);
 void showSoldiersByAgeStatus(soldier* soldiers, int soldiersQuantity);
@@ -32,6 +33,8 @@ int main()
     soldier soldiers[100];
     int soldiersQuantity = 0;
 
+    initialize(soldiers, soldiersQuantity);
+
     do {
         seletectMenuOption = getSeletectOption();
 
@@ -40,22 +43,22 @@ int main()
             {
             case 1:
                 registerSoldier(soldiers, soldiersQuantity);
-                Sleep(2000);
+                Sleep(750);
                 break;
 
             case 2:
                 showSoldiersByGenre(soldiers, soldiersQuantity);
-                Sleep(2000);
+                system("pause");
                 break;
 
             case 3:
                 showSoldiersByAgeStatus(soldiers, soldiersQuantity);
-                Sleep(2000);
+                system("pause");
                 break;
 
             case 4:
                 showSoldiersInLimaCity(soldiers, soldiersQuantity);
-                Sleep(2000);
+                system("pause");
                 break;
 
             case 5:
@@ -113,6 +116,41 @@ int getSeletectOption() {
     return seletectOption;
 }
 
+void initialize(soldier* soldiers, int& soldiersQuantity) {
+
+    soldiers[0].firstName = "Cristobal";
+    soldiers[0].lastName = "Oliveira";
+    soldiers[0].genre = 'm';
+    soldiers[0].city = "Lima";
+    soldiers[0].age = 27;
+
+    soldiers[1].firstName = "Maria";
+    soldiers[1].lastName = "Soledad Perdomo";
+    soldiers[1].genre = 'f';
+    soldiers[1].city = "Trujillo";
+    soldiers[1].age = 26;
+
+    soldiers[2].firstName = "Angela";
+    soldiers[2].lastName = "Guzman";
+    soldiers[2].genre = 'f';
+    soldiers[2].city = "Chiclayo";
+    soldiers[2].age = 14;
+
+    soldiers[3].firstName = "Karim ";
+    soldiers[3].lastName = "Fernandez";
+    soldiers[3].genre = 'f';
+    soldiers[3].city = "Lima";
+    soldiers[3].age = 52;
+
+    soldiers[4].firstName = "Constantino";
+    soldiers[4].lastName = "Cervantes";
+    soldiers[4].genre = 'm';
+    soldiers[4].city = "Cuzco";
+    soldiers[4].age = 17;
+
+    soldiersQuantity = 5;
+}
+
 void registerSoldier(soldier* soldiers, int& soldiersQuantity) {
 
     system("cls");
@@ -123,13 +161,13 @@ void registerSoldier(soldier* soldiers, int& soldiersQuantity) {
         return;
     }
 
-    cout << "\t\tRegistrará un nuevo infante" << endl << endl;
+    cout << "\tRegistrará un nuevo infante" << endl << endl;
 
     soldiers[soldiersQuantity].firstName = requestText("¿Cúal es el nombre del infante?", 2);
 
     soldiers[soldiersQuantity].lastName = requestText("¿Cúal es el apellido del infante?", 2);
 
-    soldiers[soldiersQuantity].city = requestText("¿Cúal es su ciudad de procedencia? (Solo en minúscula)", 2);
+    soldiers[soldiersQuantity].city = requestText("¿Cúal es su ciudad de procedencia?", 2);
 
     soldiers[soldiersQuantity].genre = requestGenre();
 
@@ -193,15 +231,25 @@ void showSoldiersInLimaCity(soldier* soldiers, int soldiersQuantity) {
         return;
     }
 
+    // Title
+    gotoxy(30, 0); cout << "Relación de infantes de la ciudad de Lima" << endl;
+
+    // Headers
+    showSoldiersListHeaders(2);
+
+    // Rows
+    int row = 0;
     for (int i = 0; i < soldiersQuantity; i++) {
-        if (soldiers[i].city == "lima") {
+        if (containsString(soldiers[i].city, "lima")) {
+            showSoldiersListElement(4 + row, soldiers, i);
             soldiersInLimaQuantity++;
+            row++;
         }
     }
 
     soldiersOutLimaQuantity = soldiersQuantity - soldiersInLimaQuantity;
 
-    cout << "En total hay " << soldiersInLimaQuantity << " infantes en Lima, y " << soldiersOutLimaQuantity << " fuera de Lima." << endl;
+    cout << endl << "En total hay " << soldiersInLimaQuantity << " infantes en Lima, y " << soldiersOutLimaQuantity << " fuera de Lima." << endl << endl;
 }
 
 void orderAndShowAllSoldiers(soldier* soldiers, int soldiersQuantity) {
@@ -215,7 +263,7 @@ void orderAndShowAllSoldiers(soldier* soldiers, int soldiersQuantity) {
     orderSoldiers(soldiers, soldiersQuantity);
 
     // Title
-    gotoxy(40, 0); cout << "\t\tRelación ordenada de infantes" << endl;
+    gotoxy(30, 0); cout << "Relación ordenada de infantes" << endl;
 
     // Headers
     showSoldiersListHeaders(2);
@@ -232,6 +280,10 @@ void showProblem() {
 
     system("cls");
 
+    // Title
+    gotoxy(30, 0); cout << "Problema 07" << endl;
+
+    // Body
     cout << "Una compañía de infantería tiene 100 cantidad de reclutas." << endl;
     cout << "Se desea desarrollar un programa que mediante arreglos se pueda determinar:" << endl;
     cout << "\t-> Cuántos infantes son mujeres y cuantos hombres." << endl;
