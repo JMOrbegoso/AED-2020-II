@@ -218,19 +218,11 @@ void orderAndShowAllSoldiers(soldier* soldiers, int soldiersQuantity) {
     gotoxy(40, 0); cout << "\t\tRelación ordenada de infantes" << endl;
 
     // Headers
-    gotoxy(0, 2); cout << "#" << endl;
-    gotoxy(5, 2); cout << "Apellidos y Nombres" << endl;
-    gotoxy(55, 2); cout << "Género" << endl;
-    gotoxy(65, 2); cout << "Edad" << endl;
-    gotoxy(75, 2); cout << "Ciudad" << endl;
+    showSoldiersListHeaders(2);
 
     // Rows
     for (int i = 0; i < soldiersQuantity; i++) {
-        gotoxy(0, 4 + i); cout << (i + 1) << endl;
-        gotoxy(5, 4 + i); cout << soldiers[i].lastName << " " << soldiers[i].firstName << endl;
-        gotoxy(55, 4 + i); cout << soldiers[i].genre << endl;
-        gotoxy(65, 4 + i); cout << soldiers[i].age << endl;
-        gotoxy(75, 4 + i); cout << soldiers[i].city << endl;
+        showSoldiersListElement(4 + i, soldiers, i);
     }
 }
 

@@ -16,6 +16,8 @@ void swapValue(soldier* array, int i, int j);
 bool soldiersArrayIsEmpty(int soldiersQuantity);
 void orderSoldiers(soldier* soldiers, int soldiersQuantity);
 void mixNames(soldier* soldiers, string* fullNamesArray, int soldiersQuantity);
+void showSoldiersListHeaders(int y);
+void showSoldiersListElement(int y, soldier* soldiers, int i);
 
 void gotoxy(int x, int y) {
     HANDLE hcon;
@@ -133,4 +135,25 @@ void mixNames(soldier* soldiers, string* fullNamesArray, int soldiersQuantity) {
     for (int i = 0; i < soldiersQuantity; i++) {
         fullNamesArray[i] = soldiers[i].lastName + " " + soldiers[i].firstName;
     }
+}
+
+/// <param name="y">y-axis</param>
+void showSoldiersListHeaders(int y) {
+
+    gotoxy(0, y); cout << "#" << endl;
+    gotoxy(5, y); cout << "Apellidos y Nombres" << endl;
+    gotoxy(55, y); cout << "Género" << endl;
+    gotoxy(65, y); cout << "Edad" << endl;
+    gotoxy(75, y); cout << "Ciudad" << endl;
+}
+
+/// <param name="y">y-axis</param>
+/// <param name="i">soldier index</param>
+void showSoldiersListElement(int y, soldier* soldiers, int i) {
+
+    gotoxy(0, y); cout << (i + 1) << endl;
+    gotoxy(5, y); cout << soldiers[i].lastName << " " << soldiers[i].firstName << endl;
+    gotoxy(55, y); cout << soldiers[i].genre << endl;
+    gotoxy(65, y); cout << soldiers[i].age << endl;
+    gotoxy(75, y); cout << soldiers[i].city << endl;
 }
