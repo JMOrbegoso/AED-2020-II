@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 #include <windows.h>
 #include "Structs.h"
 
@@ -16,6 +17,8 @@ void swapValue(soldier* array, int i, int j);
 bool soldiersArrayIsEmpty(int soldiersQuantity);
 void orderSoldiers(soldier* soldiers, int soldiersQuantity);
 void mixNames(soldier* soldiers, string* fullNamesArray, int soldiersQuantity);
+string toLowerCase(string text);
+bool containsString(string base, string toSearch);
 void showSoldiersListHeaders(int y);
 void showSoldiersListElement(int y, soldier* soldiers, int i);
 
@@ -135,6 +138,28 @@ void mixNames(soldier* soldiers, string* fullNamesArray, int soldiersQuantity) {
     for (int i = 0; i < soldiersQuantity; i++) {
         fullNamesArray[i] = soldiers[i].lastName + " " + soldiers[i].firstName;
     }
+}
+
+/// <summary>
+/// Receives a string and returns it in lowercase.
+/// </summary>
+string toLowerCase(string text) {
+
+    for_each(text.begin(), text.end(), [](char& c) {
+        c = ::tolower(c);
+    });
+
+    return text;
+}
+
+/// <summary>
+/// Return bool if found the "toSearch" text parameter on the "base" text parameter.
+/// </summary>
+bool containsString(string base, string toSearch) {
+    if (toLowerCase(base).find(toLowerCase(toSearch), 0) != string::npos) {
+        return true;
+    }
+    return false;
 }
 
 /// <param name="y">y-axis</param>
