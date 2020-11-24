@@ -261,6 +261,7 @@ void searchClientsByLastName(client* clients, int clientsQuantity) {
 void GetHighestSell(client* clients, int clientsQuantity) {
 
     float highestSell = 0;
+    string clientFullName;
 
     system("cls");
 
@@ -272,10 +273,11 @@ void GetHighestSell(client* clients, int clientsQuantity) {
 
         if (clients[i].payment > highestSell) {
             highestSell = clients[i].payment;
+            clientFullName = clients[i].lastName + " " + clients[i].firstName;
         }
     }
 
-    cout << endl << "El mayor pago es de S/" << highestSell << "." << endl;
+    cout << endl << "El mayor pago es de S/" << highestSell << ", perteneciente al cliente " << clientFullName << "." << endl;
 
     cout << endl;
 }
@@ -287,6 +289,7 @@ void GetLowestSell(client* clients, int clientsQuantity) {
     }
 
     float lowestSell = clients[0].payment;
+    string clientFullName = clients[0].lastName + " " + clients[0].firstName;
 
     system("cls");
 
@@ -298,10 +301,11 @@ void GetLowestSell(client* clients, int clientsQuantity) {
 
         if (lowestSell > clients[i].payment) {
             lowestSell = clients[i].payment;
+            clientFullName = clients[i].lastName + " " + clients[i].firstName;
         }
     }
 
-    cout << endl << "El menor pago es de S/" << lowestSell << "." << endl;
+    cout << endl << "El menor pago es de S/" << lowestSell << ", perteneciente al cliente " << clientFullName << "." << endl;
 
     cout << endl;
 }
