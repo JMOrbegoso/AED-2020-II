@@ -235,6 +235,9 @@ void orderAndShowAllSoldiers(soldier* soldiers, int soldiersQuantity) {
 }
 
 void showProblem() {
+
+    system("cls");
+
     cout << "Una compañía de infantería tiene 100 cantidad de reclutas." << endl;
     cout << "Se desea desarrollar un programa que mediante arreglos se pueda determinar:" << endl;
     cout << "\t-> Cuántos infantes son mujeres y cuantos hombres." << endl;
@@ -244,6 +247,9 @@ void showProblem() {
 }
 
 void showCredits() {
+
+    system("cls");
+
     cout << "Desarrollado por Juan Manuel Orbegoso" << endl;
     cout << "https://www.jmorbegoso.com" << endl;
 }
