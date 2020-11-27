@@ -1,20 +1,51 @@
-// ProcesoDeVentaDelGrupoDeltron.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include "Basicas.h"
+#include "BasicasDeEstructuras.h"
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    // Declaración de variables y estructuras de datos
+
+    empleadoDeVentas empleadosDeVentas[100];
+    int empleadosDeVentasCantidad = 0;
+
+    cliente clientes[100];
+    int clientesCantidad = 0;
+
+    almacen almacenes[5];
+
+    tipoDeUso tiposDeUso[5];
+    clasificacion clasificaciones[5];
+    subclasificacion subclasificaciones[5];
+
+    producto productos[100];
+    int productosCantidad = 0;
+
+    productoEnAlmacen productosEnAlmacen[100];
+    int productosEnAlmacenCantidad = 0;
+
+    ordenDeCompra ordenesDeCompra[100];
+    int ordenesDeCompraCantidad = 0;
+
+    productoComprado productosComprados[100];
+    int productosCompradosCantidad = 0;
+
+    // Inicializacion
+    inicializarEmpleadosDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
+    inicializarClientes(clientes, clientesCantidad);
+    inicializarAlmacenes(almacenes);
+    inicializarTiposDeUso(tiposDeUso);
+    inicializarClasificaciones(clasificaciones);
+    inicializarSubclasificaciones(subclasificaciones);
+    inicializarProductos(productos, productosCantidad);
+    inicializarProductosEnAlmacen(productosEnAlmacen, productosEnAlmacenCantidad);
+    inicializarOrdenesDeCompra(ordenesDeCompra, ordenesDeCompraCantidad);
+    inicializarProductosComprados(productosComprados, productosCompradosCantidad);
+
+    // Menú
+    menuPrincipal();
+
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
