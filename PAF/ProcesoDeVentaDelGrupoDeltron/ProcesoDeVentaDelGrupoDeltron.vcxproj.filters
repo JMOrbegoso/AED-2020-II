@@ -29,5 +29,8 @@
     <ClInclude Include="Inicializacion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BasicasDeEstructuras.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

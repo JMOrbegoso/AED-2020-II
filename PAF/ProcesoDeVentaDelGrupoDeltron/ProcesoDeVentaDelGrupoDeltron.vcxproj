@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Basicas.h" />
+    <ClInclude Include="BasicasDeEstructuras.h" />
     <ClInclude Include="Estructuras.h" />
     <ClInclude Include="Inicializacion.h" />
   </ItemGroup>
