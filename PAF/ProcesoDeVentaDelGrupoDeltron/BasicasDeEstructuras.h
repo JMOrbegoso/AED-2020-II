@@ -4,22 +4,22 @@ void inicializarEmpleadosDeVentas(empleadoDeVentas* empleadosDeVentas, int& empl
 
     empleadosDeVentas[0].apellido = "Descalzi Tenorio";
     empleadosDeVentas[0].nombre = "Yessica Rubí";
-    empleadosDeVentas[0].dni = "12569215";
+    empleadosDeVentas[0].dni = "11111111";
     empleadosDeVentas[0].clave = "123456";
 
     empleadosDeVentas[1].apellido = "Sanchez Sanchez";
     empleadosDeVentas[1].nombre = "Joselyn";
-    empleadosDeVentas[1].dni = "12569215";
+    empleadosDeVentas[1].dni = "22222222";
     empleadosDeVentas[1].clave = "123456";
 
     empleadosDeVentas[2].apellido = "Zavala Salazar";
     empleadosDeVentas[2].nombre = "Edward Daniel";
-    empleadosDeVentas[2].dni = "12569215";
+    empleadosDeVentas[2].dni = "33333333";
     empleadosDeVentas[2].clave = "123456";
 
     empleadosDeVentas[3].apellido = "Orbegoso Rosas";
     empleadosDeVentas[3].nombre = "Juan Manuel";
-    empleadosDeVentas[3].dni = "12569215";
+    empleadosDeVentas[3].dni = "44444444";
     empleadosDeVentas[3].clave = "123456";
 
     empleadosDeVentasCantidad = 4;
