@@ -83,7 +83,7 @@ void inicializarTiposDeUso(tipoDeUso* tiposDeUso) {
     tiposDeUso[4].tipo = "Servicio";
 }
 
-void inicializarClasificaciones(clasificacion* clasificaciones) {
+void inicializarClasificaciones(clasificacion* clasificaciones, int& clasificacionesCantidad) {
 
     clasificaciones[0].id = 1;
     clasificaciones[0].nombre = "Cases";
@@ -99,29 +99,8 @@ void inicializarClasificaciones(clasificacion* clasificaciones) {
 
     clasificaciones[4].id = 5;
     clasificaciones[4].nombre = "GPU (Tarjetas de video)";
-}
 
-void inicializarSubclasificaciones(subclasificacion* subclasificaciones) {
-
-    subclasificaciones[0].id = 1;
-    subclasificaciones[0].clasificacionId = 1;
-    subclasificaciones[0].nombre = "Cases";
-
-    subclasificaciones[1].id = 2;
-    subclasificaciones[1].clasificacionId = 2;
-    subclasificaciones[1].nombre = "Computadoras Desktop";
-
-    subclasificaciones[2].id = 3;
-    subclasificaciones[2].clasificacionId = 3;
-    subclasificaciones[2].nombre = "Discos Duros";
-
-    subclasificaciones[3].id = 4;
-    subclasificaciones[3].clasificacionId = 4;
-    subclasificaciones[3].nombre = "CPU (Microprocesadores)";
-
-    subclasificaciones[4].id = 5;
-    subclasificaciones[4].clasificacionId = 5;
-    subclasificaciones[4].nombre = "GPU (Tarjetas de video)";
+    clasificacionesCantidad = 5;
 }
 
 void inicializarProductos(producto* productos, int& productosCantidad) {
@@ -130,21 +109,21 @@ void inicializarProductos(producto* productos, int& productosCantidad) {
     productos[0].marca = "AMD";
     productos[0].nombre = "Ryzen 3 3100";
     productos[0].precio = 150;
-    productos[0].subclasificacionId = 4;
+    productos[0].clasificacionId = 4;
     productos[0].tipoDeUsoId = 2;
 
     productos[1].id = 2;
     productos[1].marca = "AMD";
     productos[1].nombre = "Ryzen 5 3600";
     productos[1].precio = 210;
-    productos[1].subclasificacionId = 4;
+    productos[1].clasificacionId = 4;
     productos[1].tipoDeUsoId = 2;
 
     productos[2].id = 3;
     productos[2].marca = "AMD";
     productos[2].nombre = "Ryzen 7 3700X";
     productos[2].precio = 320;
-    productos[2].subclasificacionId = 4;
+    productos[2].clasificacionId = 4;
     productos[2].tipoDeUsoId = 2;
 
     productosCantidad = 10;

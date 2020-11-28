@@ -17,8 +17,9 @@ int main()
     almacen almacenes[5];
 
     tipoDeUso tiposDeUso[5];
+
     clasificacion clasificaciones[5];
-    subclasificacion subclasificaciones[5];
+    int clasificacionesCantidad = 0;
 
     producto productos[100];
     int productosCantidad = 0;
@@ -37,8 +38,7 @@ int main()
     inicializarClientes(clientes, clientesCantidad);
     inicializarAlmacenes(almacenes);
     inicializarTiposDeUso(tiposDeUso);
-    inicializarClasificaciones(clasificaciones);
-    inicializarSubclasificaciones(subclasificaciones);
+    inicializarClasificaciones(clasificaciones, clasificacionesCantidad);
     inicializarProductos(productos, productosCantidad);
     inicializarProductosEnAlmacen(productosEnAlmacen, productosEnAlmacenCantidad);
     inicializarOrdenesDeCompra(ordenesDeCompra, ordenesDeCompraCantidad);

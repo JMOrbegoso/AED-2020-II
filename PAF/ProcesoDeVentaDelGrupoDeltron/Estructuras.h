@@ -31,18 +31,12 @@ struct clasificacion {
 	string nombre;
 };
 
-struct subclasificacion {
-	int id;
-	int clasificacionId;
-	string nombre;
-};
-
 struct producto {
 	int id;
 	string marca;
 	string nombre;
 	float precio;
-	int subclasificacionId;
+	int clasificacionId;
 	int tipoDeUsoId;
 };
 
