@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Basicas.h"
-#include "BasicasDeEstructuras.h"
 
 using namespace std;
 

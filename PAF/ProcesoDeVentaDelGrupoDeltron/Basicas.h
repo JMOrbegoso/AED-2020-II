@@ -1,4 +1,5 @@
 #include <windows.h>
+#include "BasicasDeEstructuras.h"
 
 using namespace std;
 
