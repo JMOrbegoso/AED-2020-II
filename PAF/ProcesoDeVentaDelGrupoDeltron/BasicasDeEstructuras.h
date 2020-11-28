@@ -42,7 +42,7 @@ void inicializarClientes(cliente* clientes, int& clientesCantidad) {
     clientesCantidad = 3;
 }
 
-void inicializarAlmacenes(almacen* almacenes) {
+void inicializarAlmacenes(almacen* almacenes, int& almacenesCantidad) {
 
     almacenes[0].id = 1;
     almacenes[0].departamento = "Lima";
@@ -63,9 +63,11 @@ void inicializarAlmacenes(almacen* almacenes) {
     almacenes[4].id = 5;
     almacenes[4].departamento = "Cuzco";
     almacenes[4].direccion = "Av. Los Robles 777";
+
+    almacenesCantidad = 5;
 }
 
-void inicializarTiposDeUso(tipoDeUso* tiposDeUso) {
+void inicializarTiposDeUso(tipoDeUso* tiposDeUso, int& tiposDeUsoCantidad) {
 
     tiposDeUso[0].id = 1;
     tiposDeUso[0].tipo = "Producto Final";
@@ -81,6 +83,8 @@ void inicializarTiposDeUso(tipoDeUso* tiposDeUso) {
 
     tiposDeUso[4].id = 5;
     tiposDeUso[4].tipo = "Servicio";
+
+    tiposDeUsoCantidad = 5;
 }
 
 void inicializarClasificaciones(clasificacion* clasificaciones, int& clasificacionesCantidad) {

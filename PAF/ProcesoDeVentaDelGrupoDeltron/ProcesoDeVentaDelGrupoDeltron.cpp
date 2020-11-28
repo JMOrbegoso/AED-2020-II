@@ -15,8 +15,10 @@ int main()
     int clientesCantidad = 0;
 
     almacen almacenes[5];
+    int almacenesCantidad = 0;
 
     tipoDeUso tiposDeUso[5];
+    int tiposDeUsoCantidad = 0;
 
     clasificacion clasificaciones[5];
     int clasificacionesCantidad = 0;
@@ -36,8 +38,8 @@ int main()
     // Inicializacion
     inicializarEmpleadosDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
     inicializarClientes(clientes, clientesCantidad);
-    inicializarAlmacenes(almacenes);
-    inicializarTiposDeUso(tiposDeUso);
+    inicializarAlmacenes(almacenes, almacenesCantidad);
+    inicializarTiposDeUso(tiposDeUso, tiposDeUsoCantidad);
     inicializarClasificaciones(clasificaciones, clasificacionesCantidad);
     inicializarProductos(productos, productosCantidad);
     inicializarProductosEnAlmacen(productosEnAlmacen, productosEnAlmacenCantidad);
