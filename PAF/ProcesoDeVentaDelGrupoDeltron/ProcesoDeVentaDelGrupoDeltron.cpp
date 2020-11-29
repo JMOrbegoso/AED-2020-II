@@ -3,9 +3,14 @@
 
 using namespace std;
 
+// Declaraciones adelantadas
+int pedirOpcionDelMenuRol();
+void menuLogin(bool esCliente, empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad, cliente* clientes, int clientesCantidad);
+int pedirOpcionDelMenuLogin(bool esCliente);
+
 int main()
 {
-    // Declaración de variables y estructuras de datos
+    // Declaración de estructuras de datos
 
     empleadoDeVentas empleadosDeVentas[100];
     int empleadosDeVentasCantidad = 0;
@@ -34,6 +39,11 @@ int main()
     productoComprado productosComprados[100];
     int productosCompradosCantidad = 0;
 
+    // Declaración de variables y estructuras de datos
+
+    int opcionSeleccionadaDelMenuRol;
+    bool debeCerrar;
+
     // Inicializacion
     inicializarEmpleadosDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
     inicializarClientes(clientes, clientesCantidad);
@@ -46,7 +56,139 @@ int main()
     inicializarProductosComprados(productosComprados, productosCompradosCantidad);
 
     // Menú
-    menuPrincipal();
+    do {
+        opcionSeleccionadaDelMenuRol = pedirOpcionDelMenuRol();
+
+        if (opcionSeleccionadaDelMenuRol != 0) {
+            switch (opcionSeleccionadaDelMenuRol)
+            {
+            case 1:
+                menuLogin(false, empleadosDeVentas, empleadosDeVentasCantidad, clientes, clientesCantidad);
+                debeCerrar = false;
+                break;
+
+            case 2:
+                menuLogin(true, empleadosDeVentas, empleadosDeVentasCantidad, clientes, clientesCantidad);
+                debeCerrar = false;
+                break;
+
+            default:
+                debeCerrar = true;
+                break;
+            }
+        }
+
+    } while (!(opcionSeleccionadaDelMenuRol == 0) && !debeCerrar);
 
     return 0;
+}
+
+int pedirOpcionDelMenuRol() {
+    int opcionSeleccionada;
+
+    system("cls");
+
+    mostrarAppTitulo();
+
+    cout << endl << "¿Cúal es su rol?" << endl << endl;
+
+    cout << "[1] Soy personal de ventas " << endl;
+    cout << "[2] Soy cliente" << endl;
+    cout << "[0] Salir" << endl;
+
+    cout << "Introduzca la opción deseada:" << endl;
+    cin >> opcionSeleccionada;
+    while (!(0 <= opcionSeleccionada && opcionSeleccionada <= 2)) {
+        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
+        cin >> opcionSeleccionada;
+    }
+
+    return opcionSeleccionada;
+}
+
+/// <summary>
+/// 
+/// </summary>
+/// <param name="esCliente">Si es true: es cliente, si es false es de personal de ventas</param>
+void menuLogin(bool esCliente, empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad, cliente* clientes, int clientesCantidad) {
+
+    int opcionSeleccionadaDelMenuLogin;
+
+    do {
+        opcionSeleccionadaDelMenuLogin = pedirOpcionDelMenuLogin(esCliente);
+
+        if (opcionSeleccionadaDelMenuLogin != 0) {
+            switch (opcionSeleccionadaDelMenuLogin)
+            {
+            case 1:
+
+                if (esCliente) {
+                    loginCliente(clientes, clientesCantidad);
+                }
+                else {
+                    loginPersonalDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
+                }
+                
+                system("pause");
+                break;
+
+            case 2:
+                if (esCliente) {
+                    registrarCliente(clientes, clientesCantidad);
+                }
+                else {
+                    registrarPersonalDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
+                }
+                
+                system("pause");
+                break;
+
+            default:
+                break;
+            }
+        }
+
+    } while (!(opcionSeleccionadaDelMenuLogin == 0));
+
+    esperarMostrandoTexto("Volviendo");
+}
+
+/// <summary>
+/// 
+/// </summary>
+/// <param name="esCliente">Si es true: es cliente, si es false es de personal de ventas</param>
+int pedirOpcionDelMenuLogin(bool esCliente) {
+
+    int opcionSeleccionada;
+    string rol;
+
+    if (esCliente) {
+        rol = "Cliente";
+    }
+    else {
+        rol = "Empleado de ventas";
+    }
+
+    system("cls");
+
+    mostrarAppTitulo();
+
+    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
+    cout << "\t\t\tInicio de sesión como " << rol;
+    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
+
+    cout << endl << "¿Desea iniciar sesión o registrarse?" << endl << endl;
+
+    cout << "[1] Iniciar sesión " << endl;
+    cout << "[2] Registrarse" << endl;
+    cout << "[0] Volver" << endl;
+
+    cout << "Introduzca la opción deseada:" << endl;
+    cin >> opcionSeleccionada;
+    while (!(0 <= opcionSeleccionada && opcionSeleccionada <= 2)) {
+        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
+        cin >> opcionSeleccionada;
+    }
+
+    return opcionSeleccionada;
 }
