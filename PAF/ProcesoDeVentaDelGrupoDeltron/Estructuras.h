@@ -53,7 +53,6 @@ struct ordenDeCompra {
 };
 
 struct productoComprado {
-
 	int id;
 	int productoEnAlmacenId;
 	int ordenDeCompraId;
