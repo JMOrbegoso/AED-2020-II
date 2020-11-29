@@ -170,3 +170,67 @@ void inicializarProductosComprados(productoComprado* productosComprados, int& pr
 
     productosCompradosCantidad = 3;
 }
+
+int loginPersonalDeVentas(empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad) {
+
+}
+
+int loginCliente(cliente* clientes, int clientesCantidad) {
+
+}
+
+void registrarPersonalDeVentas(empleadoDeVentas* empleadosDeVentas, int& empleadosDeVentasCantidad) {
+
+}
+
+void registrarCliente(cliente* clientes, int& clientesCantidad) {
+
+}
+
+void mostrarOrdenes(ordenDeCompra* ordenesDeCompra, int ordenesDeCompraCantidad, productoComprado* productosComprado, int productosCompradoCantidad) {
+
+}
+
+void revisarAlmacenes(almacen* almacenes, int almacenesCantidad, productoEnAlmacen* productosEnAlmacen, int productosEnAlmacenCantidad) {
+
+}
+
+void registrarProducto(producto* productos, int& productosCantidad, productoEnAlmacen* productosEnAlmacen, int& productosEnAlmacenCantidad) {
+
+}
+
+void editarProducto(producto* productos, int& productosCantidad) {
+
+}
+
+void editarProductoEnAlmacen(productoEnAlmacen* productosEnAlmacen, int& productosEnAlmacenCantidad) {
+
+}
+
+/// <summary>
+/// Muestra todos los productos disponibles en stock
+/// </summary>
+void revisarCatalogo(producto* productos, int productosCantidad, productoEnAlmacen* productosEnAlmacen, int productosEnAlmacenCantidad) {
+
+}
+
+void buscarProductoPorNombre(producto* productos, int productosCantidad, productoEnAlmacen* productosEnAlmacen, int productosEnAlmacenCantidad) {
+
+}
+
+void buscarProductoPorMarca(producto* productos, int productosCantidad, productoEnAlmacen* productosEnAlmacen, int productosEnAlmacenCantidad) {
+
+}
+
+void buscarProductoPorClasificacion(producto* productos, int productosCantidad, productoEnAlmacen* productosEnAlmacen, int productosEnAlmacenCantidad) {
+
+}
+
+void crearOrdenDeCompra(int clienteId, int almacenId, productoEnAlmacen* productosEnAlmacen, int productosEnAlmacenCantidad, ordenDeCompra* ordenesDeCompra, int ordenesDeCompraCantidad, productoComprado* productosComprado, int productosCompradoCantidad) {
+
+}
+
+void verHistorialDeOrdenes(int clienteId, ordenDeCompra* ordenesDeCompra, int ordenesDeCompraCantidad, productoComprado* productosComprado, int productosCompradoCantidad) {
+
+}
+
