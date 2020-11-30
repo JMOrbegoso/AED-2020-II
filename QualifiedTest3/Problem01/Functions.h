@@ -129,6 +129,7 @@ int getSeletectOption(supermarket supermarket) {
     cout << "Telefono: " << supermarket.telephone << endl;
     cout << "RUC: " << supermarket.ruc << endl;
     cout << "------------------------------------------------------------------------" << endl;
+    cout << "Importante: Para una correcta visualización de los datos, se recomienda ejecutar la aplicación en pantalla completa" << endl;
     cout << endl << "¿Qué desea hacer?" << endl << endl;
 
     cout << "[1] Actualizar datos del supermercado" << endl;
@@ -227,15 +228,15 @@ void editProduct(product* products, int productsQuantity) {
 void showProductsListHeaders(int y) {
 
     gotoxy(0, y); cout << "#" << endl;
-    gotoxy(0, y); cout << "Id" << endl;
-    gotoxy(5, y); cout << "Nombre" << endl;
-    gotoxy(55, y); cout << "Description" << endl;
+    gotoxy(5, y); cout << "Id" << endl;
+    gotoxy(10, y); cout << "Nombre" << endl;
+    gotoxy(25, y); cout << "Description" << endl;
     gotoxy(65, y); cout << "Precio" << endl;
     gotoxy(75, y); cout << "Tipo de Presentación" << endl;
     gotoxy(85, y); cout << "Descuento" << endl;
     gotoxy(95, y); cout << "Marca" << endl;
-    gotoxy(95, y); cout << "Stock" << endl;
-    gotoxy(95, y); cout << "Status" << endl;
+    gotoxy(105, y); cout << "Stock" << endl;
+    gotoxy(115, y); cout << "Status" << endl;
 }
 
 string getPresentationTypeString(int presentationTypeId) {
@@ -277,15 +278,15 @@ string getProductStatusString(int productStatusId) {
 void showProductsListElement(int y, product* products, int i) {
 
     gotoxy(0, y); cout << (i + 1) << endl;
-    gotoxy(0, y); cout << products[i].id << endl;
-    gotoxy(5, y); cout << products[i].name << endl;
-    gotoxy(55, y); cout << products[i].description << endl;
+    gotoxy(5, y); cout << products[i].id << endl;
+    gotoxy(10, y); cout << products[i].name << endl;
+    gotoxy(25, y); cout << products[i].description << endl;
     gotoxy(65, y); cout << "S/ " << products[i].price << endl;
     gotoxy(75, y); cout << getPresentationTypeString(products[i].presentationTypeId) << endl;
     gotoxy(85, y); cout << products[i].discount << "%" << endl;
-    gotoxy(85, y); cout << products[i].brand << endl;
-    gotoxy(85, y); cout << products[i].stock << endl;
-    gotoxy(95, y); cout << getProductStatusString(products[i].productStatusId) << endl;
+    gotoxy(95, y); cout << products[i].brand << endl;
+    gotoxy(105, y); cout << products[i].stock << endl;
+    gotoxy(115, y); cout << getProductStatusString(products[i].productStatusId) << endl;
 }
 
 void searchProductByName(product* products, int productsQuantity) {
