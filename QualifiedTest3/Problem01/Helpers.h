@@ -2,29 +2,13 @@
 
 using namespace std;
 
-void initializeSupermarkets(supermarket* supermarkets, int& quantity) {
+void initializeSupermarket(supermarket& supermarket) {
 
-    supermarkets[0].name = "Supermercado Heroes";
-    supermarkets[0].address = "Av. Los Heroes 777";
-    supermarkets[0].telephone = "952384721";
-    supermarkets[0].admin = "Roman Robles";
-    supermarkets[0].ruc = "72122372282";
-
-    /*supermarkets[1].name = "Supermercado Conquistadores";
-    supermarkets[1].address = "Av. Los Conquistadores 777";
-    supermarkets[1].telephone = "942580731";
-    supermarkets[1].admin = "Juan Gutierrez";
-    supermarkets[1].ruc = "12822372282";
-
-    supermarkets[2].name = "Supermercado Robles";
-    supermarkets[2].address = "Av. Los Robles 777";
-    supermarkets[2].telephone = "912889780";
-    supermarkets[2].admin = "María Fuentes";
-    supermarkets[2].ruc = "20002372282";
-
-    supermarketsQuantity = 3;*/
-
-    quantity = 1;
+    supermarket.name = "Supermercado Heroes";
+    supermarket.address = "Av. Los Heroes 777";
+    supermarket.telephone = "952384721";
+    supermarket.admin = "Roman Robles";
+    supermarket.ruc = "72122372282";
 }
 
 void initializeClients(client* clients, int& quantity) {
