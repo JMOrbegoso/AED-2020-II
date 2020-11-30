@@ -142,6 +142,7 @@
     <ClCompile Include="Problem01.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Functions.h" />
     <ClInclude Include="Helpers.h" />
     <ClInclude Include="Structs.h" />
   </ItemGroup>
