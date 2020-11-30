@@ -11,12 +11,6 @@ int main()
     client clients[100];
     int clientsQuantity = 0;
 
-    presentationType presentationTypes[100];
-    int presentationTypesQuantity = 0;
-
-    productStatus productStatuses[100];
-    int productStatusesQuantity = 0;
-
     product products[100];
     int productsQuantity = 0;
 
@@ -28,8 +22,6 @@ int main()
 
     initializeSupermarket(supermarket);
     initializeClients(clients, clientsQuantity);
-    initializePresentationTypes(presentationTypes, presentationTypesQuantity);
-    initializeProductStatuses(productStatuses, productStatusesQuantity);
     initializeProducts(products, productsQuantity);
     initializePurchases(purchases, purchasesQuantity);
     initializePurchasedProducts(purchasedProducts, purchasedProductsQuantity);
