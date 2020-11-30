@@ -64,8 +64,7 @@ int main()
                 break;
 
             case 7:
-                cout << "[7] Aplicar descuento del 7% a un producto" << endl;
-
+                appltDiscountToProduct(products, productsQuantity);
                 system("pause");
                 break;
 

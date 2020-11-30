@@ -341,3 +341,33 @@ void searchProductByBrand(product* products, int productsQuantity) {
 
     cout << endl;
 }
+
+void applyDiscountToProduct(product* products, int productsQuantity) {
+
+    int productId;
+    int productIndex = -1;
+
+    cout << "Aplicará un descuento del 7% a un producto" << endl;
+
+    cout << "Ingrese el Id del producto a aplicar el descuento" << endl;
+    cin >> productId;
+
+    for (int i = 0; i < productsQuantity; i++) {
+        if (products[i].id == productId)
+        {
+            productIndex = i;
+            break;
+        }
+    }
+
+    if (productIndex == -1) {
+        cout << "El Id del producto no se ha encontrado, por favor intente nuevamente." << endl;
+        return;
+    }
+
+    products[productIndex].discount = 7;
+
+    textWaiting("Aplicando descuento al producto");
+
+    cout << endl << "Aplicó el descuento al producto correctamente." << endl;
+}
