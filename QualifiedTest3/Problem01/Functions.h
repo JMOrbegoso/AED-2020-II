@@ -1,3 +1,4 @@
+#include "Helpers.h"
 #include "Structs.h"
 
 using namespace std;
@@ -145,4 +146,37 @@ void initializePurchasedProducts(purchasedProduct* purchasedProducts, int& quant
     purchasedProducts[3].productquantity = 1;
 
     quantity = 4;
+}
+
+int getSeletectOption(supermarket supermarket) {
+    int seletectOption;
+
+    system("cls");
+
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << endl << "\tBienvenido al Sistema del supermercado '" << supermarket.name << "'" << endl << endl;
+    cout << "Dirección: " << supermarket.address << endl;
+    cout << "Administrador: " << supermarket.admin << endl;
+    cout << "Telefono: " << supermarket.telephone << endl;
+    cout << "RUC: " << supermarket.ruc << endl;
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << endl << "¿Qué desea hacer?" << endl << endl;
+
+    cout << "[1] Actualizar datos del supermercado" << endl;
+    cout << "[2] Registrar nuevo producto" << endl;
+    cout << "[3] Editar un producto" << endl;
+    cout << "[4] Buscar producto por nombre" << endl;
+    cout << "[5] Buscar producto por marca" << endl;
+    cout << "[6] Ver productos ordenados por precio de forma ascendente" << endl;
+    cout << "[7] Aplicar descuento del 7% a un producto" << endl;
+    cout << "[0] Salir" << endl;
+
+    cout << "Introduzca la opción deseada:" << endl;
+    cin >> seletectOption;
+    while (!(0 <= seletectOption && seletectOption <= 7)) {
+        cout << "Introdujo una opción incorrecta, por favor seleccione una opción válida:";
+        cin >> seletectOption;
+    }
+
+    return seletectOption;
 }
