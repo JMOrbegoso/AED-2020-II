@@ -40,37 +40,6 @@ void initializeClients(client* clients, int& quantity) {
     quantity = 3;
 }
 
-void initializePresentationTypes(presentationType* presentationTypes, int& quantity) {
-
-    presentationTypes[0].id = 1;
-    presentationTypes[0].name = "botella";
-
-    presentationTypes[1].id = 2;
-    presentationTypes[1].name = "caja";
-
-    presentationTypes[2].id = 3;
-    presentationTypes[2].name = "bolsa";
-
-    presentationTypes[3].id = 4;
-    presentationTypes[3].name = "unidad";
-
-    quantity = 4;
-}
-
-void initializeProductStatuses(productStatus* productStatuses, int& quantity) {
-
-    productStatuses[0].id = 1;
-    productStatuses[0].name = "Vigente";
-
-    productStatuses[1].id = 2;
-    productStatuses[1].name = "Vencido";
-
-    productStatuses[2].id = 3;
-    productStatuses[2].name = "Descontinuado";
-
-    quantity = 3;
-}
-
 void initializeProducts(product* products, int& quantity) {
 
     products[0].id = 1;
