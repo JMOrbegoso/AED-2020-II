@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void initializeSupermarkets(supermarket* supermarkets, int& supermarketsQuantity) {
+void initializeSupermarkets(supermarket* supermarkets, int& quantity) {
 
     supermarkets[0].name = "Supermercado Heroes";
     supermarkets[0].address = "Av. Los Heroes 777";
@@ -24,10 +24,10 @@ void initializeSupermarkets(supermarket* supermarkets, int& supermarketsQuantity
 
     supermarketsQuantity = 3;*/
 
-    supermarketsQuantity = 1;
+    quantity = 1;
 }
 
-void initializeClients(client* clients, int& clientsQuantity) {
+void initializeClients(client* clients, int& quantity) {
     clients[0].id = 1;
     clients[0].lastName = "Oliveira";
     clients[0].firstName = "Cristobal";
@@ -52,10 +52,10 @@ void initializeClients(client* clients, int& clientsQuantity) {
     clients[2].telephone = "932625080";
     clients[2].dni = "62562326";
 
-    clientsQuantity = 3;
+    quantity = 3;
 }
 
-void initializePresentationTypes(presentationType* presentationTypes, int& presentationTypesQuantity) {
+void initializePresentationTypes(presentationType* presentationTypes, int& quantity) {
 
     presentationTypes[0].id = 1;
     presentationTypes[0].name = "botella";
@@ -69,10 +69,10 @@ void initializePresentationTypes(presentationType* presentationTypes, int& prese
     presentationTypes[3].id = 4;
     presentationTypes[3].name = "unidad";
 
-    presentationTypesQuantity = 4;
+    quantity = 4;
 }
 
-void initializeProductStatuses(productStatus* productStatuses, int& productStatusesQuantity) {
+void initializeProductStatuses(productStatus* productStatuses, int& quantity) {
 
     productStatuses[0].id = 1;
     productStatuses[0].name = "Vigente";
@@ -83,10 +83,10 @@ void initializeProductStatuses(productStatus* productStatuses, int& productStatu
     productStatuses[2].id = 3;
     productStatuses[2].name = "Descontinuado";
 
-    productStatusesQuantity = 3;
+    quantity = 3;
 }
 
-void initializeProducts(product* products, int& productsQuantity) {
+void initializeProducts(product* products, int& quantity) {
 
     products[0].id = 1;
     products[0].name = "Ryzen 5 3600";
@@ -118,10 +118,10 @@ void initializeProducts(product* products, int& productsQuantity) {
     products[2].stock = 20;
     products[2].productStatusId = 1;
 
-    productsQuantity = 3;
+    quantity = 3;
 }
 
-void initializePurchases(purchase* purchases, int& purchasesQuantity) {
+void initializePurchases(purchase* purchases, int& quantity) {
 
     purchases[0].id = 1;
     purchases[0].clientId = 1;
@@ -135,10 +135,10 @@ void initializePurchases(purchase* purchases, int& purchasesQuantity) {
     purchases[3].id = 4;
     purchases[3].clientId = 3;
 
-    purchasesQuantity = 4;
+    quantity = 4;
 }
 
-void initializePurchasedProducts(purchasedProduct* purchasedProducts, int& purchasedProductsQuantity) {
+void initializePurchasedProducts(purchasedProduct* purchasedProducts, int& quantity) {
 
     purchasedProducts[0].id = 1;
     purchasedProducts[0].purchaseId = 1;
@@ -160,5 +160,5 @@ void initializePurchasedProducts(purchasedProduct* purchasedProducts, int& purch
     purchasedProducts[3].productId = 1;
     purchasedProducts[3].productquantity = 1;
 
-    purchasedProductsQuantity = 2;
+    quantity = 4;
 }
