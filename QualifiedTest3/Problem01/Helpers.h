@@ -92,6 +92,100 @@ string requestDNI() {
     return dni;
 }
 
+float requestMoney(string message, int minAmount) {
+    float amount;
+
+    cout << message << "(Mínimo S/" << minAmount << ")" << endl;
+    cin >> amount;
+
+    while (!(minAmount <= amount)) {
+        cout << "Por favor, ingrese una cantidad mínima de S/" << minAmount << "." << endl;
+        fflush(stdin);
+        cin >> amount;
+    }
+
+    return amount;
+}
+
+float requestMoney(string message, int minAmount, int maxAmount) {
+    float amount;
+
+    cout << message << "(Mínimo S/" << minAmount << " y máximo S/" << maxAmount << ")" << endl;
+    cin >> amount;
+
+    while (!(minAmount <= amount && amount <= maxAmount)) {
+        cout << "Por favor, ingrese una cantidad mínima de S/" << minAmount << " y máxima de S/" << maxAmount << "." << endl;
+        fflush(stdin);
+        cin >> amount;
+    }
+
+    return amount;
+}
+
+int requestPresentationType() {
+    int presentationTypeId;
+
+    do {
+        cout << "¿Cuál es el tipo de presentación del producto?" << endl;
+
+        cout << "[1: Botella]" << endl;
+        cout << "[2: Caja]" << endl;
+        cout << "[3: Bolsa]" << endl;
+        cout << "[4: Unidad]" << endl;
+
+        cin >> presentationTypeId;
+    } while (!(1 <= presentationTypeId && presentationTypeId <= 4));
+
+    return presentationTypeId;
+}
+
+float requestDiscountPercentage(string message, int minAmount, int maxAmount) {
+    float amount;
+
+    cout << message << "(Mínimo " << minAmount << "% y máximo " << maxAmount << "%)" << endl;
+    cin >> amount;
+
+    while (!(minAmount <= amount && amount <= maxAmount)) {
+        cout << "Por favor, ingrese una cantidad mínima de " << minAmount << "% y máxima de " << maxAmount << "%." << endl;
+        fflush(stdin);
+        cin >> amount;
+    }
+
+    return amount;
+}
+
+float requestStock(string message, int minAmount) {
+    float amount;
+
+    cout << message << "(Mínimo " << minAmount << ")" << endl;
+    cin >> amount;
+
+    while (!(minAmount <= amount)) {
+        cout << "Por favor, ingrese una cantidad mínima de " << minAmount << "." << endl;
+        fflush(stdin);
+        cin >> amount;
+    }
+
+    return amount;
+}
+
+int requestProductStatus() {
+    int productStatusId;
+
+    do {
+        cout << "¿Cuál es el estado del producto?" << endl;
+
+        cout << "[1: Vigente]" << endl;
+        cout << "[2: Vencido]" << endl;
+        cout << "[3: No Perecible]" << endl;
+        cout << "[4: Descontinuado]" << endl;
+
+        cin >> productStatusId;
+    } while (!(1 <= productStatusId && productStatusId <= 4));
+
+    return productStatusId;
+}
+
 void textWaiting(string message) {
 
     cout << endl << message << " ";
