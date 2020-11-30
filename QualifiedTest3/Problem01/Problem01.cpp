@@ -34,17 +34,17 @@ int main()
             {
             case 1:
                 updateSupermarketProperties(supermarket);
-                system("pause");
+                Sleep(750);
                 break;
 
             case 2:
                 registerNewProduct(products, productsQuantity);
-                system("pause");
+                Sleep(750);
                 break;
 
             case 3:
                 editProduct(products, productsQuantity);
-                system("pause");
+                Sleep(750);
                 break;
 
             case 4:
@@ -64,7 +64,7 @@ int main()
 
             case 7:
                 applyDiscountToProduct(products, productsQuantity);
-                system("pause");
+                Sleep(750);
                 break;
 
             default:
