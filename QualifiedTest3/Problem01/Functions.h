@@ -185,3 +185,40 @@ void registerNewProduct(product* products, int& productsQuantity) {
 
     productsQuantity++;
 }
+
+void editProduct(product* products, int productsQuantity) {
+
+    int productId;
+    int productIndex = -1;
+
+    cout << "Editará un producto" << endl;
+
+    cout << "Ingrese el Id del producto a editar" << endl;
+    cin >> productId;
+
+    for (int i = 0; i < productsQuantity; i++) {
+        if (products[i].id == productId)
+        {
+            productIndex = i;
+            break;
+        }
+    }
+
+    if (productIndex == -1) {
+        cout << "El Id del producto no se ha encontrado, por favor intente nuevamente." << endl;
+        return;
+    }
+
+    products[productIndex].name = requestText("Ingrese el nombre del producto:", 1);
+    products[productIndex].description = requestText("Ingrese la descripcion del producto:", 3);
+    products[productIndex].price = requestMoney("Ingrese el precio del producto:", 0.5, 1000);
+    products[productIndex].presentationTypeId = requestPresentationType();
+    products[productIndex].discount = requestDiscountPercentage("Ingrese el porcentaje de descuento del producto", 0, 99.99);
+    products[productIndex].brand = requestText("Ingrese la marca del producto:", 1);
+    products[productIndex].stock = requestStock("Ingrese la cantidad de stock del producto", 0);
+    products[productIndex].productStatusId = requestProductStatus();
+
+    textWaiting("Editando producto");
+
+    cout << endl << "Editó el producto correctamente." << endl;
+}

@@ -43,8 +43,7 @@ int main()
                 break;
 
             case 3:
-                cout << "[3] Editar un producto" << endl;
-                
+                editProduct(products, productsQuantity);
                 system("pause");
                 break;
 
