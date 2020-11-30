@@ -43,11 +43,12 @@ struct productStatus {
 };
 
 struct purchase {
+	int id;
 	int clientId;
-	purchasedProduct purchasedProduct[100];
 };
 
 struct purchasedProduct {
+	int id;
 	int purchaseId;
 
 	int productId;
