@@ -38,8 +38,7 @@ int main()
                 break;
 
             case 2:
-                cout << "[2] Registrar nuevo producto" << endl;
-                
+                registerNewProduct(products, productsQuantity);
                 system("pause");
                 break;
 
