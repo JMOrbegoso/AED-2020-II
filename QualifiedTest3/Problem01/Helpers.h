@@ -2,4 +2,163 @@
 
 using namespace std;
 
+void initializeSupermarkets(supermarket* supermarkets, int& supermarketsQuantity) {
 
+    supermarkets[0].name = "Supermercado Heroes";
+    supermarkets[0].address = "Av. Los Heroes 777";
+    supermarkets[0].telephone = "952384721";
+    supermarkets[0].admin = "Roman Robles";
+    supermarkets[0].ruc = "72122372282";
+
+    /*supermarkets[1].name = "Supermercado Conquistadores";
+    supermarkets[1].address = "Av. Los Conquistadores 777";
+    supermarkets[1].telephone = "942580731";
+    supermarkets[1].admin = "Juan Gutierrez";
+    supermarkets[1].ruc = "12822372282";
+
+    supermarkets[2].name = "Supermercado Robles";
+    supermarkets[2].address = "Av. Los Robles 777";
+    supermarkets[2].telephone = "912889780";
+    supermarkets[2].admin = "María Fuentes";
+    supermarkets[2].ruc = "20002372282";
+
+    supermarketsQuantity = 3;*/
+
+    supermarketsQuantity = 1;
+}
+
+void initializeClients(client* clients, int& clientsQuantity) {
+    clients[0].id = 1;
+    clients[0].lastName = "Oliveira";
+    clients[0].firstName = "Cristobal";
+    clients[0].address = "Av. Las fuentes 555";
+    clients[0].genre = 'm';
+    clients[0].telephone = "910809080";
+    clients[0].dni = "88502324";
+
+    clients[1].id = 2;
+    clients[1].lastName = "Perdomo";
+    clients[1].firstName = "Maria";
+    clients[1].address = "Av. Las gaviotas 444";
+    clients[1].genre = 'f';
+    clients[1].telephone = "921725080";
+    clients[1].dni = "71402324";
+
+    clients[2].id = 3;
+    clients[2].lastName = "Guzman";
+    clients[2].firstName = "Angela";
+    clients[2].address = "Av. Los aviones 747";
+    clients[2].genre = 'f';
+    clients[2].telephone = "932625080";
+    clients[2].dni = "62562326";
+
+    clientsQuantity = 3;
+}
+
+void initializePresentationTypes(presentationType* presentationTypes, int& presentationTypesQuantity) {
+
+    presentationTypes[0].id = 1;
+    presentationTypes[0].name = "botella";
+
+    presentationTypes[1].id = 2;
+    presentationTypes[1].name = "caja";
+
+    presentationTypes[2].id = 3;
+    presentationTypes[2].name = "bolsa";
+
+    presentationTypes[3].id = 4;
+    presentationTypes[3].name = "unidad";
+
+    presentationTypesQuantity = 4;
+}
+
+void initializeProductStatuses(productStatus* productStatuses, int& productStatusesQuantity) {
+
+    productStatuses[0].id = 1;
+    productStatuses[0].name = "Vigente";
+
+    productStatuses[1].id = 2;
+    productStatuses[1].name = "Vencido";
+
+    productStatuses[2].id = 3;
+    productStatuses[2].name = "Descontinuado";
+
+    productStatusesQuantity = 3;
+}
+
+void initializeProducts(product* products, int& productsQuantity) {
+
+    products[0].id = 1;
+    products[0].name = "Ryzen 5 3600";
+    products[0].description = "Procesador de 6 núcleos y 12 hilos";
+    products[0].price = 980;
+    products[0].presentationTypeId = 2;
+    products[0].discount = 0;
+    products[0].brand = "AMD";
+    products[0].stock = 12;
+    products[0].productStatusId = 1;
+
+    products[1].id = 2;
+    products[1].name = "Ryzen 5 3400";
+    products[1].description = "Procesador de 4 núcleos y 8 hilos";
+    products[1].price = 750;
+    products[1].presentationTypeId = 2;
+    products[1].discount = 0;
+    products[1].brand = "AMD";
+    products[1].stock = 15;
+    products[1].productStatusId = 1;
+
+    products[2].id = 3;
+    products[2].name = "Ryzen 3 3100";
+    products[2].description = "Procesador de 4 núcleos y 8 hilos";
+    products[2].price = 540;
+    products[2].presentationTypeId = 2;
+    products[2].discount = 0;
+    products[2].brand = "AMD";
+    products[2].stock = 20;
+    products[2].productStatusId = 1;
+
+    productsQuantity = 3;
+}
+
+void initializePurchases(purchase* purchases, int& purchasesQuantity) {
+
+    purchases[0].id = 1;
+    purchases[0].clientId = 1;
+
+    purchases[1].id = 2;
+    purchases[1].clientId = 2;
+
+    purchases[2].id = 3;
+    purchases[2].clientId = 3;
+
+    purchases[3].id = 4;
+    purchases[3].clientId = 3;
+
+    purchasesQuantity = 4;
+}
+
+void initializePurchasedProducts(purchasedProduct* purchasedProducts, int& purchasedProductsQuantity) {
+
+    purchasedProducts[0].id = 1;
+    purchasedProducts[0].purchaseId = 1;
+    purchasedProducts[0].productId = 2;
+    purchasedProducts[0].productquantity = 1;
+
+    purchasedProducts[1].id = 2;
+    purchasedProducts[1].purchaseId = 2;
+    purchasedProducts[1].productId = 2;
+    purchasedProducts[1].productquantity = 1;
+
+    purchasedProducts[2].id = 3;
+    purchasedProducts[2].purchaseId = 3;
+    purchasedProducts[2].productId = 3;
+    purchasedProducts[2].productquantity = 1;
+
+    purchasedProducts[3].id = 4;
+    purchasedProducts[3].purchaseId = 4;
+    purchasedProducts[3].productId = 1;
+    purchasedProducts[3].productquantity = 1;
+
+    purchasedProductsQuantity = 2;
+}
