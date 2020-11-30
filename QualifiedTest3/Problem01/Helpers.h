@@ -155,8 +155,8 @@ float requestDiscountPercentage(string message, int minAmount, int maxAmount) {
     return amount;
 }
 
-float requestStock(string message, int minAmount) {
-    float amount;
+int requestStock(string message, int minAmount) {
+    int amount;
 
     cout << message << "(Mínimo " << minAmount << ")" << endl;
     cin >> amount;
