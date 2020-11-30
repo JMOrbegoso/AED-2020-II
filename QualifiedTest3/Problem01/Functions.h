@@ -180,3 +180,18 @@ int getSeletectOption(supermarket supermarket) {
 
     return seletectOption;
 }
+
+void updateSupermarketProperties(supermarket& supermarket) {
+
+    cout << "Actualizará los datos del supermercado '" << supermarket.name << "'" << endl;
+
+    supermarket.name = requestText("Ingrese el nuevo nombre del supermercado:", 5);
+    supermarket.address = requestText("Ingrese la nueva dirección del supermercado:", 5);
+    supermarket.telephone = requestText("Ingrese el nuervo número telefónico del supermercado:", 9, 9);
+    supermarket.admin = requestText("Ingrese el nuervo nombre del administrador del supermercado:", 5);
+    supermarket.ruc = requestText("Ingrese el nuervo RUC del administrador del supermercado:", 11, 11);
+
+    textWaiting("Actualizando datos");
+
+    cout << endl << "Actualizó correctamente los datos del supermercado." << endl;
+}
