@@ -32,16 +32,6 @@ struct product {
 	int productStatusId;
 };
 
-struct presentationType {
-	int id;
-	string name;
-};
-
-struct productStatus {
-	int id;
-	string name;
-};
-
 struct purchase {
 	int id;
 	int clientId;
