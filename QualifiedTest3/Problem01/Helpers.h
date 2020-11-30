@@ -91,3 +91,15 @@ string requestDNI() {
 
     return dni;
 }
+
+void textWaiting(string message) {
+
+    cout << endl << message << " ";
+    Sleep(600);
+    cout << ".";
+    Sleep(600);
+    cout << ".";
+    Sleep(600);
+    cout << ".";
+    Sleep(600);
+}
