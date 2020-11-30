@@ -315,3 +315,29 @@ void searchProductByName(product* products, int productsQuantity) {
     cout << endl;
 }
 
+void searchProductByBrand(product* products, int productsQuantity) {
+    string searchTerm;
+
+    system("cls");
+
+    searchTerm = requestText("Ingrese la marca de productos a buscar:", 2);
+
+    system("cls");
+
+    // Title
+    gotoxy(40, 0); cout << "Lista de productos con una marca similar a '" << searchTerm << "'" << endl;
+
+    // Headers
+    showProductsListHeaders(2);
+
+    // Rows
+    int row = 0;
+    for (int i = 0; i < productsQuantity; i++) {
+        if (containsString(products[i].brand, searchTerm)) {
+            showProductsListElement(4 + row, products, i);
+            row++;
+        }
+    }
+
+    cout << endl;
+}

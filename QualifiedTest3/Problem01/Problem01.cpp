@@ -6,7 +6,7 @@ int main()
 {
     int seletectMenuOption;
 
-    supermarket supermarket;    
+    supermarket supermarket;
 
     client clients[100];
     int clientsQuantity = 0;
@@ -53,14 +53,13 @@ int main()
                 break;
 
             case 5:
-                cout << "[5] Buscar producto por marca" << endl;
-                
+                searchProductByBrand(products, productsQuantity);
                 system("pause");
                 break;
 
             case 6:
                 cout << "[6] Ver productos ordenados por precio de forma ascendente" << endl;
-                
+
                 system("pause");
                 break;
 
