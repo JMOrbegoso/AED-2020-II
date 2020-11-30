@@ -1,6 +1,12 @@
 #include "Helpers.h"
 #include "Structs.h"
 
+#define minProductDiscount 0
+#define maxProductDiscount (float)99.99
+
+#define minProductPrice (float)0.5
+#define maxProductPrice 1000
+
 using namespace std;
 
 void initializeSupermarket(supermarket& supermarket) {
@@ -173,9 +179,9 @@ void registerNewProduct(product* products, int& productsQuantity) {
     products[productsQuantity].id = productsQuantity + 1;
     products[productsQuantity].name = requestText("Ingrese el nombre del producto:", 1);
     products[productsQuantity].description = requestText("Ingrese la descripcion del producto:", 3);
-    products[productsQuantity].price = requestMoney("Ingrese el precio del producto:", 0.5, 1000);
+    products[productsQuantity].price = requestMoney("Ingrese el precio del producto:", minProductPrice, maxProductPrice);
     products[productsQuantity].presentationTypeId = requestPresentationType();
-    products[productsQuantity].discount = requestDiscountPercentage("Ingrese el porcentaje de descuento del producto", 0, 99.99);
+    products[productsQuantity].discount = requestDiscountPercentage("Ingrese el porcentaje de descuento del producto", minProductDiscount, maxProductDiscount);
     products[productsQuantity].brand = requestText("Ingrese la marca del producto:", 1);
     products[productsQuantity].stock = requestStock("Ingrese la cantidad de stock del producto", 0);
     products[productsQuantity].productStatusId = requestProductStatus();
@@ -212,9 +218,9 @@ void editProduct(product* products, int productsQuantity) {
 
     products[productIndex].name = requestText("Ingrese el nombre del producto:", 1);
     products[productIndex].description = requestText("Ingrese la descripcion del producto:", 3);
-    products[productIndex].price = requestMoney("Ingrese el precio del producto:", 0.5, 1000);
+    products[productIndex].price = requestMoney("Ingrese el precio del producto:", minProductPrice, maxProductPrice);
     products[productIndex].presentationTypeId = requestPresentationType();
-    products[productIndex].discount = requestDiscountPercentage("Ingrese el porcentaje de descuento del producto", 0, 99.99);
+    products[productIndex].discount = requestDiscountPercentage("Ingrese el porcentaje de descuento del producto", minProductDiscount, maxProductDiscount);
     products[productIndex].brand = requestText("Ingrese la marca del producto:", 1);
     products[productIndex].stock = requestStock("Ingrese la cantidad de stock del producto", 0);
     products[productIndex].productStatusId = requestProductStatus();
