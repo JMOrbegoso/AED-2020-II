@@ -342,6 +342,50 @@ void searchProductByBrand(product* products, int productsQuantity) {
     cout << endl;
 }
 
+void swapValue(product* array, int i, int j) {
+
+    product temp = array[j];
+
+    array[j] = array[i];
+    array[i] = temp;
+}
+
+void orderProducts(product* products, int productsQuantity) {
+    int i, j;
+    for (i = 0; i < productsQuantity - 1; i++)
+    {
+        for (j = 0; j < productsQuantity - i - 1; j++)
+        {
+            if (products[j].price < products[j + 1].price)
+            {
+                swapValue(products, j, j + 1);
+            }
+        }
+    }
+}
+
+void orderAndShowProducts(product* products, int productsQuantity) {
+
+    orderProducts(products, productsQuantity);
+
+    system("cls");
+
+    // Title
+    gotoxy(40, 0); cout << "Lista de productos ordenados por precio de forma descendente" << endl;
+
+    // Headers
+    showProductsListHeaders(2);
+
+    // Rows
+    int row = 0;
+    for (int i = 0; i < productsQuantity; i++) {
+        showProductsListElement(4 + row, products, i);
+        row++;
+    }
+
+    cout << endl;
+}
+
 void applyDiscountToProduct(product* products, int productsQuantity) {
 
     int productId;

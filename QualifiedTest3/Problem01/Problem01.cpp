@@ -58,13 +58,12 @@ int main()
                 break;
 
             case 6:
-                cout << "[6] Ver productos ordenados por precio de forma ascendente" << endl;
-
+                orderAndShowProducts(products, productsQuantity);
                 system("pause");
                 break;
 
             case 7:
-                appltDiscountToProduct(products, productsQuantity);
+                applyDiscountToProduct(products, productsQuantity);
                 system("pause");
                 break;
 
