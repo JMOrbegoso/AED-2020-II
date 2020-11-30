@@ -1,20 +1,92 @@
-// Problem01.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <windows.h>
+#include "Functions.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int seletectMenuOption;
+
+    supermarket supermarket;    
+
+    client clients[100];
+    int clientsQuantity = 0;
+
+    presentationType presentationTypes[100];
+    int presentationTypesQuantity = 0;
+
+    productStatus productStatuses[100];
+    int productStatusesQuantity = 0;
+
+    product products[100];
+    int productsQuantity = 0;
+
+    purchase purchases[100];
+    int purchasesQuantity = 0;
+
+    purchasedProduct purchasedProducts[100];
+    int purchasedProductsQuantity = 0;
+
+    initializeSupermarket(supermarket);
+    initializeClients(clients, clientsQuantity);
+    initializePresentationTypes(presentationTypes, presentationTypesQuantity);
+    initializeProductStatuses(productStatuses, productStatusesQuantity);
+    initializeProducts(products, productsQuantity);
+    initializePurchases(purchases, purchasesQuantity);
+    initializePurchasedProducts(purchasedProducts, purchasedProductsQuantity);
+
+    do {
+        seletectMenuOption = getSeletectOption(supermarket);
+
+        if (seletectMenuOption != 0) {
+            switch (seletectMenuOption)
+            {
+            case 1:
+                updateSupermarketProperties(supermarket);
+                system("pause");
+                break;
+
+            case 2:
+                cout << "[2] Registrar nuevo producto" << endl;
+                
+                system("pause");
+                break;
+
+            case 3:
+                cout << "[3] Editar un producto" << endl;
+                
+                system("pause");
+                break;
+
+            case 4:
+                cout << "[4] Buscar producto por nombre" << endl;
+                
+                system("pause");
+                break;
+
+            case 5:
+                cout << "[5] Buscar producto por marca" << endl;
+                
+                system("pause");
+                break;
+
+            case 6:
+                cout << "[6] Ver productos ordenados por precio de forma ascendente" << endl;
+                
+                system("pause");
+                break;
+
+            case 7:
+                cout << "[7] Aplicar descuento del 7% a un producto" << endl;
+
+                system("pause");
+                break;
+
+            default:
+                break;
+            }
+        }
+
+    } while (!(seletectMenuOption == 0));
+
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
