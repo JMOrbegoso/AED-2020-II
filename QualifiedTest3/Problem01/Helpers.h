@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <windows.h>
+#include <algorithm>
 
 using namespace std;
 
@@ -196,4 +197,26 @@ void textWaiting(string message) {
     Sleep(600);
     cout << ".";
     Sleep(600);
+}
+
+/// <summary>
+/// Receives a string and returns it in lowercase.
+/// </summary>
+string toLowerCase(string text) {
+
+    for_each(text.begin(), text.end(), [](char& c) {
+        c = ::tolower(c);
+    });
+
+    return text;
+}
+
+/// <summary>
+/// Return bool if found the "toSearch" text parameter on the "base" text parameter.
+/// </summary>
+bool containsString(string base, string toSearch) {
+    if (toLowerCase(base).find(toLowerCase(toSearch), 0) != string::npos) {
+        return true;
+    }
+    return false;
 }
