@@ -222,3 +222,96 @@ void editProduct(product* products, int productsQuantity) {
 
     cout << endl << "Editó el producto correctamente." << endl;
 }
+
+/// <param name="y">y-axis</param>
+void showProductsListHeaders(int y) {
+
+    gotoxy(0, y); cout << "#" << endl;
+    gotoxy(0, y); cout << "Id" << endl;
+    gotoxy(5, y); cout << "Nombre" << endl;
+    gotoxy(55, y); cout << "Description" << endl;
+    gotoxy(65, y); cout << "Precio" << endl;
+    gotoxy(75, y); cout << "Tipo de Presentación" << endl;
+    gotoxy(85, y); cout << "Descuento" << endl;
+    gotoxy(95, y); cout << "Marca" << endl;
+    gotoxy(95, y); cout << "Stock" << endl;
+    gotoxy(95, y); cout << "Status" << endl;
+}
+
+string getPresentationTypeString(int presentationTypeId) {
+    switch (presentationTypeId)
+    {
+    case 1:
+        return "Botella";
+    case 2:
+        return "Caja";
+    case 3:
+        return "Bolsa";
+    case 4:
+        return "Unidad";
+
+    default:
+        return "No Encontrado";;
+    }
+}
+
+string getProductStatusString(int productStatusId) {
+    switch (productStatusId)
+    {
+    case 1:
+        return "Vigente";
+    case 2:
+        return "Vencido";
+    case 3:
+        return "No Perecible";
+    case 4:
+        return "Descontinuado";
+
+    default:
+        return "No Encontrado";;
+    }
+}
+
+/// <param name="y">y-axis</param>
+/// <param name="i">soldier index</param>
+void showProductsListElement(int y, product* products, int i) {
+
+    gotoxy(0, y); cout << (i + 1) << endl;
+    gotoxy(0, y); cout << products[i].id << endl;
+    gotoxy(5, y); cout << products[i].name << endl;
+    gotoxy(55, y); cout << products[i].description << endl;
+    gotoxy(65, y); cout << "S/ " << products[i].price << endl;
+    gotoxy(75, y); cout << getPresentationTypeString(products[i].presentationTypeId) << endl;
+    gotoxy(85, y); cout << products[i].discount << "%" << endl;
+    gotoxy(85, y); cout << products[i].brand << endl;
+    gotoxy(85, y); cout << products[i].stock << endl;
+    gotoxy(95, y); cout << getProductStatusString(products[i].productStatusId) << endl;
+}
+
+void searchProductByName(product* products, int productsQuantity) {
+    string searchTerm;
+
+    system("cls");
+
+    searchTerm = requestText("Ingrese el nombre del producto a buscar:", 2);
+
+    system("cls");
+
+    // Title
+    gotoxy(40, 0); cout << "Lista de productos con un nombre similar a '" << searchTerm << "'" << endl;
+
+    // Headers
+    showProductsListHeaders(2);
+
+    // Rows
+    int row = 0;
+    for (int i = 0; i < productsQuantity; i++) {
+        if (containsString(products[i].name, searchTerm)) {
+            showProductsListElement(4 + row, products, i);
+            row++;
+        }
+    }
+
+    cout << endl;
+}
+

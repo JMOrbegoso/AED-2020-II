@@ -48,8 +48,7 @@ int main()
                 break;
 
             case 4:
-                cout << "[4] Buscar producto por nombre" << endl;
-                
+                searchProductByName(products, productsQuantity);
                 system("pause");
                 break;
 
