@@ -164,3 +164,24 @@ void updateSupermarketProperties(supermarket& supermarket) {
 
     cout << endl << "Actualizó correctamente los datos del supermercado." << endl;
 }
+
+void registerNewProduct(product* products, int& productsQuantity) {
+
+    cout << "Registrará un nuevo producto" << endl;
+
+    products[productsQuantity].id = productsQuantity + 1;
+    products[productsQuantity].name = requestText("Ingrese el nombre del producto:", 1);
+    products[productsQuantity].description = requestText("Ingrese la descripcion del producto:", 3);
+    products[productsQuantity].price = requestMoney("Ingrese el precio del producto:", 0.5, 1000);
+    products[productsQuantity].presentationTypeId = requestPresentationType();
+    products[productsQuantity].discount = requestDiscountPercentage("Ingrese el porcentaje de descuento del producto", 0, 99.99);
+    products[productsQuantity].brand = requestText("Ingrese la marca del producto:", 1);
+    products[productsQuantity].stock = requestStock("Ingrese la cantidad de stock del producto", 0);
+    products[productsQuantity].productStatusId = requestProductStatus();
+
+    textWaiting("Registrando nuevo producto");
+
+    cout << endl << "Registró el nuevo producto correctamente." << endl;
+
+    productsQuantity++;
+}
