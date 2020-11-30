@@ -12,25 +12,34 @@ struct supermarket {
 
 struct client {
 	int id;
-	string  lastName;
+	string lastName;
 	string firstName;
 	string address;
 	char genre;
 	string telephone;
 	string dni;
-	purchase purchases[100];
 };
 
 struct product {
 	int id;
-	string  name;
-	string  description;
+	string name;
+	string description;
 	float price;
-	int presentationType;
+	int presentationTypeId;
 	float discount;
 	string brand;
 	int stock;
-	int status;
+	int productStatusId;
+};
+
+struct presentationType {
+	int id;
+	string name;
+};
+
+struct productStatus {
+	int id;
+	string name;
 };
 
 struct purchase {
