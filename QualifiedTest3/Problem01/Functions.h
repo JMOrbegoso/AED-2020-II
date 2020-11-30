@@ -9,6 +9,9 @@
 
 using namespace std;
 
+void showProductsListElement(int y, product* products, int i);
+void showProductsListHeaders(int y);
+
 void initializeSupermarket(supermarket& supermarket) {
 
     supermarket.name = "Supermercado Heroes";
@@ -159,6 +162,8 @@ int getSeletectOption(supermarket supermarket) {
 
 void updateSupermarketProperties(supermarket& supermarket) {
 
+    system("cls");
+
     cout << "Actualizará los datos del supermercado '" << supermarket.name << "'" << endl;
 
     supermarket.name = requestText("Ingrese el nuevo nombre del supermercado:", 5);
@@ -173,6 +178,8 @@ void updateSupermarketProperties(supermarket& supermarket) {
 }
 
 void registerNewProduct(product* products, int& productsQuantity) {
+
+    system("cls");
 
     cout << "Registrará un nuevo producto" << endl;
 
@@ -198,6 +205,8 @@ void editProduct(product* products, int productsQuantity) {
     int productId;
     int productIndex = -1;
 
+    system("cls");
+
     cout << "Editará un producto" << endl;
 
     cout << "Ingrese el Id del producto a editar" << endl;
@@ -215,6 +224,17 @@ void editProduct(product* products, int productsQuantity) {
         cout << "El Id del producto no se ha encontrado, por favor intente nuevamente." << endl;
         return;
     }
+
+    cout << endl << "Editará el producto:" << endl;
+
+    // Headers
+    showProductsListHeaders(6);
+
+    // Row
+    for (int i = 0; i < productsQuantity; i++) {
+        showProductsListElement(7, products, i);
+    }
+    cout << endl << endl;
 
     products[productIndex].name = requestText("Ingrese el nombre del producto:", 1);
     products[productIndex].description = requestText("Ingrese la descripcion del producto:", 3);
