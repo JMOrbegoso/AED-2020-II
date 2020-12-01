@@ -1,5 +1,6 @@
-#include <windows.h>
 #include <algorithm>
+#include <string>
+#include <windows.h>
 
 using namespace std;
 

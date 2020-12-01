@@ -145,6 +145,7 @@
     <ClInclude Include="Basicas.h" />
     <ClInclude Include="Funciones.h" />
     <ClInclude Include="Estructuras.h" />
+    <ClInclude Include="Menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

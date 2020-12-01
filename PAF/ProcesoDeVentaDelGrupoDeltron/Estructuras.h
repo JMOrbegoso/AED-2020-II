@@ -1,7 +1,5 @@
 #include <string>
 
-using namespace std;
-
 struct empleadoDeVentas {
 	string dni;
 	string nombre;

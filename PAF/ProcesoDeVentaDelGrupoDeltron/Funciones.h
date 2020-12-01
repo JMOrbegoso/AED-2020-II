@@ -177,6 +177,18 @@ void inicializarProductosComprados(deltronXpand& deltronXpand) {
     deltronXpand.productosCompradosCantidad = 3;
 }
 
+void inicializacion(deltronXpand& deltronXpand) {
+    inicializarEmpleadosDeVentas(deltronXpand);
+    inicializarClientes(deltronXpand);
+    inicializarAlmacenes(deltronXpand);
+    inicializarTiposDeUso(deltronXpand);
+    inicializarClasificaciones(deltronXpand);
+    inicializarProductos(deltronXpand);
+    inicializarProductosEnAlmacen(deltronXpand);
+    inicializarOrdenesDeCompra(deltronXpand);
+    inicializarProductosComprados(deltronXpand);
+}
+
 #pragma endregion
 
 #pragma region Funciones Basicas con estructuras
