@@ -156,7 +156,7 @@ void inicializarProductosEnAlmacen(deltronXpand& deltronXpand) {
 void inicializarOrdenesDeCompra(deltronXpand& deltronXpand) {
 
     deltronXpand.ordenesDeCompra[0].id = 1;
-    deltronXpand.ordenesDeCompra[0].clienteId = 1;
+    deltronXpand.ordenesDeCompra[0].clienteRUC = "11111111111";
 
     deltronXpand.ordenesDeCompraCantidad = 3;
 }
@@ -167,6 +167,7 @@ void inicializarProductosComprados(deltronXpand& deltronXpand) {
     deltronXpand.productosComprados[0].productoEnAlmacenId = 1;
     deltronXpand.productosComprados[0].ordenDeCompraId = 1;
     deltronXpand.productosComprados[0].cantidad = 1;
+    deltronXpand.productosComprados[0].precio = 300;
 
     deltronXpand.productosCompradosCantidad = 3;
 }
