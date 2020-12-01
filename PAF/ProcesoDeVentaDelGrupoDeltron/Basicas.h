@@ -23,14 +23,13 @@ bool contieneTexto(string textoBase, string textoPorBuscar) {
 
 void esperarMostrandoTexto(string mensaje) {
 
-    cout << mensaje << " ";
-    Sleep(600);
-    cout << ".";
-    Sleep(600);
-    cout << ".";
-    Sleep(600);
-    cout << ".";
-    Sleep(600);
+    cout << mensaje;
+
+    for (int i = 0; i < 6; i++)
+    {
+        Sleep(250);
+        cout << ".";
+    }
 }
 
 void mostrarAppTitulo() {
