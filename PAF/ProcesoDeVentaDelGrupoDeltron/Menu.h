@@ -150,7 +150,7 @@ void menuEmpleadoDeVentas(deltronXpand& deltronXpand, string dniDelEmpleadoDeVen
 
     } while (!(opcionSeleccionada == 0));
 
-    esperarMostrandoTexto("Volviendo");
+    esperarMostrandoTexto("Cerrando Sesión");
 }
 
 void menuCliente(deltronXpand& deltronXpand, string rucDelClienteLogeado) {
@@ -196,7 +196,7 @@ void menuCliente(deltronXpand& deltronXpand, string rucDelClienteLogeado) {
 
     } while (!(opcionSeleccionada == 0));
 
-    esperarMostrandoTexto("Volviendo");
+    esperarMostrandoTexto("Cerrando Sesión");
 }
 
 #pragma endregion
