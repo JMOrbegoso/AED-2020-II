@@ -16,49 +16,22 @@ void menuEmpleadoDeVentas(empleadoDeVentas* empleadosDeVentas, int empleadosDeVe
 int main()
 {
     // Declaración de estructuras de datos
+    deltronXpand deltronXpand;
 
-    empleadoDeVentas empleadosDeVentas[100];
-    int empleadosDeVentasCantidad = 0;
-
-    cliente clientes[100];
-    int clientesCantidad = 0;
-
-    almacen almacenes[5];
-    int almacenesCantidad = 0;
-
-    tipoDeUso tiposDeUso[5];
-    int tiposDeUsoCantidad = 0;
-
-    clasificacion clasificaciones[5];
-    int clasificacionesCantidad = 0;
-
-    producto productos[100];
-    int productosCantidad = 0;
-
-    productoEnAlmacen productosEnAlmacen[100];
-    int productosEnAlmacenCantidad = 0;
-
-    ordenDeCompra ordenesDeCompra[100];
-    int ordenesDeCompraCantidad = 0;
-
-    productoComprado productosComprados[100];
-    int productosCompradosCantidad = 0;
-
-    // Declaración de variables y estructuras de datos
-
+    // Declaración de variables
     int opcionSeleccionadaDelMenuRol;
     bool debeCerrar;
 
     // Inicializacion
-    inicializarEmpleadosDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
-    inicializarClientes(clientes, clientesCantidad);
-    inicializarAlmacenes(almacenes, almacenesCantidad);
-    inicializarTiposDeUso(tiposDeUso, tiposDeUsoCantidad);
-    inicializarClasificaciones(clasificaciones, clasificacionesCantidad);
-    inicializarProductos(productos, productosCantidad);
-    inicializarProductosEnAlmacen(productosEnAlmacen, productosEnAlmacenCantidad);
-    inicializarOrdenesDeCompra(ordenesDeCompra, ordenesDeCompraCantidad);
-    inicializarProductosComprados(productosComprados, productosCompradosCantidad);
+    inicializarEmpleadosDeVentas(deltronXpand);
+    inicializarClientes(deltronXpand);
+    inicializarAlmacenes(deltronXpand);
+    inicializarTiposDeUso(deltronXpand);
+    inicializarClasificaciones(deltronXpand);
+    inicializarProductos(deltronXpand);
+    inicializarProductosEnAlmacen(deltronXpand);
+    inicializarOrdenesDeCompra(deltronXpand);
+    inicializarProductosComprados(deltronXpand);
 
     // Menú
     do {
@@ -68,12 +41,12 @@ int main()
             switch (opcionSeleccionadaDelMenuRol)
             {
             case 1:
-                menuLogin(empleadosDeVentas, empleadosDeVentasCantidad);
+                menuLogin(deltronXpand.empleadosDeVentas, deltronXpand.empleadosDeVentasCantidad);
                 debeCerrar = false;
                 break;
 
             case 2:
-                menuLogin(clientes, clientesCantidad);
+                menuLogin(deltronXpand.clientes, deltronXpand.clientesCantidad);
                 debeCerrar = false;
                 break;
 
