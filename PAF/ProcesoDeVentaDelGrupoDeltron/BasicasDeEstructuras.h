@@ -171,46 +171,48 @@ void inicializarProductosComprados(deltronXpand& deltronXpand) {
     deltronXpand.productosCompradosCantidad = 3;
 }
 
-int loginPersonalDeVentas(deltronXpand deltronXpand) {
+string loginPersonalDeVentas(deltronXpand deltronXpand) {
     // Pide DNI (8 caracteres)
     // Pide la clave (minimo 6 caracteres)
     // Buscar que el DNI sea exactamente igual al de un empleado de ventas existente
     //
     //      No encontro el DNI (El empleado de ventas no existe):
     //      Muestra texto diciendo que el empleado de ventas ingresado no existe
-    //      Retorna 0
+    //      Retorna ""
     //
     //      Si encontró el DNI (El empleado de ventas sí existe):
     //      Verfica con un "if" si la clave ingresada es la misma del empleado de ventas guardado
     //
     //          Si es la misma clave:
     //          Muestra texto diciendo bienvenid@ *nombre del empleado de ventas*
-    //          Retorna el id del empleado de ventas
+    //          Retorna el DNI del empleado de ventas
     //
     //          No es la misma clave
     //          Muestra texto diciendo que la clave es incorrecta
-    //          Retorna 0
+    //          Retorna ""
+    return "44444444";
 }
 
-int loginCliente(deltronXpand deltronXpand) {
+string loginCliente(deltronXpand deltronXpand) {
     // Pide RUC (11 caracteres)
     // Pide la clave (minimo 6 caracteres)
     // Buscar que el RUC sea exactamente igual al de un cliente existente
     //
     //      No encontro el RUC (El cliente no existe):
     //      Muestra texto diciendo que el client ingresado no existe
-    //      Retorna 0
+    //      Retorna ""
     //
     //      Si encontró el RUC (El cliente si existe):
     //      Verfica con un "if" si la clave ingresada es la misma del cliente guardado
     //
     //          Si es la misma clave:
     //          Muestra texto diciendo bienvenid@ *nombre del cliente*
-    //          Retorna el id del cliente
+    //          Retorna el RUC del cliente
     //
     //          No es la misma clave
     //          Muestra texto diciendo que la clave es incorrecta
-    //          Retorna 0
+    //          Retorna ""
+    return "11111111111";
 }
 
 void registrarPersonalDeVentas(deltronXpand& deltronXpand) {
