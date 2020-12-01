@@ -49,7 +49,7 @@ struct productoEnAlmacen {
 
 struct ordenDeCompra {
 	int id;
-	int clienteId;
+	string clienteRUC;
 };
 
 struct productoComprado {
@@ -57,6 +57,7 @@ struct productoComprado {
 	int productoEnAlmacenId;
 	int ordenDeCompraId;
 	int cantidad;
+	float precio;
 };
 
 struct deltronXpand {
