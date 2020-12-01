@@ -12,38 +12,24 @@ Crear una lista enlazada simple.
 
 #include <iostream>
 #include <windows.h>
+#include "Structs.h"
 
 using namespace std;
 
-
-
-struct student {
-    string code;
-    string name;
-    int age;
-    float scores[5];
-    float averageScore;
-    string professionalCareer;
-};
-
-struct node {
-    student student;
-    node* next;
-};
-
-struct studentsList {
-    node *first;
-    int size;
-};
-
-void initList(studentsList &classroom) {
-    classroom.first = NULL;
-    classroom.size = 0;
+void init(listaEstudiantes &estudiantes) {
+    estudiantes.cabecera = NULL;
+    estudiantes.largo = 0;
 }
 
-void registerStudent(studentsList& classroom) {
 
-    classroom.;
+
+
+
+
+void registerStudent(studentsList& classroom) {
+    studentNode studentNode;
+
+    classroom.first->next = &studentNode;
 
     classroom.size++;
 }
