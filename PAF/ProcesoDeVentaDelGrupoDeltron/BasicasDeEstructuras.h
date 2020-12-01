@@ -213,12 +213,29 @@ int loginCliente(deltronXpand deltronXpand) {
     //          Retorna 0
 }
 
-void registrarPersonalDeVentas(empleadoDeVentas* empleadosDeVentas, int& empleadosDeVentasCantidad) {
-    // Debe de validar si el dni del nuevo empleadoDeVentas ya est� en uso por otro empleadoDeVentas ya registrado
+void registrarPersonalDeVentas(deltronXpand& deltronXpand) {
+    // Pide nombres
+    // Pide apellidos
+    // Pide DNI (8 caracteres)
+    // Pide la clave (minimo 6 caracteres)
+    // Verifica con un "for" si el DNI del nuevo empleadoDeVentas ya est� en uso por otro empleadoDeVentas ya registrado
+    //
+    //      Si ya existe alguno registrado muestra un texto diciendo que el DNI usado ya est� en uso
+    //
+    //      Si no encontr� el DNI, a�ade el empleado de ventas al arreglo de empleados de ventas
+    //      Le muestra un mensaje diciendo que fue registrado exitosamente y ya puede iniciar sesi�n
 }
 
-void registrarCliente(cliente* clientes, int& clientesCantidad) {
-    // Debe de validar si el ruc del nuevo cliente ya est� en uso por otro cliente ya registrado
+void registrarCliente(deltronXpand& deltronXpand) {
+    // Pide la raz�n social
+    // Pide RUC (11 caracteres)
+    // Pide la clave (minimo 6 caracteres)
+    // Verifica con un "for" si el RUC del nuevo cliente ya est� en uso por otro cliente ya registrado
+    //
+    //      Si ya existe alguno registrado muestra un texto diciendo que el RUC usado ya est� en uso
+    //
+    //      Si no encontr� el RUC, a�ade el cliente al arreglo de clientes
+    //      Le muestra un mensaje diciendo que fue registrado exitosamente y ya puede iniciar sesi�n
 }
 
 void mostrarOrdenes(ordenDeCompra* ordenesDeCompra, int ordenesDeCompraCantidad, productoComprado* productosComprado, int productosCompradoCantidad) {
