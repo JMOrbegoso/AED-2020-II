@@ -192,27 +192,27 @@ void menuEmpleadoDeVentas(deltronXpand& deltronXpand, string dniDelEmpleadoDeVen
             switch (opcionSeleccionada)
             {
             case 1:
-                cout << "[1] Mostrar todas las ordenes" << endl;
+                mostrarOrdenes(deltronXpand);
                 system("pause");
                 break;
 
             case 2:
-                cout << "[2] Revisar Almacenes" << endl;
+                revisarAlmacenes(deltronXpand);
                 system("pause");
                 break;
 
             case 3:
-                cout << "[3] Registrar nuevo producto" << endl;
+                registrarProducto(deltronXpand);
                 system("pause");
                 break;
 
             case 4:
-                cout << "[4] Editar datos de producto existente" << endl;
+                editarProducto(deltronXpand);
                 system("pause");
                 break;
 
             case 5:
-                cout << "[5] Cambiar stock de producto en almacén" << endl;
+                editarProductoEnAlmacen(deltronXpand);
                 system("pause");
                 break;
 
@@ -268,32 +268,32 @@ void menuCliente(deltronXpand& deltronXpand, string rucDelClienteLogeado) {
             switch (opcionSeleccionada)
             {
             case 1:
-                cout << "[1] Revisar catalogo de productos" << endl;
+                revisarCatalogo(deltronXpand);
                 system("pause");
                 break;
 
             case 2:
-                cout << "[2] Buscar producto por nombre" << endl;
+                buscarProductoPorNombre(deltronXpand);
                 system("pause");
                 break;
 
             case 3:
-                cout << "[3] Buscar producto por marca" << endl;
+                buscarProductoPorMarca(deltronXpand);
                 system("pause");
                 break;
 
             case 4:
-                cout << "[4] Buscar producto por clasificación" << endl;
+                buscarProductoPorClasificacion(deltronXpand);
                 system("pause");
                 break;
 
             case 5:
-                cout << "[5] Crear orden de compra" << endl;
+                crearOrdenDeCompra(deltronXpand);
                 system("pause");
                 break;
 
             case 6:
-                cout << "[6] Ver historial de ordenes realizadas" << endl;
+                verHistorialDeOrdenes(deltronXpand);
                 system("pause");
                 break;
 
