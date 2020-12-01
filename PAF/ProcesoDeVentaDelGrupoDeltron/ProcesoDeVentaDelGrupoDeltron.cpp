@@ -5,8 +5,9 @@ using namespace std;
 
 // Declaraciones adelantadas
 int pedirOpcionDelMenuRol();
-void menuLogin(bool esCliente, empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad, cliente* clientes, int clientesCantidad);
-int pedirOpcionDelMenuLogin(bool esCliente);
+void menuLogin(empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad);
+void menuLogin(cliente* clientes, int clientesCantidad);
+int pedirOpcionDelMenuLogin(string rol);
 
 int main()
 {
@@ -63,12 +64,12 @@ int main()
             switch (opcionSeleccionadaDelMenuRol)
             {
             case 1:
-                menuLogin(false, empleadosDeVentas, empleadosDeVentasCantidad, clientes, clientesCantidad);
+                menuLogin(empleadosDeVentas, empleadosDeVentasCantidad);
                 debeCerrar = false;
                 break;
 
             case 2:
-                menuLogin(true, empleadosDeVentas, empleadosDeVentasCantidad, clientes, clientesCantidad);
+                menuLogin(clientes, clientesCantidad);
                 debeCerrar = false;
                 break;
 
@@ -106,41 +107,64 @@ int pedirOpcionDelMenuRol() {
     return opcionSeleccionada;
 }
 
-/// <summary>
-/// 
-/// </summary>
-/// <param name="esCliente">Si es true: es cliente, si es false es de personal de ventas</param>
-void menuLogin(bool esCliente, empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad, cliente* clientes, int clientesCantidad) {
+void menuLogin(empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad) {
 
     int opcionSeleccionadaDelMenuLogin;
+    int empleadoDeVentasId;
 
     do {
-        opcionSeleccionadaDelMenuLogin = pedirOpcionDelMenuLogin(esCliente);
+        opcionSeleccionadaDelMenuLogin = pedirOpcionDelMenuLogin("Empleado de ventas");
 
         if (opcionSeleccionadaDelMenuLogin != 0) {
             switch (opcionSeleccionadaDelMenuLogin)
             {
             case 1:
+                empleadoDeVentasId = loginPersonalDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
 
-                if (esCliente) {
-                    loginCliente(clientes, clientesCantidad);
-                }
-                else {
-                    loginPersonalDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
-                }
-                
                 system("pause");
                 break;
 
             case 2:
-                if (esCliente) {
-                    registrarCliente(clientes, clientesCantidad);
-                }
-                else {
-                    registrarPersonalDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
-                }
-                
+                registrarPersonalDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
+
+                esperarMostrandoTexto("Ahora ya puede iniciar sesión");
+
+                empleadoDeVentasId = loginPersonalDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
+                break;
+
+            default:
+                break;
+            }
+        }
+
+    } while (!(opcionSeleccionadaDelMenuLogin == 0));
+
+    esperarMostrandoTexto("Volviendo");
+}
+
+void menuLogin(cliente* clientes, int clientesCantidad) {
+
+    int opcionSeleccionadaDelMenuLogin;
+    int clienteId;
+
+    do {
+        opcionSeleccionadaDelMenuLogin = pedirOpcionDelMenuLogin("Cliente");
+
+        if (opcionSeleccionadaDelMenuLogin != 0) {
+            switch (opcionSeleccionadaDelMenuLogin)
+            {
+            case 1:
+                clienteId = loginCliente(clientes, clientesCantidad);
+
                 system("pause");
+                break;
+
+            case 2:
+                registrarCliente(clientes, clientesCantidad);
+
+                esperarMostrandoTexto("Ahora ya puede iniciar sesión");
+
+                clienteId = loginCliente(clientes, clientesCantidad);
                 break;
 
             default:
@@ -157,17 +181,9 @@ void menuLogin(bool esCliente, empleadoDeVentas* empleadosDeVentas, int empleado
 /// 
 /// </summary>
 /// <param name="esCliente">Si es true: es cliente, si es false es de personal de ventas</param>
-int pedirOpcionDelMenuLogin(bool esCliente) {
+int pedirOpcionDelMenuLogin(string rol) {
 
     int opcionSeleccionada;
-    string rol;
-
-    if (esCliente) {
-        rol = "Cliente";
-    }
-    else {
-        rol = "Empleado de ventas";
-    }
 
     system("cls");
 
