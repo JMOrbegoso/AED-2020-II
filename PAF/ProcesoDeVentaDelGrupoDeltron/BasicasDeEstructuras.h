@@ -132,7 +132,7 @@ void inicializarProductos(deltronXpand& deltronXpand) {
     deltronXpand.productos[2].clasificacionId = 4;
     deltronXpand.productos[2].tipoDeUsoId = 2;
 
-    deltronXpand.productosCantidad = 10;
+    deltronXpand.productosCantidad = 3;
 }
 
 void inicializarProductosEnAlmacen(deltronXpand& deltronXpand) {
