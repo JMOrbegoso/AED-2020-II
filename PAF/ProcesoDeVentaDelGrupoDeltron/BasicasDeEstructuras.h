@@ -1,5 +1,7 @@
 #include "Estructuras.h"
 
+#pragma region Funciones de Inicializacion
+
 void inicializarEmpleadosDeVentas(deltronXpand& deltronXpand) {
 
     deltronXpand.empleadosDeVentas[0].apellido = "Descalzi Tenorio";
@@ -172,6 +174,15 @@ void inicializarProductosComprados(deltronXpand& deltronXpand) {
     deltronXpand.productosCompradosCantidad = 3;
 }
 
+#pragma endregion
+
+#pragma region Funciones Basicas con estructuras
+
+
+#pragma endregion
+
+#pragma region Funciones Basicas con estructuras
+
 string loginPersonalDeVentas(deltronXpand deltronXpand) {
     // Pide DNI (8 caracteres)
     // Pide la clave (minimo 6 caracteres)
@@ -288,3 +299,4 @@ void verHistorialDeOrdenes(int clienteId, ordenDeCompra* ordenesDeCompra, int or
 
 }
 
+#pragma endregion
