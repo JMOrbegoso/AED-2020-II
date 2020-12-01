@@ -298,7 +298,28 @@ void editarProductoEnAlmacen(deltronXpand& deltronXpand) {
 /// Muestra todos los productos disponibles en stock
 /// </summary>
 void revisarCatalogo(deltronXpand deltronXpand) {
+    int almacenId;
+    int clasificacionId;
 
+    // Pregunta almac�n
+    almacenId = 1;
+    // Pregunta Clasificaci�n
+    clasificacionId = 4;
+    // Muestra productos que cumplan ese requerimiento
+
+    for (int i = 0; i < deltronXpand.productosEnAlmacenCantidad; i++)
+    {
+        if (deltronXpand.productosEnAlmacen[i].almacenId == almacenId)
+        {
+            for (int j = 0; j < deltronXpand.productosCantidad; j++)
+            {
+                if (deltronXpand.productos[j].id == deltronXpand.productosEnAlmacen[i].productoId && deltronXpand.productos[j].clasificacionId == clasificacionId)
+                {
+                    cout << deltronXpand.productos[j].nombre << endl;
+                }
+            }
+        }
+    }
 }
 
 void buscarProductoPorNombre(deltronXpand deltronXpand) {
