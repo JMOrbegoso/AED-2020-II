@@ -178,6 +178,33 @@ void inicializarProductosComprados(deltronXpand& deltronXpand) {
 
 #pragma region Funciones Basicas con estructuras
 
+string obtenerNombreCompletoDeEmpleadoDeVentas(deltronXpand deltronXpand, string dni) {
+    string nombreCompleto;
+
+    for (int i = 0; i < deltronXpand.empleadosDeVentasCantidad; i++)
+    {
+        if (deltronXpand.empleadosDeVentas[i].dni == dni) {
+            nombreCompleto = deltronXpand.empleadosDeVentas[i].apellido + " " + deltronXpand.empleadosDeVentas[i].nombre;
+            return nombreCompleto;
+        }
+    }
+
+    return "";
+}
+
+string obtenerRazonSocialDeCliente(deltronXpand deltronXpand, string ruc) {
+    string razonSocial;
+
+    for (int i = 0; i < deltronXpand.clientesCantidad; i++)
+    {
+        if (deltronXpand.clientes[i].ruc == ruc) {
+            razonSocial = deltronXpand.clientes[i].razonSocial;
+            return razonSocial;
+        }
+    }
+
+    return "";
+}
 
 #pragma endregion
 
