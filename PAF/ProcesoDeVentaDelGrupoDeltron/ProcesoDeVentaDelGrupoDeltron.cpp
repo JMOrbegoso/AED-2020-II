@@ -283,16 +283,11 @@ void menuCliente(deltronXpand& deltronXpand, string rucDelClienteLogeado) {
                 break;
 
             case 4:
-                buscarProductoPorClasificacion(deltronXpand);
-                system("pause");
-                break;
-
-            case 5:
                 crearOrdenDeCompra(deltronXpand);
                 system("pause");
                 break;
 
-            case 6:
+            case 5:
                 verHistorialDeOrdenes(deltronXpand);
                 system("pause");
                 break;
@@ -323,14 +318,13 @@ int pedirOpcionDelMenuCliente(string razonSocialCliente) {
     cout << "[1] Revisar catalogo de productos" << endl;
     cout << "[2] Buscar producto por nombre" << endl;
     cout << "[3] Buscar producto por marca" << endl;
-    cout << "[4] Buscar producto por clasificación" << endl;
-    cout << "[5] Crear orden de compra" << endl;
-    cout << "[6] Ver historial de ordenes realizadas" << endl;
+    cout << "[4] Crear orden de compra" << endl;
+    cout << "[5] Ver historial de ordenes realizadas" << endl;
     cout << "[0] Cerrar Sesión" << endl;
 
     cout << endl << "Introduzca la opción deseada:" << endl;
     cin >> opcionSeleccionada;
-    while (!(0 <= opcionSeleccionada && opcionSeleccionada <= 6)) {
+    while (!(0 <= opcionSeleccionada && opcionSeleccionada <= 5)) {
         cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
         cin >> opcionSeleccionada;
     }

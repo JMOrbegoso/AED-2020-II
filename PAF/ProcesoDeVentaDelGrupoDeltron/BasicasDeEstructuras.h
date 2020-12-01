@@ -307,9 +307,6 @@ void buscarProductoPorNombre(deltronXpand deltronXpand) {
 void buscarProductoPorMarca(deltronXpand deltronXpand) {
 }
 
-void buscarProductoPorClasificacion(deltronXpand deltronXpand) {
-}
-
 void crearOrdenDeCompra(deltronXpand& deltronXpand) {
 }
 
