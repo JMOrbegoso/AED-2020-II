@@ -35,7 +35,7 @@ void esperarMostrandoTexto(string mensaje) {
 void mostrarAppTitulo() {
 
     cout << endl << "--------------------------------------------------------------------------------------------" << endl;
-    cout << endl << "\t\t\tSistema del Grupo Deltron S.A." << endl;
+    cout << endl << "\t\t\tSistema al sistema Xpand del Grupo Deltron S.A." << endl;
     cout << endl << "--------------------------------------------------------------------------------------------" << endl;
 }
 
@@ -182,9 +182,9 @@ int pedirOpcionDelMenuRol() {
 
     cout << endl << "¿Cúal es su rol?" << endl << endl;
 
-    cout << "[1] Soy personal de ventas" << endl;
-    cout << "[2] Soy cliente" << endl;
-    cout << "[0] Salir" << endl;
+    cout << "[1] Personal de ventas" << endl;
+    cout << "[2] Cliente" << endl;
+    cout << "[0] Cerrar sistema" << endl;
 
     cout << endl << "Introduzca la opción deseada:" << endl;
     cin >> opcionSeleccionada;
