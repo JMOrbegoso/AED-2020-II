@@ -171,12 +171,46 @@ void inicializarProductosComprados(deltronXpand& deltronXpand) {
     deltronXpand.productosCompradosCantidad = 3;
 }
 
-int loginPersonalDeVentas(empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad) {
-    return 1;
+int loginPersonalDeVentas(deltronXpand deltronXpand) {
+    // Pide DNI (8 caracteres)
+    // Pide la clave (minimo 6 caracteres)
+    // Buscar que el DNI sea exactamente igual al de un empleado de ventas existente
+    //
+    //      No encontro el DNI (El empleado de ventas no existe):
+    //      Muestra texto diciendo que el empleado de ventas ingresado no existe
+    //      Retorna 0
+    //
+    //      Si encontró el DNI (El empleado de ventas sí existe):
+    //      Verfica con un "if" si la clave ingresada es la misma del empleado de ventas guardado
+    //
+    //          Si es la misma clave:
+    //          Muestra texto diciendo bienvenid@ *nombre del empleado de ventas*
+    //          Retorna el id del empleado de ventas
+    //
+    //          No es la misma clave
+    //          Muestra texto diciendo que la clave es incorrecta
+    //          Retorna 0
 }
 
-int loginCliente(cliente* clientes, int clientesCantidad) {
-    return 1;
+int loginCliente(deltronXpand deltronXpand) {
+    // Pide RUC (11 caracteres)
+    // Pide la clave (minimo 6 caracteres)
+    // Buscar que el RUC sea exactamente igual al de un cliente existente
+    //
+    //      No encontro el RUC (El cliente no existe):
+    //      Muestra texto diciendo que el client ingresado no existe
+    //      Retorna 0
+    //
+    //      Si encontró el RUC (El cliente si existe):
+    //      Verfica con un "if" si la clave ingresada es la misma del cliente guardado
+    //
+    //          Si es la misma clave:
+    //          Muestra texto diciendo bienvenid@ *nombre del cliente*
+    //          Retorna el id del cliente
+    //
+    //          No es la misma clave
+    //          Muestra texto diciendo que la clave es incorrecta
+    //          Retorna 0
 }
 
 void registrarPersonalDeVentas(empleadoDeVentas* empleadosDeVentas, int& empleadosDeVentasCantidad) {
