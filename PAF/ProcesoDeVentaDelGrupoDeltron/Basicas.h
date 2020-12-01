@@ -1,6 +1,5 @@
 #include <windows.h>
 #include <algorithm>
-#include "BasicasDeEstructuras.h"
 
 using namespace std;
 

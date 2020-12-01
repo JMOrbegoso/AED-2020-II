@@ -1,4 +1,7 @@
+#include "Basicas.h"
 #include "Estructuras.h"
+
+using namespace std;
 
 #pragma region Funciones de Inicializacion
 
