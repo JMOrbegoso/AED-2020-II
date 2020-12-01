@@ -279,51 +279,41 @@ void registrarCliente(deltronXpand& deltronXpand) {
     //      Le muestra un mensaje diciendo que fue registrado exitosamente y ya puede iniciar sesi�n
 }
 
-void mostrarOrdenes(ordenDeCompra* ordenesDeCompra, int ordenesDeCompraCantidad, productoComprado* productosComprado, int productosCompradoCantidad) {
-
+void mostrarOrdenes(deltronXpand deltronXpand) {
 }
 
-void revisarAlmacenes(almacen* almacenes, int almacenesCantidad, productoEnAlmacen* productosEnAlmacen, int productosEnAlmacenCantidad) {
-
+void revisarAlmacenes(deltronXpand deltronXpand) {
 }
 
-void registrarProducto(producto* productos, int& productosCantidad, productoEnAlmacen* productosEnAlmacen, int& productosEnAlmacenCantidad) {
-
+void registrarProducto(deltronXpand& deltronXpand) {
 }
 
-void editarProducto(producto* productos, int& productosCantidad) {
-
+void editarProducto(deltronXpand& deltronXpand) {
 }
 
-void editarProductoEnAlmacen(productoEnAlmacen* productosEnAlmacen, int& productosEnAlmacenCantidad) {
-
+void editarProductoEnAlmacen(deltronXpand& deltronXpand) {
 }
 
 /// <summary>
 /// Muestra todos los productos disponibles en stock
 /// </summary>
-void revisarCatalogo(producto* productos, int productosCantidad, productoEnAlmacen* productosEnAlmacen, int productosEnAlmacenCantidad) {
+void revisarCatalogo(deltronXpand deltronXpand) {
 
 }
 
-void buscarProductoPorNombre(producto* productos, int productosCantidad, productoEnAlmacen* productosEnAlmacen, int productosEnAlmacenCantidad) {
-
+void buscarProductoPorNombre(deltronXpand deltronXpand) {
 }
 
-void buscarProductoPorMarca(producto* productos, int productosCantidad, productoEnAlmacen* productosEnAlmacen, int productosEnAlmacenCantidad) {
-
+void buscarProductoPorMarca(deltronXpand deltronXpand) {
 }
 
-void buscarProductoPorClasificacion(producto* productos, int productosCantidad, productoEnAlmacen* productosEnAlmacen, int productosEnAlmacenCantidad) {
-
+void buscarProductoPorClasificacion(deltronXpand deltronXpand) {
 }
 
-void crearOrdenDeCompra(int clienteId, int almacenId, productoEnAlmacen* productosEnAlmacen, int productosEnAlmacenCantidad, ordenDeCompra* ordenesDeCompra, int ordenesDeCompraCantidad, productoComprado* productosComprado, int productosCompradoCantidad) {
-
+void crearOrdenDeCompra(deltronXpand& deltronXpand) {
 }
 
-void verHistorialDeOrdenes(int clienteId, ordenDeCompra* ordenesDeCompra, int ordenesDeCompraCantidad, productoComprado* productosComprado, int productosCompradoCantidad) {
-
+void verHistorialDeOrdenes(deltronXpand deltronXpand) {
 }
 
 #pragma endregion
