@@ -3,17 +3,18 @@
 
 using namespace std;
 
-// Declaraciones adelantadas
-int pedirOpcionDelMenuRol();
+#pragma region Declaraciones adelantadas
+
+void menuEmpleadoDeVentas(deltronXpand& deltronXpand, string dniDelEmpleadoDeVentasLogeado);
+void menuCliente(deltronXpand& deltronXpand, string rucDelClienteLogeado);
 void menuLoginEmpleadoDeVentas(deltronXpand& deltronXpand);
 void menuLoginCliente(deltronXpand& deltronXpand);
-int pedirOpcionDelMenuLogin(string rol);
-void menuEmpleadoDeVentas(deltronXpand& deltronXpand, string rucDelClienteLogeado);
-int pedirOpcionDelMenuEmpleadoDeVentas(string nombreEmpleadoDeVentas);
-void menuCliente(deltronXpand& deltronXpand, string rucDelClienteLogeado);
-int pedirOpcionDelMenuCliente(string razonSocialCliente);
 
-void menuPrincipal(deltronXpand deltronXpand) {
+#pragma endregion
+
+#pragma region Funciones del Menú
+
+void menuPrincipal(deltronXpand& deltronXpand) {
     int opcionSeleccionadaDelMenuRol;
     bool debeCerrar;
 
@@ -40,29 +41,6 @@ void menuPrincipal(deltronXpand deltronXpand) {
         }
 
     } while (!(opcionSeleccionadaDelMenuRol == 0) && !debeCerrar);
-}
-
-int pedirOpcionDelMenuRol() {
-    int opcionSeleccionada;
-
-    system("cls");
-
-    mostrarAppTitulo();
-
-    cout << endl << "¿Cúal es su rol?" << endl << endl;
-
-    cout << "[1] Soy personal de ventas" << endl;
-    cout << "[2] Soy cliente" << endl;
-    cout << "[0] Salir" << endl;
-
-    cout << endl << "Introduzca la opción deseada:" << endl;
-    cin >> opcionSeleccionada;
-    while (!(0 <= opcionSeleccionada && opcionSeleccionada <= 2)) {
-        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
-        cin >> opcionSeleccionada;
-    }
-
-    return opcionSeleccionada;
 }
 
 void menuLoginEmpleadoDeVentas(deltronXpand& deltronXpand) {
@@ -129,38 +107,6 @@ void menuLoginCliente(deltronXpand& deltronXpand) {
     esperarMostrandoTexto("Volviendo");
 }
 
-/// <summary>
-/// 
-/// </summary>
-/// <param name="esCliente">Si es true: es cliente, si es false es de personal de ventas</param>
-int pedirOpcionDelMenuLogin(string rol) {
-
-    int opcionSeleccionada;
-
-    system("cls");
-
-    mostrarAppTitulo();
-
-    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
-    cout << "\t\t\tInicio de sesión como " << rol;
-    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
-
-    cout << endl << "¿Desea iniciar sesión o registrarse?" << endl << endl;
-
-    cout << "[1] Iniciar sesión" << endl;
-    cout << "[2] Registrarse" << endl;
-    cout << "[0] Volver" << endl;
-
-    cout << endl << "Introduzca la opción deseada:" << endl;
-    cin >> opcionSeleccionada;
-    while (!(0 <= opcionSeleccionada && opcionSeleccionada <= 2)) {
-        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
-        cin >> opcionSeleccionada;
-    }
-
-    return opcionSeleccionada;
-}
-
 void menuEmpleadoDeVentas(deltronXpand& deltronXpand, string dniDelEmpleadoDeVentasLogeado) {
     int opcionSeleccionada;
 
@@ -205,36 +151,6 @@ void menuEmpleadoDeVentas(deltronXpand& deltronXpand, string dniDelEmpleadoDeVen
     } while (!(opcionSeleccionada == 0));
 
     esperarMostrandoTexto("Volviendo");
-}
-
-int pedirOpcionDelMenuEmpleadoDeVentas(string nombreEmpleadoDeVentas) {
-    int opcionSeleccionada;
-
-    system("cls");
-
-    mostrarAppTitulo();
-
-    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
-    cout << "\t\t\tBienvenid@ " << nombreEmpleadoDeVentas;
-    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
-
-    cout << endl << "¿Que desea hacer hoy?" << endl << endl;
-
-    cout << "[1] Mostrar todas las ordenes" << endl;
-    cout << "[2] Revisar Almacenes" << endl;
-    cout << "[3] Registrar nuevo producto" << endl;
-    cout << "[4] Editar datos de producto existente" << endl;
-    cout << "[5] Cambiar stock de producto en almacén" << endl;
-    cout << "[0] Cerrar Sesión" << endl;
-
-    cout << endl << "Introduzca la opción deseada:" << endl;
-    cin >> opcionSeleccionada;
-    while (!(0 <= opcionSeleccionada && opcionSeleccionada <= 5)) {
-        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
-        cin >> opcionSeleccionada;
-    }
-
-    return opcionSeleccionada;
 }
 
 void menuCliente(deltronXpand& deltronXpand, string rucDelClienteLogeado) {
@@ -283,32 +199,4 @@ void menuCliente(deltronXpand& deltronXpand, string rucDelClienteLogeado) {
     esperarMostrandoTexto("Volviendo");
 }
 
-int pedirOpcionDelMenuCliente(string razonSocialCliente) {
-    int opcionSeleccionada;
-
-    system("cls");
-
-    mostrarAppTitulo();
-
-    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
-    cout << "\t\t\tBienvenid@ " << razonSocialCliente;
-    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
-
-    cout << endl << "¿Que desea hacer hoy?" << endl << endl;
-
-    cout << "[1] Revisar catalogo de productos" << endl;
-    cout << "[2] Buscar producto por nombre" << endl;
-    cout << "[3] Buscar producto por marca" << endl;
-    cout << "[4] Crear orden de compra" << endl;
-    cout << "[5] Ver historial de ordenes realizadas" << endl;
-    cout << "[0] Cerrar Sesión" << endl;
-
-    cout << endl << "Introduzca la opción deseada:" << endl;
-    cin >> opcionSeleccionada;
-    while (!(0 <= opcionSeleccionada && opcionSeleccionada <= 5)) {
-        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
-        cin >> opcionSeleccionada;
-    }
-
-    return opcionSeleccionada;
-}
+#pragma endregion
