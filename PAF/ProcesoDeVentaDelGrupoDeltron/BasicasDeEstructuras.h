@@ -180,11 +180,11 @@ int loginCliente(cliente* clientes, int clientesCantidad) {
 }
 
 void registrarPersonalDeVentas(empleadoDeVentas* empleadosDeVentas, int& empleadosDeVentasCantidad) {
-
+    // Debe de validar si el dni del nuevo empleadoDeVentas ya est� en uso por otro empleadoDeVentas ya registrado
 }
 
 void registrarCliente(cliente* clientes, int& clientesCantidad) {
-
+    // Debe de validar si el ruc del nuevo cliente ya est� en uso por otro cliente ya registrado
 }
 
 void mostrarOrdenes(ordenDeCompra* ordenesDeCompra, int ordenesDeCompraCantidad, productoComprado* productosComprado, int productosCompradoCantidad) {
