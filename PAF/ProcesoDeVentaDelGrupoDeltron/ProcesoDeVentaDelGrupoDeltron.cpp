@@ -5,13 +5,13 @@ using namespace std;
 
 // Declaraciones adelantadas
 int pedirOpcionDelMenuRol();
-void menuLogin(empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad);
-void menuLogin(cliente* clientes, int clientesCantidad);
+void menuLogin(deltronXpand& deltronXpand);
+void menuLogin(deltronXpand& deltronXpand);
 int pedirOpcionDelMenuLogin(string rol);
 int pedirOpcionDelMenuCliente();
-void menuCliente(cliente* clientes, int clientesCantidad);
+void menuCliente(deltronXpand& deltronXpand);
 int pedirOpcionDelMenuEmpleadoDeVentas();
-void menuEmpleadoDeVentas(empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad);
+void menuEmpleadoDeVentas(deltronXpand& deltronXpand);
 
 int main()
 {
@@ -41,12 +41,12 @@ int main()
             switch (opcionSeleccionadaDelMenuRol)
             {
             case 1:
-                menuLogin(deltronXpand.empleadosDeVentas, deltronXpand.empleadosDeVentasCantidad);
+                menuLogin(deltronXpand);
                 debeCerrar = false;
                 break;
 
             case 2:
-                menuLogin(deltronXpand.clientes, deltronXpand.clientesCantidad);
+                menuLogin(deltronXpand);
                 debeCerrar = false;
                 break;
 
@@ -84,10 +84,10 @@ int pedirOpcionDelMenuRol() {
     return opcionSeleccionada;
 }
 
-void menuLogin(empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad) {
+void menuLogin(deltronXpand& deltronXpand) {
 
     int opcionSeleccionadaDelMenuLogin;
-    int empleadoDeVentasId;
+    string empleadoDeVentasDNI;
 
     do {
         opcionSeleccionadaDelMenuLogin = pedirOpcionDelMenuLogin("Empleado de ventas");
@@ -96,14 +96,14 @@ void menuLogin(empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantida
             switch (opcionSeleccionadaDelMenuLogin)
             {
             case 2:
-                registrarPersonalDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
+                registrarPersonalDeVentas(deltronXpand);
 
                 esperarMostrandoTexto("Ahora ya puede iniciar sesión");
 
             case 1:
-                empleadoDeVentasId = loginPersonalDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
+                empleadoDeVentasDNI = loginPersonalDeVentas(deltronXpand);
 
-                menuEmpleadoDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
+                menuEmpleadoDeVentas(deltronXpand);
                 break;
 
             default:
@@ -116,10 +116,10 @@ void menuLogin(empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantida
     esperarMostrandoTexto("Volviendo");
 }
 
-void menuLogin(cliente* clientes, int clientesCantidad) {
+void menuLogin(deltronXpand& deltronXpand) {
 
     int opcionSeleccionadaDelMenuLogin;
-    int clienteId;
+    string clienteRUC;
 
     do {
         opcionSeleccionadaDelMenuLogin = pedirOpcionDelMenuLogin("Cliente");
@@ -128,14 +128,14 @@ void menuLogin(cliente* clientes, int clientesCantidad) {
             switch (opcionSeleccionadaDelMenuLogin)
             {
             case 2:
-                registrarCliente(clientes, clientesCantidad);
+                registrarCliente(deltronXpand);
 
                 esperarMostrandoTexto("Ahora ya puede iniciar sesión");
 
             case 1:
-                clienteId = loginCliente(clientes, clientesCantidad);
+                clienteRUC = loginCliente(deltronXpand);
 
-                menuCliente(clientes, clientesCantidad);
+                menuCliente(deltronXpand);
                 break;
 
             default:
@@ -180,7 +180,7 @@ int pedirOpcionDelMenuLogin(string rol) {
     return opcionSeleccionada;
 }
 
-void menuCliente(cliente* clientes, int clientesCantidad) {
+void menuCliente(deltronXpand& deltronXpand) {
 
     int opcionSeleccionada;
     int clienteId;
@@ -262,7 +262,7 @@ int pedirOpcionDelMenuCliente() {
     return opcionSeleccionada;
 }
 
-void menuEmpleadoDeVentas(empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad) {
+void menuEmpleadoDeVentas(deltronXpand& deltronXpand) {
 
     int opcionSeleccionada;
     int empleadoDeVentasId;
