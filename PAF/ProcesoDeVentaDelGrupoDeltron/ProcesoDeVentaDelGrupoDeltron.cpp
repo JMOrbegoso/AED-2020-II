@@ -5,8 +5,8 @@ using namespace std;
 
 // Declaraciones adelantadas
 int pedirOpcionDelMenuRol();
-void menuLogin(deltronXpand& deltronXpand);
-void menuLogin(deltronXpand& deltronXpand);
+void menuLoginEmpleadoDeVentas(deltronXpand& deltronXpand);
+void menuLoginCliente(deltronXpand& deltronXpand);
 int pedirOpcionDelMenuLogin(string rol);
 int pedirOpcionDelMenuCliente();
 void menuCliente(deltronXpand& deltronXpand);
@@ -41,12 +41,12 @@ int main()
             switch (opcionSeleccionadaDelMenuRol)
             {
             case 1:
-                menuLogin(deltronXpand);
+                menuLoginEmpleadoDeVentas(deltronXpand);
                 debeCerrar = false;
                 break;
 
             case 2:
-                menuLogin(deltronXpand);
+                menuLoginCliente(deltronXpand);
                 debeCerrar = false;
                 break;
 
@@ -84,7 +84,7 @@ int pedirOpcionDelMenuRol() {
     return opcionSeleccionada;
 }
 
-void menuLogin(deltronXpand& deltronXpand) {
+void menuLoginEmpleadoDeVentas(deltronXpand& deltronXpand) {
 
     int opcionSeleccionadaDelMenuLogin;
     string empleadoDeVentasDNI;
@@ -116,7 +116,7 @@ void menuLogin(deltronXpand& deltronXpand) {
     esperarMostrandoTexto("Volviendo");
 }
 
-void menuLogin(deltronXpand& deltronXpand) {
+void menuLoginCliente(deltronXpand& deltronXpand) {
 
     int opcionSeleccionadaDelMenuLogin;
     string clienteRUC;
