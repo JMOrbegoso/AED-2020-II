@@ -8,6 +8,10 @@ int pedirOpcionDelMenuRol();
 void menuLogin(empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad);
 void menuLogin(cliente* clientes, int clientesCantidad);
 int pedirOpcionDelMenuLogin(string rol);
+int pedirOpcionDelMenuCliente();
+void menuCliente(cliente* clientes, int clientesCantidad);
+int pedirOpcionDelMenuEmpleadoDeVentas();
+void menuEmpleadoDeVentas(empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad);
 
 int main()
 {
@@ -93,11 +97,11 @@ int pedirOpcionDelMenuRol() {
 
     cout << endl << "¿Cúal es su rol?" << endl << endl;
 
-    cout << "[1] Soy personal de ventas " << endl;
+    cout << "[1] Soy personal de ventas" << endl;
     cout << "[2] Soy cliente" << endl;
     cout << "[0] Salir" << endl;
 
-    cout << "Introduzca la opción deseada:" << endl;
+    cout << endl << "Introduzca la opción deseada:" << endl;
     cin >> opcionSeleccionada;
     while (!(0 <= opcionSeleccionada && opcionSeleccionada <= 2)) {
         cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
@@ -118,18 +122,15 @@ void menuLogin(empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantida
         if (opcionSeleccionadaDelMenuLogin != 0) {
             switch (opcionSeleccionadaDelMenuLogin)
             {
-            case 1:
-                empleadoDeVentasId = loginPersonalDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
-
-                system("pause");
-                break;
-
             case 2:
                 registrarPersonalDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
 
                 esperarMostrandoTexto("Ahora ya puede iniciar sesión");
 
+            case 1:
                 empleadoDeVentasId = loginPersonalDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
+
+                menuEmpleadoDeVentas(empleadosDeVentas, empleadosDeVentasCantidad);
                 break;
 
             default:
@@ -153,18 +154,15 @@ void menuLogin(cliente* clientes, int clientesCantidad) {
         if (opcionSeleccionadaDelMenuLogin != 0) {
             switch (opcionSeleccionadaDelMenuLogin)
             {
-            case 1:
-                clienteId = loginCliente(clientes, clientesCantidad);
-
-                system("pause");
-                break;
-
             case 2:
                 registrarCliente(clientes, clientesCantidad);
 
                 esperarMostrandoTexto("Ahora ya puede iniciar sesión");
 
+            case 1:
                 clienteId = loginCliente(clientes, clientesCantidad);
+
+                menuCliente(clientes, clientesCantidad);
                 break;
 
             default:
@@ -195,13 +193,171 @@ int pedirOpcionDelMenuLogin(string rol) {
 
     cout << endl << "¿Desea iniciar sesión o registrarse?" << endl << endl;
 
-    cout << "[1] Iniciar sesión " << endl;
+    cout << "[1] Iniciar sesión" << endl;
     cout << "[2] Registrarse" << endl;
     cout << "[0] Volver" << endl;
 
-    cout << "Introduzca la opción deseada:" << endl;
+    cout << endl << "Introduzca la opción deseada:" << endl;
     cin >> opcionSeleccionada;
     while (!(0 <= opcionSeleccionada && opcionSeleccionada <= 2)) {
+        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
+        cin >> opcionSeleccionada;
+    }
+
+    return opcionSeleccionada;
+}
+
+void menuCliente(cliente* clientes, int clientesCantidad) {
+
+    int opcionSeleccionada;
+    int clienteId;
+
+    do {
+        opcionSeleccionada = pedirOpcionDelMenuCliente();
+
+        if (opcionSeleccionada != 0) {
+            switch (opcionSeleccionada)
+            {
+            case 1:
+                cout << "[1] Revisar catalogo de productos" << endl;
+                system("pause");
+                break;
+
+            case 2:
+                cout << "[2] Buscar producto por nombre" << endl;
+                system("pause");
+                break;
+
+            case 3:
+                cout << "[3] Buscar producto por marca" << endl;
+                system("pause");
+                break;
+
+            case 4:
+                cout << "[4] Buscar producto por clasificación" << endl;
+                system("pause");
+                break;
+
+            case 5:
+                cout << "[5] Crear orden de compra" << endl;
+                system("pause");
+                break;
+
+            case 6:
+                cout << "[6] Ver historial de ordenes realizadas" << endl;
+                system("pause");
+                break;
+
+            default:
+                break;
+            }
+        }
+
+    } while (!(opcionSeleccionada == 0));
+
+    esperarMostrandoTexto("Volviendo");
+}
+
+int pedirOpcionDelMenuCliente() {
+    int opcionSeleccionada;
+
+    system("cls");
+
+    mostrarAppTitulo();
+
+    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
+    cout << "\t\t\tBienvenid@";
+    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
+
+    cout << endl << "¿Que desea hacer hoy?" << endl << endl;
+
+    cout << "[1] Revisar catalogo de productos" << endl;
+    cout << "[2] Buscar producto por nombre" << endl;
+    cout << "[3] Buscar producto por marca" << endl;
+    cout << "[4] Buscar producto por clasificación" << endl;
+    cout << "[5] Crear orden de compra" << endl;
+    cout << "[6] Ver historial de ordenes realizadas" << endl;
+    cout << "[0] Cerrar Sesión" << endl;
+
+    cout << endl << "Introduzca la opción deseada:" << endl;
+    cin >> opcionSeleccionada;
+    while (!(0 <= opcionSeleccionada && opcionSeleccionada <= 6)) {
+        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
+        cin >> opcionSeleccionada;
+    }
+
+    return opcionSeleccionada;
+}
+
+void menuEmpleadoDeVentas(empleadoDeVentas* empleadosDeVentas, int empleadosDeVentasCantidad) {
+
+    int opcionSeleccionada;
+    int empleadoDeVentasId;
+
+    do {
+        opcionSeleccionada = pedirOpcionDelMenuEmpleadoDeVentas();
+
+        if (opcionSeleccionada != 0) {
+            switch (opcionSeleccionada)
+            {
+            case 1:
+                cout << "[1] Mostrar todas las ordenes" << endl;
+                system("pause");
+                break;
+
+            case 2:
+                cout << "[2] Revisar Almacenes" << endl;
+                system("pause");
+                break;
+
+            case 3:
+                cout << "[3] Registrar nuevo producto" << endl;
+                system("pause");
+                break;
+
+            case 4:
+                cout << "[4] Editar datos de producto existente" << endl;
+                system("pause");
+                break;
+
+            case 5:
+                cout << "[5] Cambiar stock de producto en almacén" << endl;
+                system("pause");
+                break;
+
+            default:
+                break;
+            }
+        }
+
+    } while (!(opcionSeleccionada == 0));
+
+    esperarMostrandoTexto("Volviendo");
+}
+
+int pedirOpcionDelMenuEmpleadoDeVentas() {
+    int opcionSeleccionada;
+
+    system("cls");
+
+    mostrarAppTitulo();
+
+    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
+    cout << "\t\t\tBienvenid@";
+    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
+
+    cout << endl << "¿Que desea hacer hoy?" << endl << endl;
+
+    cout << "[1] Mostrar todas las ordenes" << endl;
+    cout << "[2] Revisar Almacenes" << endl;
+    cout << "[3] Registrar nuevo producto" << endl;
+    cout << "[4] Editar datos de producto existente" << endl;
+    cout << "[5] Cambiar stock de producto en almacén" << endl;
+    cout << "[0] Cerrar Sesión" << endl;
+
+    cout << endl << "Introduzca la opción deseada:" << endl;
+    cin >> opcionSeleccionada;
+    while (!(0 <= opcionSeleccionada && opcionSeleccionada <= 5)) {
         cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
         cin >> opcionSeleccionada;
     }
