@@ -323,6 +323,33 @@ void revisarCatalogo(deltronXpand deltronXpand) {
 }
 
 void buscarProductoPorNombre(deltronXpand deltronXpand) {
+    int almacenId;
+    string terminoDeBusqueda;
+
+    // Pregunta el almacen
+    almacenId = 1;
+
+    // Pregunta el termino de busqueda
+    terminoDeBusqueda = "3600";
+
+    // Busca el termino de busqueda en el arreglo de productos
+    for (int i = 0; i < deltronXpand.productosEnAlmacenCantidad; i++)
+    {
+        if (deltronXpand.productosEnAlmacen[i].almacenId == almacenId)
+        {
+            for (int j = 0; j < deltronXpand.productosCantidad; j++)
+            {
+                if (deltronXpand.productos[j].id == deltronXpand.productosEnAlmacen[i].productoId)
+                {
+                    if (contieneTexto(convertirEnMinusculas(deltronXpand.productos[j].nombre), terminoDeBusqueda))
+                    {
+                        // Y los muestra en pantalla
+                        cout << deltronXpand.productos[j].nombre << endl;
+                    }
+                }
+            }
+        }
+    }
 }
 
 void buscarProductoPorMarca(deltronXpand deltronXpand) {
