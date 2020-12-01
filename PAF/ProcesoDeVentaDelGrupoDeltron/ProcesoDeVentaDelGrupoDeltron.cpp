@@ -8,9 +8,9 @@ int pedirOpcionDelMenuRol();
 void menuLoginEmpleadoDeVentas(deltronXpand& deltronXpand);
 void menuLoginCliente(deltronXpand& deltronXpand);
 int pedirOpcionDelMenuLogin(string rol);
-void menuEmpleadoDeVentas(deltronXpand& deltronXpand);
+void menuEmpleadoDeVentas(deltronXpand& deltronXpand, string rucDelClienteLogeado);
 int pedirOpcionDelMenuEmpleadoDeVentas(string nombreEmpleadoDeVentas);
-void menuCliente(deltronXpand& deltronXpand);
+void menuCliente(deltronXpand& deltronXpand, string rucDelClienteLogeado);
 int pedirOpcionDelMenuCliente(string razonSocialCliente);
 
 int main()
@@ -103,7 +103,7 @@ void menuLoginEmpleadoDeVentas(deltronXpand& deltronXpand) {
             case 1:
                 empleadoDeVentasDNI = loginPersonalDeVentas(deltronXpand);
 
-                menuEmpleadoDeVentas(deltronXpand);
+                menuEmpleadoDeVentas(deltronXpand, empleadoDeVentasDNI);
                 break;
 
             default:
@@ -135,7 +135,7 @@ void menuLoginCliente(deltronXpand& deltronXpand) {
             case 1:
                 clienteRUC = loginCliente(deltronXpand);
 
-                menuCliente(deltronXpand);
+                menuCliente(deltronXpand, clienteRUC);
                 break;
 
             default:
@@ -180,13 +180,13 @@ int pedirOpcionDelMenuLogin(string rol) {
     return opcionSeleccionada;
 }
 
-void menuEmpleadoDeVentas(deltronXpand& deltronXpand) {
-
+void menuEmpleadoDeVentas(deltronXpand& deltronXpand, string dniDelEmpleadoDeVentasLogeado) {
     int opcionSeleccionada;
-    int empleadoDeVentasId;
+
+    string nombreCompletoDeEmpleadoDeVentas = obtenerNombreCompletoDeEmpleadoDeVentas(deltronXpand, dniDelEmpleadoDeVentasLogeado);
 
     do {
-        opcionSeleccionada = pedirOpcionDelMenuEmpleadoDeVentas();
+        opcionSeleccionada = pedirOpcionDelMenuEmpleadoDeVentas(nombreCompletoDeEmpleadoDeVentas);
 
         if (opcionSeleccionada != 0) {
             switch (opcionSeleccionada)
@@ -256,13 +256,13 @@ int pedirOpcionDelMenuEmpleadoDeVentas(string nombreEmpleadoDeVentas) {
     return opcionSeleccionada;
 }
 
-void menuCliente(deltronXpand& deltronXpand) {
-
+void menuCliente(deltronXpand& deltronXpand, string rucDelClienteLogeado) {
     int opcionSeleccionada;
-    int clienteId;
+
+    string razonSocialDeCliente = obtenerRazonSocialDeCliente(deltronXpand, rucDelClienteLogeado);
 
     do {
-        opcionSeleccionada = pedirOpcionDelMenuCliente();
+        opcionSeleccionada = pedirOpcionDelMenuCliente(razonSocialDeCliente);
 
         if (opcionSeleccionada != 0) {
             switch (opcionSeleccionada)
