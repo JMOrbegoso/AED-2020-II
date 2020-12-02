@@ -333,6 +333,11 @@ void mostrarOrdenes(deltronXpand deltronXpand) {
 }
 
 void revisarAlmacenes(deltronXpand deltronXpand) {
+    // Pregunta de que almacen desea revisar y lo almacena en *almacenId*
+    // Recorre con un *for* todos los *productos en almacen*
+    // Busca los elementos de *productos en almacen* que tengan la propiedad almacenId igual que lo pedido por el usuario
+    // Cuando encuentra uno de estos elementos busca su productoId en el arreglo de productos
+    // Cuando lo encuentre lo muestra en pantalla con su stock
 }
 
 void registrarProducto(deltronXpand& deltronXpand) {
