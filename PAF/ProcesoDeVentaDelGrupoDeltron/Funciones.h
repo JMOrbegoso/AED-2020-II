@@ -298,6 +298,38 @@ void registrarCliente(deltronXpand& deltronXpand) {
 }
 
 void mostrarOrdenes(deltronXpand deltronXpand) {
+    // Muestra todas las ordenes del arreglo de ordenesDeCompra, mostrando su comprador y monto total
+
+    float parcial;
+    string clienteRazonSocial;
+
+    // Limpia la pantalla
+    system("cls");
+
+    // Recorre con un for todo el arreglo de ordenesDeCompra
+    for (int i = 0; i < deltronXpand.ordenesDeCompraCantidad; i++)
+    {
+        parcial = 0;
+        cout << "El cliente: " << deltronXpand.ordenesDeCompra[i].clienteRazonSocial << " ha comprado:" << endl;
+
+        // Obtener el producto comprado desde sus propiedades originales
+        for (int j = 0; j < deltronXpand.productosCompradosCantidad; j++)
+        {
+            if (deltronXpand.productosComprados[j].ordenDeCompraId == deltronXpand.ordenesDeCompra[i].id)
+            {
+                // Se agrega el precio del producto al parcial acumulado
+                parcial += deltronXpand.productosComprados[j].precio * deltronXpand.productosComprados[j].cantidad;
+
+                // Se imprime en pantalla el producto
+                cout << deltronXpand.productosComprados[j].nombre << endl;
+            }
+        }
+
+        // Muestra el precio total de la compra:
+        mostrarPieDePresupuesto(parcial);
+
+        cout << endl;
+    }
 }
 
 void revisarAlmacenes(deltronXpand deltronXpand) {
