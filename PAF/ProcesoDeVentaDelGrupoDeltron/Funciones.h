@@ -409,6 +409,11 @@ void buscarProductoPorNombre(deltronXpand deltronXpand) {
 }
 
 void buscarProductoPorMarca(deltronXpand deltronXpand) {
+    // Pregunta el termino de busqueda
+
+    // Busca el termino de busqueda en el arreglo de productos
+
+    // Proceso similar a la funcion buscarProductoPorNombre pero en lugar de comparar el nombre, compara la marca.
 }
 
 void crearOrdenDeCompra(deltronXpand& deltronXpand) {
