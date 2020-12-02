@@ -341,6 +341,8 @@ void revisarAlmacenes(deltronXpand deltronXpand) {
 }
 
 void registrarProducto(deltronXpand& deltronXpand) {
+    // Agrega un nuevo producto preguntando al usuario
+    // Cuando termine de agregarlo debe de mostrar un menu pidiendo que añada el stock del producto en los almacenes deseados
 }
 
 void editarProducto(deltronXpand& deltronXpand) {
