@@ -62,7 +62,14 @@ void menuLoginEmpleadoDeVentas(deltronXpand& deltronXpand) {
             case 1:
                 empleadoDeVentasDNI = loginPersonalDeVentas(deltronXpand);
 
-                menuEmpleadoDeVentas(deltronXpand, empleadoDeVentasDNI);
+                if (empleadoDeVentasDNI != ""){
+                    menuEmpleadoDeVentas(deltronXpand, empleadoDeVentasDNI);
+                }
+                else {
+                    cout << endl;
+                    esperarMostrandoTexto("Intente nuevamente o registrese");
+                }
+
                 break;
 
             default:
@@ -94,7 +101,14 @@ void menuLoginCliente(deltronXpand& deltronXpand) {
             case 1:
                 clienteRUC = loginCliente(deltronXpand);
 
-                menuCliente(deltronXpand, clienteRUC);
+                if (clienteRUC != "") {
+                    menuCliente(deltronXpand, clienteRUC);
+                }
+                else {
+                    cout << endl;
+                    esperarMostrandoTexto("Intente nuevamente o registrese");
+                }
+                
                 break;
 
             default:
