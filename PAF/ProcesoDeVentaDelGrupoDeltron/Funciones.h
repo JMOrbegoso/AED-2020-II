@@ -49,23 +49,23 @@ void inicializarClientes(deltronXpand& deltronXpand) {
 
 void inicializarAlmacenes(deltronXpand& deltronXpand) {
 
-    deltronXpand.almacenes[0].id = 1;
+    deltronXpand.almacenes[0].almacenId = 1;
     deltronXpand.almacenes[0].departamento = "Lima";
     deltronXpand.almacenes[0].direccion = "Av. Los Heroes 777";
 
-    deltronXpand.almacenes[1].id = 2;
+    deltronXpand.almacenes[1].almacenId = 2;
     deltronXpand.almacenes[1].departamento = "Trujillo";
     deltronXpand.almacenes[1].direccion = "Av. Los Girasoles 777";
 
-    deltronXpand.almacenes[2].id = 3;
+    deltronXpand.almacenes[2].almacenId = 3;
     deltronXpand.almacenes[2].departamento = "Chiclayo";
     deltronXpand.almacenes[2].direccion = "Av. Los Conquistadores 777";
 
-    deltronXpand.almacenes[3].id = 4;
+    deltronXpand.almacenes[3].almacenId = 4;
     deltronXpand.almacenes[3].departamento = "Arequipa";
     deltronXpand.almacenes[3].direccion = "Av. Los Naranjos 777";
 
-    deltronXpand.almacenes[4].id = 5;
+    deltronXpand.almacenes[4].almacenId = 5;
     deltronXpand.almacenes[4].departamento = "Cuzco";
     deltronXpand.almacenes[4].direccion = "Av. Los Robles 777";
 
@@ -74,19 +74,19 @@ void inicializarAlmacenes(deltronXpand& deltronXpand) {
 
 void inicializarTiposDeUso(deltronXpand& deltronXpand) {
 
-    deltronXpand.tiposDeUso[0].id = 1;
+    deltronXpand.tiposDeUso[0].tipoDeUsoId = 1;
     deltronXpand.tiposDeUso[0].tipo = "Producto Final";
 
-    deltronXpand.tiposDeUso[1].id = 2;
+    deltronXpand.tiposDeUso[1].tipoDeUsoId = 2;
     deltronXpand.tiposDeUso[1].tipo = "Componente";
 
-    deltronXpand.tiposDeUso[2].id = 3;
+    deltronXpand.tiposDeUso[2].tipoDeUsoId = 3;
     deltronXpand.tiposDeUso[2].tipo = "Suministro";
 
-    deltronXpand.tiposDeUso[3].id = 4;
+    deltronXpand.tiposDeUso[3].tipoDeUsoId = 4;
     deltronXpand.tiposDeUso[3].tipo = "Repuesto";
 
-    deltronXpand.tiposDeUso[4].id = 5;
+    deltronXpand.tiposDeUso[4].tipoDeUsoId = 5;
     deltronXpand.tiposDeUso[4].tipo = "Servicio";
 
     deltronXpand.tiposDeUsoCantidad = 5;
@@ -94,19 +94,19 @@ void inicializarTiposDeUso(deltronXpand& deltronXpand) {
 
 void inicializarClasificaciones(deltronXpand& deltronXpand) {
 
-    deltronXpand.clasificaciones[0].id = 1;
+    deltronXpand.clasificaciones[0].clasificacionId = 1;
     deltronXpand.clasificaciones[0].nombre = "Cases";
 
-    deltronXpand.clasificaciones[1].id = 2;
+    deltronXpand.clasificaciones[1].clasificacionId = 2;
     deltronXpand.clasificaciones[1].nombre = "Computadoras Desktop";
 
-    deltronXpand.clasificaciones[2].id = 3;
+    deltronXpand.clasificaciones[2].clasificacionId = 3;
     deltronXpand.clasificaciones[2].nombre = "Discos Duros";
 
-    deltronXpand.clasificaciones[3].id = 4;
+    deltronXpand.clasificaciones[3].clasificacionId = 4;
     deltronXpand.clasificaciones[3].nombre = "CPU (Microprocesadores)";
 
-    deltronXpand.clasificaciones[4].id = 5;
+    deltronXpand.clasificaciones[4].clasificacionId = 5;
     deltronXpand.clasificaciones[4].nombre = "GPU (Tarjetas de video)";
 
     deltronXpand.clasificacionesCantidad = 5;
@@ -114,21 +114,21 @@ void inicializarClasificaciones(deltronXpand& deltronXpand) {
 
 void inicializarProductos(deltronXpand& deltronXpand) {
 
-    deltronXpand.productos[0].id = 1;
+    deltronXpand.productos[0].productoId = 1;
     deltronXpand.productos[0].marca = "AMD";
     deltronXpand.productos[0].nombre = "Ryzen 3 3100";
     deltronXpand.productos[0].precio = 150;
     deltronXpand.productos[0].clasificacionId = 4;
     deltronXpand.productos[0].tipoDeUsoId = 2;
 
-    deltronXpand.productos[1].id = 2;
+    deltronXpand.productos[1].productoId = 2;
     deltronXpand.productos[1].marca = "AMD";
     deltronXpand.productos[1].nombre = "Ryzen 5 3600";
     deltronXpand.productos[1].precio = 210;
     deltronXpand.productos[1].clasificacionId = 4;
     deltronXpand.productos[1].tipoDeUsoId = 2;
 
-    deltronXpand.productos[2].id = 3;
+    deltronXpand.productos[2].productoId = 3;
     deltronXpand.productos[2].marca = "AMD";
     deltronXpand.productos[2].nombre = "Ryzen 7 3700X";
     deltronXpand.productos[2].precio = 320;
@@ -140,17 +140,17 @@ void inicializarProductos(deltronXpand& deltronXpand) {
 
 void inicializarProductosEnAlmacen(deltronXpand& deltronXpand) {
 
-    deltronXpand.productosEnAlmacen[0].id = 1;
+    deltronXpand.productosEnAlmacen[0].productoEnAlmacenId = 1;
     deltronXpand.productosEnAlmacen[0].almacenId = 1;
     deltronXpand.productosEnAlmacen[0].productoId = 1;
     deltronXpand.productosEnAlmacen[0].stock = 10;
 
-    deltronXpand.productosEnAlmacen[1].id = 2;
+    deltronXpand.productosEnAlmacen[1].productoEnAlmacenId = 2;
     deltronXpand.productosEnAlmacen[1].almacenId = 1;
     deltronXpand.productosEnAlmacen[1].productoId = 3;
     deltronXpand.productosEnAlmacen[1].stock = 15;
 
-    deltronXpand.productosEnAlmacen[2].id = 3;
+    deltronXpand.productosEnAlmacen[2].productoEnAlmacenId = 3;
     deltronXpand.productosEnAlmacen[2].almacenId = 1;
     deltronXpand.productosEnAlmacen[2].productoId = 2;
     deltronXpand.productosEnAlmacen[2].stock = 20;
@@ -160,7 +160,7 @@ void inicializarProductosEnAlmacen(deltronXpand& deltronXpand) {
 
 void inicializarOrdenesDeCompra(deltronXpand& deltronXpand) {
 
-    deltronXpand.ordenesDeCompra[0].id = 1;
+    deltronXpand.ordenesDeCompra[0].ordenDeCompraId = 1;
     deltronXpand.ordenesDeCompra[0].clienteRUC = "11111111111";
     deltronXpand.ordenesDeCompra[0].clienteRazonSocial = "Computadoras S.A.";
 
@@ -169,7 +169,7 @@ void inicializarOrdenesDeCompra(deltronXpand& deltronXpand) {
 
 void inicializarProductosComprados(deltronXpand& deltronXpand) {
 
-    deltronXpand.productosComprados[0].id = 1;
+    deltronXpand.productosComprados[0].productoCompradoId = 1;
     deltronXpand.productosComprados[0].productoEnAlmacenId = 1;
     deltronXpand.productosComprados[0].ordenDeCompraId = 1;
     deltronXpand.productosComprados[0].cantidad = 1;
@@ -315,7 +315,7 @@ void mostrarOrdenes(deltronXpand deltronXpand) {
         // Obtener el producto comprado desde sus propiedades originales
         for (int j = 0; j < deltronXpand.productosCompradosCantidad; j++)
         {
-            if (deltronXpand.productosComprados[j].ordenDeCompraId == deltronXpand.ordenesDeCompra[i].id)
+            if (deltronXpand.productosComprados[j].ordenDeCompraId == deltronXpand.ordenesDeCompra[i].ordenDeCompraId)
             {
                 // Se agrega el precio del producto al parcial acumulado
                 parcial += deltronXpand.productosComprados[j].precio * deltronXpand.productosComprados[j].cantidad;
@@ -371,7 +371,7 @@ void revisarCatalogo(deltronXpand deltronXpand) {
         {
             for (int j = 0; j < deltronXpand.productosCantidad; j++)
             {
-                if (deltronXpand.productos[j].id == deltronXpand.productosEnAlmacen[i].productoId)
+                if (deltronXpand.productos[j].productoId == deltronXpand.productosEnAlmacen[i].productoId)
                 {
                     if (deltronXpand.productos[j].clasificacionId == clasificacionId)
                     {
@@ -400,7 +400,7 @@ void buscarProductoPorNombre(deltronXpand deltronXpand) {
         {
             for (int j = 0; j < deltronXpand.productosCantidad; j++)
             {
-                if (deltronXpand.productos[j].id == deltronXpand.productosEnAlmacen[i].productoId)
+                if (deltronXpand.productos[j].productoId == deltronXpand.productosEnAlmacen[i].productoId)
                 {
                     if (contieneTexto(convertirEnMinusculas(deltronXpand.productos[j].nombre), terminoDeBusqueda))
                     {
@@ -446,7 +446,7 @@ void verHistorialDeOrdenes(deltronXpand deltronXpand, string clienteRUC) {
             // Obtener el producto comprado desde sus propiedades originales
             for (int j = 0; j < deltronXpand.productosCompradosCantidad; j++)
             {
-                if (deltronXpand.productosComprados[j].ordenDeCompraId == deltronXpand.ordenesDeCompra[i].id)
+                if (deltronXpand.productosComprados[j].ordenDeCompraId == deltronXpand.ordenesDeCompra[i].ordenDeCompraId)
                 {
                     // Se agrega el precio del producto al parcial acumulado
                     parcial += deltronXpand.productosComprados[j].precio * deltronXpand.productosComprados[j].cantidad;

@@ -14,23 +14,23 @@ struct cliente {
 };
 
 struct almacen {
-	int id;
+	int almacenId;
 	string departamento;
 	string direccion;
 };
 
 struct tipoDeUso {
-	int id;
+	int tipoDeUsoId;
 	string tipo;
 };
 
 struct clasificacion {
-	int id;
+	int clasificacionId;
 	string nombre;
 };
 
 struct producto {
-	int id;
+	int productoId;
 	string marca;
 	string nombre;
 	float precio;
@@ -39,14 +39,14 @@ struct producto {
 };
 
 struct productoEnAlmacen {
-	int id;
+	int productoEnAlmacenId;
 	int almacenId;
 	int productoId;
 	int stock;
 };
 
 struct ordenDeCompra {
-	int id;
+	int ordenDeCompraId;
 	string clienteRUC;
 
 	// Propiedades originales del producto comprado
@@ -54,7 +54,7 @@ struct ordenDeCompra {
 };
 
 struct productoComprado {
-	int id;
+	int productoCompradoId;
 	int productoEnAlmacenId;
 	int ordenDeCompraId;
 	int cantidad;
