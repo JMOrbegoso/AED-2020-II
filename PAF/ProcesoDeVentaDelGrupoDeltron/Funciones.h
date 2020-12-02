@@ -419,7 +419,45 @@ void buscarProductoPorMarca(deltronXpand deltronXpand) {
 void crearOrdenDeCompra(deltronXpand& deltronXpand) {
 }
 
-void verHistorialDeOrdenes(deltronXpand deltronXpand) {
+void verHistorialDeOrdenes(deltronXpand deltronXpand, string clienteRUC) {
+    float parcial;
+    int compraNumero = 1;
+
+    // Recorre con un for todo el arreglo de ordenesDeCompra
+    // Buscando las compras realizadas por un cliente con el ruc *clienteRUC*
+
+    // Limpia la pantalla
+    system("cls");
+
+    // Recorre con un for todo el arreglo de ordenesDeCompra
+    for (int i = 0; i < deltronXpand.ordenesDeCompraCantidad; i++)
+    {
+        if (deltronXpand.ordenesDeCompra[i].clienteRUC == clienteRUC)
+        {
+            parcial = 0;
+            cout << "Compra #" << compraNumero << endl;
+            cout << "------------------------------------------------" << endl;
+
+            // Obtener el producto comprado desde sus propiedades originales
+            for (int j = 0; j < deltronXpand.productosCompradosCantidad; j++)
+            {
+                if (deltronXpand.productosComprados[j].ordenDeCompraId == deltronXpand.ordenesDeCompra[i].id)
+                {
+                    // Se agrega el precio del producto al parcial acumulado
+                    parcial += deltronXpand.productosComprados[j].precio * deltronXpand.productosComprados[j].cantidad;
+
+                    // Se imprime en pantalla el producto
+                    cout << deltronXpand.productosComprados[j].nombre << endl;
+                }
+            }
+
+            // Muestra el precio total de la compra:
+            mostrarPieDePresupuesto(parcial);
+            compraNumero++;
+
+            cout << endl;
+        }
+    }
 }
 
 #pragma endregion

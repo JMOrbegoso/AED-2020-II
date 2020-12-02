@@ -185,7 +185,7 @@ void menuCliente(deltronXpand& deltronXpand, string rucDelClienteLogeado) {
                 break;
 
             case 5:
-                verHistorialDeOrdenes(deltronXpand);
+                verHistorialDeOrdenes(deltronXpand, rucDelClienteLogeado);
                 system("pause");
                 break;
 
