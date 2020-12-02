@@ -142,6 +142,7 @@
     <ClCompile Include="ProcesoDeVentaDelGrupoDeltron.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AuxiliaresConEstructuras.h" />
     <ClInclude Include="Basicas.h" />
     <ClInclude Include="Funciones.h" />
     <ClInclude Include="Estructuras.h" />
