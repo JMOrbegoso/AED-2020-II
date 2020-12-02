@@ -48,6 +48,9 @@ struct productoEnAlmacen {
 struct ordenDeCompra {
 	int id;
 	string clienteRUC;
+
+	// Propiedades originales del producto comprado
+	string clienteRazonSocial;
 };
 
 struct productoComprado {
@@ -55,6 +58,10 @@ struct productoComprado {
 	int productoEnAlmacenId;
 	int ordenDeCompraId;
 	int cantidad;
+
+	// Propiedades originales del producto comprado
+	string marca;
+	string nombre;
 	float precio;
 };
 
