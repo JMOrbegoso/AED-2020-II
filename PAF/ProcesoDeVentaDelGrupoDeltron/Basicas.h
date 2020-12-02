@@ -48,6 +48,22 @@ void gotoxy(int x, int y) {
     SetConsoleCursorPosition(hcon, dwPos);
 }
 
+float calcularIGV(float parcial) {
+    return parcial * 18 / 100;
+}
+
+float calcularTotal(float parcial) {
+    return parcial * 118 / 100;
+}
+
+void mostrarPieDePresupuesto(float precioParcial) {
+    cout << "------------------------------------------------" << endl;
+    cout << "Parcial: " << precioParcial << endl;
+    cout << "IGV: " << calcularIGV(precioParcial) << endl;
+    cout << "------------------------------------------------" << endl;
+    cout << "Total: " << calcularTotal(precioParcial) << endl;
+}
+
 #pragma endregion
 
 #pragma region Funciones básicas de entrada de datos
