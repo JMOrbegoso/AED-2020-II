@@ -64,6 +64,12 @@ void mostrarPieDePresupuesto(float precioParcial) {
     cout << "Total: " << (precioParcial * (float)118 / (float)100) << endl;
 }
 
+void mostrarTituloDeOpcion(string titulo) {
+    mostrarLineaSeparadora();
+    cout << "\t\t"<< titulo << endl;
+    mostrarLineaSeparadora();
+}
+
 #pragma endregion
 
 #pragma region Funciones básicas de entrada de datos
