@@ -33,6 +33,26 @@ string obtenerRazonSocialDeCliente(deltronXpand deltronXpand, string ruc) {
     return "";
 }
 
+int pedirAlmacenId(deltronXpand deltronXpand) {
+    int opcionSeleccionada;
+
+    cout << endl << "Escoja un almacén:" << endl << endl;
+
+    for (int i = 0; i < deltronXpand.almacenesCantidad; i++)
+    {
+        cout << "[" << deltronXpand.almacenes[i].almacenId << "] " << deltronXpand.almacenes[i].departamento << " -> " << deltronXpand.almacenes[i].direccion << endl;
+    }
+
+    cout << endl << "Introduzca la opción deseada:" << endl;
+    cin >> opcionSeleccionada;
+    while (!(1 <= opcionSeleccionada && opcionSeleccionada <= (deltronXpand.almacenesCantidad - 1))) {
+        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
+        cin >> opcionSeleccionada;
+    }
+
+    return opcionSeleccionada;
+}
+
 #pragma endregion
 
 #pragma region Funciones de Inicializacion
