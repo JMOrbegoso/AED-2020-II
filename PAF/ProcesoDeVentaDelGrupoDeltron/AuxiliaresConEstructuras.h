@@ -93,6 +93,68 @@ int pedirTipoDeUsoId(deltronXpand deltronXpand) {
     return opcionSeleccionada;
 }
 
+string obtenerNombreDeClasificacion(deltronXpand deltronXpand, int clasificacionId) {
+    for (int i = 0; i < deltronXpand.clasificacionesCantidad; i++) {
+        if (deltronXpand.clasificaciones[i].clasificacionId == clasificacionId) {
+            return deltronXpand.clasificaciones[i].nombre;
+        }
+    }
+    return "Clasifición desconocida";
+}
+
+string obtenerNombreDeTipoDeUso(deltronXpand deltronXpand, int tipoDeUsoId) {
+    for (int i = 0; i < deltronXpand.tiposDeUsoCantidad; i++) {
+        if (deltronXpand.tiposDeUso[i].tipoDeUsoId == tipoDeUsoId) {
+            return deltronXpand.tiposDeUso[i].tipo;
+        }
+    }
+    return "Tipo de uso desconocido";
+}
+
+/// <param name="y">eje-y</param>
+void mostrarCabeceraDeListaDeProductos(int y) {
+
+    gotoxy(0, y); cout << "Id" << endl;
+    gotoxy(5, y); cout << "Marca" << endl;
+    gotoxy(20, y); cout << "Nombre" << endl;
+    gotoxy(40, y); cout << "Precio (USD)" << endl;
+    gotoxy(60, y); cout << "Clasificación" << endl;
+    gotoxy(80, y); cout << "Tipo de Uso" << endl;
+}
+
+/// <param name="y">eje-y</param>
+void mostrarFilaDeListaDeProductos(deltronXpand deltronXpand, int y, producto producto) {
+
+    gotoxy(0, y); cout << producto.productoId << endl;
+    gotoxy(5, y); cout << producto.marca << endl;
+    gotoxy(20, y); cout << producto.nombre << endl;
+    gotoxy(40, y); cout << producto.precio << endl;
+    gotoxy(60, y); cout << obtenerNombreDeClasificacion(deltronXpand, producto.clasificacionId) << endl;
+    gotoxy(80, y); cout << obtenerNombreDeTipoDeUso(deltronXpand, producto.tipoDeUsoId) << endl;
+}
+
+/// <param name="y">eje-y</param>
+void mostrarCabeceraDeListaDeProductosComprados(int y) {
+
+    gotoxy(0, y); cout << "Id" << endl;
+    gotoxy(5, y); cout << "Marca" << endl;
+    gotoxy(20, y); cout << "Nombre" << endl;
+    gotoxy(40, y); cout << "Precio (USD)" << endl;
+    gotoxy(60, y); cout << "Cantidad" << endl;
+    gotoxy(80, y); cout << "Parcial (USD)" << endl;
+}
+
+/// <param name="y">eje-y</param>
+void mostrarFilaDeListaDeProductosComprados(deltronXpand deltronXpand, int y, productoComprado productoComprado) {
+
+    gotoxy(0, y); cout << productoComprado.productoCompradoId << endl;
+    gotoxy(5, y); cout << productoComprado.marca << endl;
+    gotoxy(20, y); cout << productoComprado.nombre << endl;
+    gotoxy(40, y); cout << productoComprado.precio << endl;
+    gotoxy(60, y); cout << productoComprado.cantidad << endl;
+    gotoxy(80, y); cout << (productoComprado.precio * productoComprado.cantidad) << endl;
+}
+
 #pragma endregion
 
 #pragma region Funciones de Inicializacion
