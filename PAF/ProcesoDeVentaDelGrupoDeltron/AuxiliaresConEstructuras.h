@@ -73,6 +73,26 @@ int pedirClasificacionId(deltronXpand deltronXpand) {
     return opcionSeleccionada;
 }
 
+int pedirTipoDeUsoId(deltronXpand deltronXpand) {
+    int opcionSeleccionada;
+
+    cout << endl << "Escoja un tipo de uso:" << endl << endl;
+
+    for (int i = 0; i < deltronXpand.tiposDeUsoCantidad; i++)
+    {
+        cout << "[" << deltronXpand.tiposDeUso[i].tipoDeUsoId << "] " << deltronXpand.tiposDeUso[i].tipo << endl;
+    }
+
+    cout << endl << "Introduzca la opción deseada:" << endl;
+    cin >> opcionSeleccionada;
+    while (!(1 <= opcionSeleccionada && opcionSeleccionada <= (deltronXpand.tiposDeUsoCantidad - 1))) {
+        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
+        cin >> opcionSeleccionada;
+    }
+
+    return opcionSeleccionada;
+}
+
 #pragma endregion
 
 #pragma region Funciones de Inicializacion
