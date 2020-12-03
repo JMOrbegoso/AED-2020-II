@@ -22,6 +22,8 @@ bool contieneTexto(string textoBase, string textoPorBuscar) {
 }
 
 void esperarMostrandoTexto(string mensaje) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, 236);
 
     cout << mensaje;
 
@@ -30,6 +32,8 @@ void esperarMostrandoTexto(string mensaje) {
         Sleep(250);
         cout << ".";
     }
+
+    SetConsoleTextAttribute(hConsole, 15);
 }
 
 void mostrarAppTitulo() {
