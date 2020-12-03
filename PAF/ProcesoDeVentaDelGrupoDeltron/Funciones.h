@@ -219,7 +219,7 @@ void verHistorialDeOrdenes(deltronXpand deltronXpand, string clienteRUC) {
         {
             parcial = 0;
             cout << "Compra #" << compraNumero << endl;
-            cout << "------------------------------------------------" << endl;
+            mostrarLineaSeparadora();
 
             // Obtener el producto comprado desde sus propiedades originales
             for (int j = 0; j < deltronXpand.productosCompradosCantidad; j++)

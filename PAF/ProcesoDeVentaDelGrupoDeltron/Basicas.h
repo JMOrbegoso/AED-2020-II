@@ -36,11 +36,15 @@ void esperarMostrandoTexto(string mensaje) {
     SetConsoleTextAttribute(hConsole, 15);
 }
 
-void mostrarAppTitulo() {
+void mostrarLineaSeparadora() {
+    cout << "------------------------------------------------------------------------------------------------" << endl;
+}
 
-    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
+void mostrarAppTitulo() {
+    cout << endl;
+    mostrarLineaSeparadora();
     cout << endl << "\t\t\tSistema al sistema Xpand del Grupo Deltron S.A." << endl;
-    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
+    mostrarLineaSeparadora();
 }
 
 void gotoxy(int x, int y) {
@@ -52,20 +56,12 @@ void gotoxy(int x, int y) {
     SetConsoleCursorPosition(hcon, dwPos);
 }
 
-float calcularIGV(float parcial) {
-    return parcial * 18 / 100;
-}
-
-float calcularTotal(float parcial) {
-    return parcial * 118 / 100;
-}
-
 void mostrarPieDePresupuesto(float precioParcial) {
-    cout << "------------------------------------------------" << endl;
-    cout << "Parcial: " << precioParcial << endl;
-    cout << "IGV: " << calcularIGV(precioParcial) << endl;
-    cout << "------------------------------------------------" << endl;
-    cout << "Total: " << calcularTotal(precioParcial) << endl;
+    mostrarLineaSeparadora();
+    cout << "SubTotal: " << precioParcial << endl;
+    cout << "IGV: " << (precioParcial * (float)18 / (float)100) << endl;
+    mostrarLineaSeparadora();
+    cout << "Total: " << (precioParcial * (float)118 / (float)100) << endl;
 }
 
 #pragma endregion
@@ -224,9 +220,11 @@ int pedirOpcionDelMenuLogin(string rol) {
 
     mostrarAppTitulo();
 
-    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
+    cout << endl;
+    mostrarLineaSeparadora();
     cout << "\t\t\tInicio de sesión como " << rol;
-    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
+    cout << endl;
+    mostrarLineaSeparadora();
 
     cout << endl << "¿Desea iniciar sesión o registrarse?" << endl << endl;
 
@@ -251,9 +249,11 @@ int pedirOpcionDelMenuEmpleadoDeVentas(string nombreEmpleadoDeVentas) {
 
     mostrarAppTitulo();
 
-    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
+    cout << endl;
+    mostrarLineaSeparadora();
     cout << "\t\t\tBienvenid@ " << nombreEmpleadoDeVentas;
-    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
+    cout << endl;
+    mostrarLineaSeparadora();
 
     cout << endl << "¿Que desea hacer hoy?" << endl << endl;
 
@@ -281,9 +281,11 @@ int pedirOpcionDelMenuCliente(string razonSocialCliente) {
 
     mostrarAppTitulo();
 
-    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
+    cout << endl;
+    mostrarLineaSeparadora();
     cout << "\t\t\tBienvenid@ " << razonSocialCliente;
-    cout << endl << "--------------------------------------------------------------------------------------------" << endl;
+    cout << endl;
+    mostrarLineaSeparadora();
 
     cout << endl << "¿Que desea hacer hoy?" << endl << endl;
 
