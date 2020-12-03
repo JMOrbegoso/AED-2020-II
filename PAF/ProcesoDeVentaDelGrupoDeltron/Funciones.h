@@ -110,6 +110,7 @@ void mostrarOrdenes(deltronXpand deltronXpand) {
 
 void revisarAlmacenes(deltronXpand deltronXpand) {
     // Pregunta de que almacen desea revisar y lo almacena en *almacenId*
+    int almacenId = pedirTipoDeUsoId(deltronXpand);
     // Recorre con un *for* todos los *productos en almacen*
     // Busca los elementos de *productos en almacen* que tengan la propiedad almacenId igual que lo pedido por el usuario
     // Cuando encuentra uno de estos elementos busca su productoId en el arreglo de productos
@@ -205,6 +206,7 @@ void crearOrdenDeCompra(deltronXpand& deltronXpand) {
 void verHistorialDeOrdenes(deltronXpand deltronXpand, string clienteRUC) {
     float parcial;
     int compraNumero = 1;
+    int fila = 0;
 
     // Recorre con un for todo el arreglo de ordenesDeCompra
     // Buscando las compras realizadas por un cliente con el ruc *clienteRUC*
@@ -212,13 +214,18 @@ void verHistorialDeOrdenes(deltronXpand deltronXpand, string clienteRUC) {
     // Limpia la pantalla
     system("cls");
 
+    // Muestra titulo
+    mostrarTituloDeOpcion("Historial de Ordenes");
+
     // Recorre con un for todo el arreglo de ordenesDeCompra
     for (int i = 0; i < deltronXpand.ordenesDeCompraCantidad; i++)
     {
         if (deltronXpand.ordenesDeCompra[i].clienteRUC == clienteRUC)
         {
             parcial = 0;
-            cout << "Compra #" << compraNumero << endl;
+            cout << "Compra #" << compraNumero << ":" << endl;
+
+            mostrarCabeceraDeListaDeProductosComprados(5);
             mostrarLineaSeparadora();
 
             // Obtener el producto comprado desde sus propiedades originales
@@ -230,7 +237,9 @@ void verHistorialDeOrdenes(deltronXpand deltronXpand, string clienteRUC) {
                     parcial += deltronXpand.productosComprados[j].precio * deltronXpand.productosComprados[j].cantidad;
 
                     // Se imprime en pantalla el producto
-                    cout << deltronXpand.productosComprados[j].nombre << endl;
+                    mostrarFilaDeListaDeProductosComprados(deltronXpand, 7 + fila, deltronXpand.productosComprados[j]);
+
+                    fila++;
                 }
             }
 
