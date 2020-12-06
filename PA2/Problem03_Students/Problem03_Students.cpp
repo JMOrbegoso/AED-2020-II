@@ -5,7 +5,7 @@ using namespace std;
 
 void registrarEstudiantes(estudiantes est[max], int& ne);
 void mostrarEstudiantes(estudiantes est[max], int ne);
-float calcularPromedios(estudiantes est[max], int ne);
+void calcularPromedios(estudiantes est[max], int ne);
 void ordenarEstudiantes(estudiantes est[max], int ne);
 
 int main()
@@ -70,7 +70,7 @@ void mostrarEstudiantes(estudiantes est[max], int ne) {
     system("pause");
 }
 
-float calcularPromedios(estudiantes est[max], int ne) {
+void calcularPromedios(estudiantes est[max], int ne) {
     float suma = 0;
     float suma2 = 0;
     for (int y = 0; y < ne; y++) {
