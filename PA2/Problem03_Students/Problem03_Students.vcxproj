@@ -141,6 +141,10 @@
   <ItemGroup>
     <ClCompile Include="Problem03_Students.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Basicas.h" />
+    <ClInclude Include="Estructuras.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
