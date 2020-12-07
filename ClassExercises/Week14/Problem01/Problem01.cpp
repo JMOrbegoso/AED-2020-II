@@ -15,7 +15,7 @@ Crear una lista enlazada simple.
 
 */
 
-#include "estructuras.h"
+#include "basicas.h
 
 #include <iostream>
 
