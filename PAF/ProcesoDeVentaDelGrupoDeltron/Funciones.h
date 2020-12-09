@@ -5,25 +5,41 @@ using namespace std;
 #pragma region Funciones Basicas con estructuras
 
 string loginPersonalDeVentas(deltronXpand deltronXpand) {
+
     // Pide DNI (8 caracteres)
+    string dniIngresado = pedirDNI();
     // Pide la clave (minimo 6 caracteres)
+    string claveIngresada = pedirClave();
+
+    bool encontroPersonalDeVentas = false;
+
     // Buscar que el DNI sea exactamente igual al de un empleado de ventas existente
-    //
-    //      No encontro el DNI (El empleado de ventas no existe):
-    //      Muestra texto diciendo que el empleado de ventas ingresado no existe
-    //      Retorna ""
-    //
-    //      Si encontró el DNI (El empleado de ventas sí existe):
-    //      Verfica con un "if" si la clave ingresada es la misma del empleado de ventas guardado
-    //
-    //          Si es la misma clave:
-    //          Muestra texto diciendo bienvenid@ *nombre del empleado de ventas*
-    //          Retorna el DNI del empleado de ventas
-    //
-    //          No es la misma clave
-    //          Muestra texto diciendo que la clave es incorrecta
-    //          Retorna ""
-    return "44444444";
+    for (int i = 0; i < deltronXpand.empleadosDeVentasCantidad; i++) {
+        if (deltronXpand.empleadosDeVentas[i].dni == dniIngresado) {
+            // Se encontro un empleado de ventas con ese DNI
+            // Significa que el empleado de ventas fue encontrado
+            encontroPersonalDeVentas = true;
+
+            // Verfica con un "if" si la clave ingresada es la misma del empleado de ventas guardado
+            if (claveIngresada == deltronXpand.empleadosDeVentas[i].clave) {
+                // Significa que el usuario ingreso su clave correctamente.
+                cout << "Bienvenid@ " << obtenerNombreCompletoDeEmpleadoDeVentas(deltronXpand, dniIngresado);
+                return deltronXpand.empleadosDeVentas[i].dni;
+            }
+            else {
+                // Significa que el usuario NO ingreso su clave correctamente.
+                cout << "Corrija la contraseña";
+                return "";
+            }
+        }
+    }
+
+    // Verfica si no se encontro ningun empleado de ventas como ese DNI
+    if (encontroPersonalDeVentas == false) {
+        cout << "No fue encontrado su DNI. Usuario no existe";
+    }
+
+    return "";
 }
 
 string loginCliente(deltronXpand deltronXpand) {
