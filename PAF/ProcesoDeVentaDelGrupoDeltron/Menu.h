@@ -57,7 +57,7 @@ void menuLoginEmpleadoDeVentas(deltronXpand& deltronXpand) {
             case 2:
                 registrarPersonalDeVentas(deltronXpand);
 
-                esperarMostrandoTexto("Ahora ya puede iniciar sesión");
+                esperarMostrandoTexto("Ahora ya puede iniciar sesión", true);
 
             case 1:
                 empleadoDeVentasDNI = loginPersonalDeVentas(deltronXpand);
@@ -67,7 +67,7 @@ void menuLoginEmpleadoDeVentas(deltronXpand& deltronXpand) {
                 }
                 else {
                     cout << endl;
-                    esperarMostrandoTexto("Intente nuevamente o registrese");
+                    esperarMostrandoTexto("Intente nuevamente o registrese", true);
                 }
 
                 break;
@@ -96,7 +96,7 @@ void menuLoginCliente(deltronXpand& deltronXpand) {
             case 2:
                 registrarCliente(deltronXpand);
 
-                esperarMostrandoTexto("Ahora ya puede iniciar sesión");
+                esperarMostrandoTexto("Ahora ya puede iniciar sesión", true);
 
             case 1:
                 clienteRUC = loginCliente(deltronXpand);
@@ -106,7 +106,7 @@ void menuLoginCliente(deltronXpand& deltronXpand) {
                 }
                 else {
                     cout << endl;
-                    esperarMostrandoTexto("Intente nuevamente o registrese");
+                    esperarMostrandoTexto("Intente nuevamente o registrese", true);
                 }
                 
                 break;
