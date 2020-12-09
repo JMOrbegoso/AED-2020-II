@@ -144,6 +144,18 @@ void registrarProducto(deltronXpand& deltronXpand) {
 }
 
 void editarProducto(deltronXpand& deltronXpand) {
+    // Primero muestra en pantalla una lista con todos los productos del arreglo *deltronXpand.productos*
+    // Luego le pregunta al usuario el ID del producto que desea editar
+    // Con un *for* se recorre el arreglo *deltronXpand.productos* buscando el que tenga el productoId igual que el que ingreso el usuario
+    // Conociendo el producto que desea editar pedir que ingrese:
+    //      string marca;
+    //      string nombre;
+    //      float precio;
+    //      int clasificacionId;
+    //      int tipoDeUsoId;
+    // Recordar que en Basicas.h y en AuxiliaresConEstructuras.h ya hay algunas funciones para pedir el precio, la clasificacionId o tipoDeUsoId.
+    // Editar el producto
+    // FIN
 }
 
 void editarProductoEnAlmacen(deltronXpand& deltronXpand) {
