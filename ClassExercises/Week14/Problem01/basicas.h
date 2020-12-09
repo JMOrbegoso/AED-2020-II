@@ -1,3 +1,5 @@
+#include <string>
+#include <algorithm>
 #include "estructuras.h"
 
 int getSeletectOption() {
@@ -26,4 +28,47 @@ int getSeletectOption() {
     }
 
     return seletectOption;
+}
+
+void showCredits() {
+
+    system("cls");
+
+    cout << "Desarrollado por Juan Manuel Orbegoso" << endl;
+    cout << "https://www.jmorbegoso.com" << endl;
+}
+
+string requestText(string message, int minLength) {
+    string text;
+
+    cout << message << " (Mínimo " << minLength << " caracteres)" << endl;
+
+    do {
+        fflush(stdin);
+        getline(cin, text);
+    } while (!(minLength <= text.length()));
+
+    return text;
+}
+
+/// <summary>
+/// Receives a string and returns it in lowercase.
+/// </summary>
+string toLowerCase(string text) {
+
+    for_each(text.begin(), text.end(), [](char& c) {
+        c = ::tolower(c);
+    });
+
+    return text;
+}
+
+/// <summary>
+/// Return bool if found the "toSearch" text parameter on the "base" text parameter.
+/// </summary>
+bool containsString(string base, string toSearch) {
+    if (toLowerCase(base).find(toLowerCase(toSearch), 0) != string::npos) {
+        return true;
+    }
+    return false;
 }
