@@ -66,7 +66,7 @@ void mostrarPieDePresupuesto(float precioParcial) {
 
 void mostrarTituloDeOpcion(string titulo) {
     mostrarLineaSeparadora();
-    cout << "\t\t"<< titulo << endl;
+    cout << "\t\t" << titulo << endl;
     mostrarLineaSeparadora();
 }
 
@@ -159,6 +159,14 @@ string pedirRUC() {
     dni = pedirTexto("¿Cúal es el RUC?", 11, 11);
 
     return dni;
+}
+
+string pedirClave() {
+    string clave;
+
+    clave = pedirTexto("¿Cúal es su clave?", 6);
+
+    return clave;
 }
 
 float pedirDinero(string mensaje, int montoMinimo) {
