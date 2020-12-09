@@ -169,14 +169,15 @@ void revisarCatalogo(deltronXpand deltronXpand) {
     int clasificacionId;
 
     // Pregunta almac�n
-    almacenId = 1;
+    almacenId = pedirAlmacenId(deltronXpand);
 
     // Pregunta Clasificaci�n
-    clasificacionId = 4;
+    clasificacionId = pedirClasificacionId(deltronXpand);
+
+    mostrarCabeceraDeListaDeProductos(4);
 
     // Muestra productos que cumplan ese requerimiento
-
-
+    int fila = 0;
     for (int i = 0; i < deltronXpand.productosEnAlmacenCantidad; i++)
     {
         if (deltronXpand.productosEnAlmacen[i].almacenId == almacenId)
@@ -187,7 +188,8 @@ void revisarCatalogo(deltronXpand deltronXpand) {
                 {
                     if (deltronXpand.productos[j].clasificacionId == clasificacionId)
                     {
-                        cout << deltronXpand.productos[j].nombre << endl;
+                        mostrarFilaDeListaDeProductos(deltronXpand, 4 + fila, deltronXpand.productos[j]);
+                        fila++;
                     }
                 }
             }
