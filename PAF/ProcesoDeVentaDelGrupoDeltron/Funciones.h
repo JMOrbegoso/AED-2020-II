@@ -162,6 +162,9 @@ void editarProductoEnAlmacen(deltronXpand& deltronXpand) {
     system("cls");
     int almacenId = pedirAlmacenId(deltronXpand);
     // Primero pregunta el almacen que desea buscar usando *almacenId = pedirAlmacenId(deltronXpand);*
+    system("cls");
+    mostrarCabeceraDeListaDeProductosEnAlmacen(4);
+
     // Luego debe de mostrar los productos en ese almacen, para saber los datos debe de usar un *for* dentro de otro *for*
     int fila = 0;
     for (int i = 0; i < deltronXpand.productosEnAlmacenCantidad; i++) {
@@ -169,7 +172,7 @@ void editarProductoEnAlmacen(deltronXpand& deltronXpand) {
             for (int j = 0; j < deltronXpand.productosCantidad; j++) {
                 if (deltronXpand.productos[j].productoId == deltronXpand.productosEnAlmacen[i].productoId) {
                     // Mostrar los productos en pantalla
-                    mostrarFilaDeListaDeProductosEnAlmacen(deltronXpand, 4 + fila, deltronXpand.productosEnAlmacen[i], deltronXpand.productos[i]);
+                    mostrarFilaDeListaDeProductosEnAlmacen(deltronXpand, 4 + fila, deltronXpand.productosEnAlmacen[i], deltronXpand.productos[j]);
                     fila++;
                 }
             }
