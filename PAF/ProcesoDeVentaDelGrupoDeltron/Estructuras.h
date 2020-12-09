@@ -48,6 +48,7 @@ struct productoEnAlmacen {
 struct ordenDeCompra {
 	int ordenDeCompraId;
 	string clienteRUC;
+	string fecha;
 
 	// Propiedades originales del producto comprado
 	string clienteRazonSocial;
