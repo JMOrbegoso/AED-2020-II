@@ -23,12 +23,17 @@ string loginPersonalDeVentas(deltronXpand deltronXpand) {
             // Verfica con un "if" si la clave ingresada es la misma del empleado de ventas guardado
             if (claveIngresada == deltronXpand.empleadosDeVentas[i].clave) {
                 // Significa que el usuario ingreso su clave correctamente.
-                cout << "Bienvenid@ " << obtenerNombreCompletoDeEmpleadoDeVentas(deltronXpand, dniIngresado);
+                system("cls");
+
+                gotoxy(10, 30); cout << "Bienvenid@ " << obtenerNombreCompletoDeEmpleadoDeVentas(deltronXpand, dniIngresado) << endl;
+                
+                gotoxy(0, 40); esperarMostrandoTexto("Ingresando", true);
+
                 return deltronXpand.empleadosDeVentas[i].dni;
             }
             else {
                 // Significa que el usuario NO ingreso su clave correctamente.
-                cout << "Corrija la contraseña";
+                cout << "Contraseña incorrecta, por favor corrijala" << endl;
                 return "";
             }
         }
@@ -36,7 +41,7 @@ string loginPersonalDeVentas(deltronXpand deltronXpand) {
 
     // Verfica si no se encontro ningun empleado de ventas como ese DNI
     if (encontroPersonalDeVentas == false) {
-        cout << "No fue encontrado su DNI. Usuario no existe";
+        cout << "No fue encontrado su DNI. Usuario no existe" << endl;
     }
 
     return "";
@@ -183,11 +188,14 @@ void buscarProductoPorNombre(deltronXpand deltronXpand) {
     string terminoDeBusqueda;
 
     // Pregunta el almacen
-    almacenId = 1;
+    almacenId = pedirAlmacenId(deltronXpand);
 
     // Pregunta el termino de busqueda
-    terminoDeBusqueda = "3600";
+    terminoDeBusqueda = pedirTerminoDeBusqueda();
 
+    mostrarCabeceraDeListaDeProductos(4);
+
+    int fila = 0;
     // Busca el termino de busqueda en el arreglo de productos
     for (int i = 0; i < deltronXpand.productosEnAlmacenCantidad; i++)
     {
@@ -200,7 +208,8 @@ void buscarProductoPorNombre(deltronXpand deltronXpand) {
                     if (contieneTexto(convertirEnMinusculas(deltronXpand.productos[j].nombre), terminoDeBusqueda))
                     {
                         // Y los muestra en pantalla
-                        cout << deltronXpand.productos[j].nombre << endl;
+                        mostrarFilaDeListaDeProductos(deltronXpand, 6 + fila, deltronXpand.productos[j]);
+                        fila++;
                     }
                 }
             }
