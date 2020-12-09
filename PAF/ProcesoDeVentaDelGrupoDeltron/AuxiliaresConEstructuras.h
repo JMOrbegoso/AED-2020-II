@@ -93,6 +93,15 @@ int pedirTipoDeUsoId(deltronXpand deltronXpand) {
     return opcionSeleccionada;
 }
 
+string obtenerNombreDeAlmacen(deltronXpand deltronXpand, int almacenId) {
+    for (int i = 0; i < deltronXpand.almacenesCantidad; i++) {
+        if (deltronXpand.almacenes[i].almacenId == almacenId) {
+            return deltronXpand.almacenes[i].departamento;
+        }
+    }
+    return "Clasifición desconocida";
+}
+
 string obtenerNombreDeClasificacion(deltronXpand deltronXpand, int clasificacionId) {
     for (int i = 0; i < deltronXpand.clasificacionesCantidad; i++) {
         if (deltronXpand.clasificaciones[i].clasificacionId == clasificacionId) {
@@ -131,6 +140,32 @@ void mostrarFilaDeListaDeProductos(deltronXpand deltronXpand, int y, producto pr
     gotoxy(40, y); cout << producto.precio << endl;
     gotoxy(60, y); cout << obtenerNombreDeClasificacion(deltronXpand, producto.clasificacionId) << endl;
     gotoxy(80, y); cout << obtenerNombreDeTipoDeUso(deltronXpand, producto.tipoDeUsoId) << endl;
+}
+
+/// <param name="y">eje-y</param>
+void mostrarCabeceraDeListaDeProductosEnAlmacen(int y) {
+
+    gotoxy(0, y); cout << "Id" << endl;
+    gotoxy(5, y); cout << "Almacén" << endl;
+    gotoxy(15, y); cout << "Marca" << endl;
+    gotoxy(35, y); cout << "Nombre" << endl;
+    gotoxy(55, y); cout << "Precio (USD)" << endl;
+    gotoxy(75, y); cout << "Stock" << endl;
+    gotoxy(85, y); cout << "Clasificación" << endl;
+    gotoxy(95, y); cout << "Tipo de Uso" << endl;
+}
+
+/// <param name="y">eje-y</param>
+void mostrarFilaDeListaDeProductosEnAlmacen(deltronXpand deltronXpand, int y, productoEnAlmacen productoEnAlmacen, producto producto) {
+
+    gotoxy(0, y); cout << productoEnAlmacen.productoEnAlmacenId << endl;
+    gotoxy(5, y); cout << obtenerNombreDeAlmacen(deltronXpand, productoEnAlmacen.almacenId) << endl;
+    gotoxy(15, y); cout << producto.marca << endl;
+    gotoxy(35, y); cout << producto.nombre << endl;
+    gotoxy(55, y); cout << producto.precio << endl;
+    gotoxy(75, y); cout << productoEnAlmacen.stock << endl;
+    gotoxy(85, y); cout << obtenerNombreDeClasificacion(deltronXpand, producto.clasificacionId) << endl;
+    gotoxy(95, y); cout << obtenerNombreDeTipoDeUso(deltronXpand, producto.tipoDeUsoId) << endl;
 }
 
 /// <param name="y">eje-y</param>
