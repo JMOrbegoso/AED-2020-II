@@ -21,7 +21,7 @@ bool contieneTexto(string textoBase, string textoPorBuscar) {
     return false;
 }
 
-void esperarMostrandoTexto(string mensaje) {
+void esperarMostrandoTexto(string mensaje, bool esperaLarga = false) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, 236);
 
@@ -29,7 +29,13 @@ void esperarMostrandoTexto(string mensaje) {
 
     for (int i = 0; i < 6; i++)
     {
-        Sleep(250);
+        if (esperaLarga) {
+            Sleep(750);
+        }
+        else {
+            Sleep(250);
+        }
+
         cout << ".";
     }
 
@@ -197,6 +203,10 @@ float pedirDinero(string mensaje, int montoMinimo, int montoMaximo) {
     }
 
     return monto;
+}
+
+string pedirTerminoDeBusqueda() {
+    return pedirTexto("Ingrese el termino de busqueda", 2);
 }
 
 #pragma endregion
