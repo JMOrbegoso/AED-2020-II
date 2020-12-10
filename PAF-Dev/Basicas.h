@@ -1,4 +1,4 @@
-#include <algorithm>
+//#include <algorithm>
 #include <string>
 #include <windows.h>
 
@@ -7,10 +7,9 @@ using namespace std;
 #pragma region Funciones básicas
 
 string convertirEnMinusculas(string texto) {
-    for_each(texto.begin(), texto.end(), [](char& c) {
+    /*for_each(texto.begin(), texto.end(), [](char& c) {
         c = ::tolower(c);
-    });
-
+    });*/
     return texto;
 }
 
