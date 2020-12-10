@@ -360,3 +360,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+#Dev-C++
+PAF-Dev/*.exe
+PAF-Dev/Makefile.win
+PAF-Dev/main.o
