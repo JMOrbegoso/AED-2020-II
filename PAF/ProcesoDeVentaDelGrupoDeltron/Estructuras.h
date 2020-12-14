@@ -63,9 +63,21 @@ struct productoComprado {
 	float precio;
 };
 
+struct productoDisponible {
+	int productoEnAlmacenId;
+	int almacenId;
+	int productoId;
+	int stock;
+	string marca;
+	string nombre;
+	float precio;
+	int clasificacionId;
+	int tipoDeUsoId;
+};
+
 struct deltronXpand {
 	string fecha;
-	
+
 	almacen almacenes[5];
 	int almacenesCantidad = 0;
 
