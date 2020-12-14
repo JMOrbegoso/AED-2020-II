@@ -1,7 +1,6 @@
-//#include <algorithm>
 #include <string>
 #include <windows.h>
-#include <sstream> 
+#include <string> 
 
 using namespace std;
 
@@ -209,11 +208,8 @@ string pedirTerminoDeBusqueda() {
     return pedirTexto("Ingrese el termino de busqueda", 2);
 }
 
-string toString(int& i) {
-    stringstream ss;
-    ss << i;
-
-    return ss.str();
+string toString(int numero) {
+    return std::to_string(numero);
 }
 
 string pedirFecha() {
