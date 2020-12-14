@@ -26,7 +26,7 @@ string loginPersonalDeVentas(deltronXpand deltronXpand) {
                 system("cls");
 
                 gotoxy(10, 15); cout << "Bienvenid@ " << obtenerNombreCompletoDeEmpleadoDeVentas(deltronXpand, dniIngresado) << endl;
-                
+
                 gotoxy(0, 30); esperarMostrandoTexto("Ingresando", true);
 
                 return deltronXpand.empleadosDeVentas[i].dni;
@@ -139,8 +139,8 @@ void mostrarOrdenes(deltronXpand deltronXpand) {
 }
 
 void revisarAlmacenes(deltronXpand deltronXpand) {
-	// Revisar el contenido de la funcion: * editarProductoEnAlmacen *, es muy parecida a esta
-	
+    // Revisar el contenido de la funcion: * editarProductoEnAlmacen *, es muy parecida a esta
+
     // Pregunta de que almacen desea revisar y lo almacena en *almacenId*
     int almacenId = pedirTipoDeUsoId(deltronXpand);
     // Recorre con un *for* todos los *productos en almacen*
@@ -171,19 +171,19 @@ void editarProducto(deltronXpand& deltronXpand) {
 
 void editarProductoEnAlmacen(deltronXpand& deltronXpand) {
     system("cls");
-    
+
     mostrarAppTitulo();
     mostrarTituloDeOpcion("Editar stock de un producto en almacén");
-    
+
     int almacenId = pedirAlmacenId(deltronXpand);
-    
+
     // Primero pregunta el almacen que desea buscar usando *almacenId = pedirAlmacenId(deltronXpand);*
     system("cls");
-    
+
     string nombreDelAlmacen = obtenerNombreDeAlmacen(deltronXpand, almacenId);
     mostrarAppTitulo();
     mostrarTituloDeOpcion("Editar stock de un producto en almacén de " + nombreDelAlmacen);
-    
+
     mostrarCabeceraDeListaDeProductosEnAlmacen(10);
 
     // Luego debe de mostrar los productos en ese almacen, para saber los datos debe de usar un *for* dentro de otro *for*
@@ -304,7 +304,7 @@ void buscarProductoPorMarca(deltronXpand deltronXpand) {
 }
 
 void crearOrdenDeCompra(deltronXpand& deltronXpand, string clienteRUC) {
-	// Pregunta el almacen
+    // Pregunta el almacen
     int almacenId = pedirAlmacenId(deltronXpand);
 
     // Muestra los productos de ese almacen
@@ -332,7 +332,8 @@ void crearOrdenDeCompra(deltronXpand& deltronXpand, string clienteRUC) {
     bool encontroProducto = false;
     int cantidad = 0;
     productoComprado productoComprado;
-    
+
+    /*
     // Pide id de producto en almacen, o 0 para dejar de mostrar. Debe de hacerse con un while
     do {
         cout << "Ingrese el Id del producto deseado, o '0' para dejar de añadir productos a su carrito de compra.'";
@@ -346,31 +347,31 @@ void crearOrdenDeCompra(deltronXpand& deltronXpand, string clienteRUC) {
         }
 
         if (!encontroProducto) {
-        	cout << "No se encontró el Id del producto, por favor ingrese el ID de un producto existente.";
+            cout << "No se encontró el Id del producto, por favor ingrese el ID de un producto existente.";
         }
         else {
             productosDeseadosIds[productosDeseadosCantidad] = productoDeseadoId;
             productosDeseadosCantidad++;
-            
+
             // Convertir este en una funcion independiente
         cout << "¿Qué cantidad desea de este producto?" + endl;
         cin >> cantidad;
-                
+
         productoComprado.productoCompradoId = deltronXpand.productosCompradosCantidad;
-		productoComprado. productoEnAlmacenId = productoDeseadoId;
-		productoComprado. ordenDeCompraId = ordenDeCompra.ordenDeCompraId;
-		productoComprado. cantidad = cantidad;
-		productoComprado. marca = ;
-		productoComprado. nombre = ;
-		productoComprado. precio = ;
-	
-	    deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad] = productoComprado;
-	    deltronXpand.productosCompradosCantidad++;
+        productoComprado. productoEnAlmacenId = productoDeseadoId;
+        productoComprado. ordenDeCompraId = ordenDeCompra.ordenDeCompraId;
+        productoComprado. cantidad = cantidad;
+        productoComprado. marca = ;
+        productoComprado. nombre = ;
+        productoComprado. precio = ;
+
+        deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad] = productoComprado;
+        deltronXpand.productosCompradosCantidad++;
         }
     } while (productoDeseadoId != 0);
-    
-    
-	
+    */
+
+
 }
 
 void verHistorialDeOrdenes(deltronXpand deltronXpand, string clienteRUC) {
