@@ -10,7 +10,10 @@ int main()
 
     // Inicializacion
     inicializacion(deltronXpand);
-
+	
+	// Inicializa la fecha
+	deltronXpand.fecha = pedirFecha();
+	
     // Menú
     menuPrincipal(deltronXpand);
 

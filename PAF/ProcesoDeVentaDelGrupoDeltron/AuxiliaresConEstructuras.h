@@ -146,26 +146,24 @@ void mostrarFilaDeListaDeProductos(deltronXpand deltronXpand, int y, producto pr
 void mostrarCabeceraDeListaDeProductosEnAlmacen(int y) {
 
     gotoxy(0, y); cout << "Id" << endl;
-    gotoxy(5, y); cout << "Almacén" << endl;
-    gotoxy(15, y); cout << "Marca" << endl;
-    gotoxy(35, y); cout << "Nombre" << endl;
-    gotoxy(55, y); cout << "Precio (USD)" << endl;
-    gotoxy(75, y); cout << "Stock" << endl;
-    gotoxy(85, y); cout << "Clasificación" << endl;
-    gotoxy(95, y); cout << "Tipo de Uso" << endl;
+    gotoxy(5, y); cout << "Marca" << endl;
+    gotoxy(20, y); cout << "Nombre" << endl;
+    gotoxy(50, y); cout << "Precio (USD)" << endl;
+    gotoxy(65, y); cout << "Stock" << endl;
+    gotoxy(75, y); cout << "Clasificación" << endl;
+    gotoxy(90, y); cout << "Tipo de Uso" << endl;
 }
 
 /// <param name="y">eje-y</param>
 void mostrarFilaDeListaDeProductosEnAlmacen(deltronXpand deltronXpand, int y, productoEnAlmacen productoEnAlmacen, producto producto) {
 
     gotoxy(0, y); cout << productoEnAlmacen.productoEnAlmacenId << endl;
-    gotoxy(5, y); cout << obtenerNombreDeAlmacen(deltronXpand, productoEnAlmacen.almacenId) << endl;
-    gotoxy(15, y); cout << producto.marca << endl;
-    gotoxy(35, y); cout << producto.nombre << endl;
-    gotoxy(55, y); cout << producto.precio << endl;
-    gotoxy(75, y); cout << productoEnAlmacen.stock << endl;
-    gotoxy(85, y); cout << obtenerNombreDeClasificacion(deltronXpand, producto.clasificacionId) << endl;
-    gotoxy(95, y); cout << obtenerNombreDeTipoDeUso(deltronXpand, producto.tipoDeUsoId) << endl;
+    gotoxy(5, y); cout << producto.marca << endl;
+    gotoxy(20, y); cout << producto.nombre << endl;
+    gotoxy(50, y); cout << producto.precio << endl;
+    gotoxy(65, y); cout << productoEnAlmacen.stock << endl;
+    gotoxy(75, y); cout << obtenerNombreDeClasificacion(deltronXpand, producto.clasificacionId) << endl;
+    gotoxy(90, y); cout << obtenerNombreDeTipoDeUso(deltronXpand, producto.tipoDeUsoId) << endl;
 }
 
 /// <param name="y">eje-y</param>
@@ -283,16 +281,16 @@ void inicializarClasificaciones(deltronXpand& deltronXpand) {
     deltronXpand.clasificaciones[0].nombre = "Cases";
 
     deltronXpand.clasificaciones[1].clasificacionId = 2;
-    deltronXpand.clasificaciones[1].nombre = "Computadoras Desktop";
+    deltronXpand.clasificaciones[1].nombre = "Computadoras";
 
     deltronXpand.clasificaciones[2].clasificacionId = 3;
     deltronXpand.clasificaciones[2].nombre = "Discos Duros";
 
     deltronXpand.clasificaciones[3].clasificacionId = 4;
-    deltronXpand.clasificaciones[3].nombre = "CPU (Microprocesadores)";
+    deltronXpand.clasificaciones[3].nombre = "CPU";
 
     deltronXpand.clasificaciones[4].clasificacionId = 5;
-    deltronXpand.clasificaciones[4].nombre = "GPU (Tarjetas de video)";
+    deltronXpand.clasificaciones[4].nombre = "GPU";
 
     deltronXpand.clasificacionesCantidad = 5;
 }

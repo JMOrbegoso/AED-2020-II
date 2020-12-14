@@ -1,16 +1,16 @@
-#include <algorithm>
+//#include <algorithm>
 #include <string>
 #include <windows.h>
+#include <sstream> 
 
 using namespace std;
 
 #pragma region Funciones básicas
 
 string convertirEnMinusculas(string texto) {
-    for_each(texto.begin(), texto.end(), [](char& c) {
+    /*for_each(texto.begin(), texto.end(), [](char& c) {
         c = ::tolower(c);
-    });
-
+    });*/
     return texto;
 }
 
@@ -30,10 +30,10 @@ void esperarMostrandoTexto(string mensaje, bool esperaLarga = false) {
     for (int i = 0; i < 6; i++)
     {
         if (esperaLarga) {
-            Sleep(750);
+            Sleep(350);
         }
         else {
-            Sleep(250);
+            Sleep(150);
         }
 
         cout << ".";
@@ -49,7 +49,7 @@ void mostrarLineaSeparadora() {
 void mostrarAppTitulo() {
     cout << endl;
     mostrarLineaSeparadora();
-    cout << endl << "\t\t\tSistema al sistema Xpand del Grupo Deltron S.A." << endl;
+    cout << endl << "\t\t\t\tSistema Xpand del Grupo Deltron S.A." << endl << endl;
     mostrarLineaSeparadora();
 }
 
@@ -207,6 +207,70 @@ float pedirDinero(string mensaje, int montoMinimo, int montoMaximo) {
 
 string pedirTerminoDeBusqueda() {
     return pedirTexto("Ingrese el termino de busqueda", 2);
+}
+
+std::string toString(auto &i){
+   std::stringstream ss;
+   ss << i;
+ 
+   return ss.str();
+}
+
+string pedirFecha() {
+    string fecha;
+
+    // Pide año
+    int year;
+    cout << endl << "¿En que año nos encontramos?" << endl;
+    cin >> year;
+    while (!(2000 <= year && year <= (2040))) {
+        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
+        cin >> year;
+    }
+
+    // Pide mes
+    int mesSeleccionado;
+    string meses[12];
+    meses[0] = "Enero";
+    meses[1] = "Febrero";
+    meses[2] = "Marzo";
+    meses[3] = "Abril";
+    meses[4] = "Mayo";
+    meses[5] = "Junio";
+    meses[6] = "Julio";
+    meses[7] = "Agosto";
+    meses[8] = "Septiembre";
+    meses[9] = "Octubre";
+    meses[10] = "Noviembre";
+    meses[11] = "Diciembre";
+
+    cout << endl << "¿Hoy en que mes no encontramos?" << endl << endl;
+
+    for (int i = 0; i < 12; i++)
+    {
+        cout << "[" << (i + 1) << "] " << meses[i] << endl;
+    }
+
+    cout << endl << "Introduzca la opción deseada:" << endl;
+    cin >> mesSeleccionado;
+    while (!(1 <= mesSeleccionado && mesSeleccionado <= (12))) {
+        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
+        cin >> mesSeleccionado;
+    }
+
+    // Pide dia
+    int dia;
+    cout << endl << "¿Que día del mes es hoy?" << endl;
+    cin >> dia;
+    while (!(1 <= dia && dia <= (31))) {
+        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
+        cin >> dia;
+    }
+
+    //
+	fecha = toString(year) + " - " + meses[mesSeleccionado - 1] + " - " + toString(dia);
+
+    return fecha;
 }
 
 #pragma endregion

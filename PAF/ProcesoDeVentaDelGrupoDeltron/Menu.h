@@ -194,7 +194,7 @@ void menuCliente(deltronXpand& deltronXpand, string rucDelClienteLogeado) {
                 break;
 
             case 4:
-                crearOrdenDeCompra(deltronXpand);
+                crearOrdenDeCompra(deltronXpand, rucDelClienteLogeado);
                 system("pause");
                 break;
 

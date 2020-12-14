@@ -67,6 +67,8 @@ struct productoComprado {
 };
 
 struct deltronXpand {
+	string fecha;
+	
 	almacen almacenes[5];
 	int almacenesCantidad = 0;
 
