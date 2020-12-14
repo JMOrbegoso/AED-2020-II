@@ -209,11 +209,11 @@ string pedirTerminoDeBusqueda() {
     return pedirTexto("Ingrese el termino de busqueda", 2);
 }
 
-string toString(int &i){
-   stringstream ss;
-   ss << i;
- 
-   return ss.str();
+string toString(int& i) {
+    stringstream ss;
+    ss << i;
+
+    return ss.str();
 }
 
 string pedirFecha() {
