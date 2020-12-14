@@ -61,12 +61,14 @@ void gotoxy(int x, int y) {
     SetConsoleCursorPosition(hcon, dwPos);
 }
 
-void mostrarPieDePresupuesto(float precioParcial) {
-    mostrarLineaSeparadora();
-    cout << "SubTotal: " << precioParcial << endl;
-    cout << "IGV: " << (precioParcial * (float)18 / (float)100) << endl;
-    mostrarLineaSeparadora();
-    cout << "Total: " << (precioParcial * (float)118 / (float)100) << endl;
+void mostrarPieDePresupuesto(float precioParcial, int y) {
+    gotoxy(0, y + 0); cout << "SubTotal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+    gotoxy(0, y + 1); cout << "IGV . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .";
+    gotoxy(0, y + 2); cout << "Total . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .";
+
+    gotoxy(80, y + 0); cout << precioParcial;
+    gotoxy(80, y + 1); cout << (precioParcial * (float)18 / (float)100);
+    gotoxy(80, y + 2); cout << (precioParcial * (float)118 / (float)100);
 }
 
 void mostrarTituloDeOpcion(string titulo) {
