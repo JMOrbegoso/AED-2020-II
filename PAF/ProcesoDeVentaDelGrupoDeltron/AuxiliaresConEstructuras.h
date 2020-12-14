@@ -368,7 +368,11 @@ void inicializarOrdenesDeCompra(deltronXpand& deltronXpand) {
     deltronXpand.ordenesDeCompra[2].clienteRUC = "11111111111";
     deltronXpand.ordenesDeCompra[2].fecha = "2020/Agosto/24";
 
-    deltronXpand.ordenesDeCompraCantidad = 3;
+    deltronXpand.ordenesDeCompra[3].ordenDeCompraId = 4;
+    deltronXpand.ordenesDeCompra[3].clienteRUC = "11111111111";
+    deltronXpand.ordenesDeCompra[3].fecha = "2020/Octubre/29";
+
+    deltronXpand.ordenesDeCompraCantidad = 4;
 }
 
 void inicializarProductosComprados(deltronXpand& deltronXpand) {
@@ -397,15 +401,23 @@ void inicializarProductosComprados(deltronXpand& deltronXpand) {
     deltronXpand.productosComprados[2].nombre = "Ryzen 7 3700X";
     deltronXpand.productosComprados[2].precio = 300;
 
-    deltronXpand.productosComprados[2].productoCompradoId = 4;
-    deltronXpand.productosComprados[2].productoEnAlmacenId = 3;
-    deltronXpand.productosComprados[2].ordenDeCompraId = 3;
-    deltronXpand.productosComprados[2].cantidad = 1;
-    deltronXpand.productosComprados[2].marca = "AMD";
-    deltronXpand.productosComprados[2].nombre = "Ryzen 7 3700X";
-    deltronXpand.productosComprados[2].precio = 290;
+    deltronXpand.productosComprados[3].productoCompradoId = 4;
+    deltronXpand.productosComprados[3].productoEnAlmacenId = 3;
+    deltronXpand.productosComprados[3].ordenDeCompraId = 3;
+    deltronXpand.productosComprados[3].cantidad = 1;
+    deltronXpand.productosComprados[3].marca = "AMD";
+    deltronXpand.productosComprados[3].nombre = "Ryzen 7 3700X";
+    deltronXpand.productosComprados[3].precio = 290;
 
-    deltronXpand.productosCompradosCantidad = 4;
+    deltronXpand.productosComprados[4].productoCompradoId = 4;
+    deltronXpand.productosComprados[4].productoEnAlmacenId = 3;
+    deltronXpand.productosComprados[4].ordenDeCompraId = 4;
+    deltronXpand.productosComprados[4].cantidad = 1;
+    deltronXpand.productosComprados[4].marca = "AMD";
+    deltronXpand.productosComprados[4].nombre = "Ryzen 7 3700X";
+    deltronXpand.productosComprados[4].precio = 295;
+
+    deltronXpand.productosCompradosCantidad = 5;
 }
 
 void inicializacion(deltronXpand& deltronXpand) {
