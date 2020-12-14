@@ -253,24 +253,37 @@ string pedirFecha() {
 
     cout << endl << "Introduzca la opción deseada:" << endl;
     cin >> mesSeleccionado;
-    while (!(1 <= mesSeleccionado && mesSeleccionado <= (12))) {
+    mesSeleccionado--;
+    while (!(0 <= mesSeleccionado && mesSeleccionado <= 11)) {
         cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
         cin >> mesSeleccionado;
+    }
+
+    int maxDias;
+    if (mesSeleccionado == 0 || mesSeleccionado == 2 || mesSeleccionado == 4 || mesSeleccionado == 6 || mesSeleccionado == 7 || mesSeleccionado == 9 || mesSeleccionado == 11) {
+        maxDias = 31;
+    }
+    else if (mesSeleccionado == 3 || mesSeleccionado == 5 || mesSeleccionado == 8 || mesSeleccionado == 10) {
+        maxDias = 30;
+    }
+    else if (mesSeleccionado == 1 && year % 4 == 0) {
+        cout << "Bisiesto" << endl;
+        maxDias = 29;
+    }
+    else {
+        maxDias = 28;
     }
 
     // Pide dia
     int dia;
     cout << endl << "¿Que día del mes es hoy?" << endl;
     cin >> dia;
-    while (!(1 <= dia && dia <= (31))) {
+    while (!(1 <= dia && dia <= maxDias)) {
         cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
         cin >> dia;
     }
 
-    //
-	fecha = toString(year) + " - " + meses[mesSeleccionado - 1] + " - " + toString(dia);
-
-    return fecha;
+    return toString(year) + "/" + meses[mesSeleccionado - 1] + "/" + toString(dia);
 }
 
 #pragma endregion
