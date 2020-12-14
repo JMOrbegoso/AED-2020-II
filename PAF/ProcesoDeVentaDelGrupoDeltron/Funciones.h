@@ -427,15 +427,15 @@ void crearOrdenDeCompra(deltronXpand& deltronXpand, string clienteRUC) {
     }
 
     // Añadir los elementos del carrito de compra a los arreglos de deltronXpand
-    deltronXpand.ordenesDeCompra[deltronXpand.ordenesDeCompraCantidad].ordenDeCompraId = deltronXpand.ordenesDeCompraCantidad;
+    deltronXpand.ordenesDeCompra[deltronXpand.ordenesDeCompraCantidad].ordenDeCompraId = deltronXpand.ordenesDeCompraCantidad + 1;
     deltronXpand.ordenesDeCompra[deltronXpand.ordenesDeCompraCantidad].clienteRUC = clienteRUC;
     deltronXpand.ordenesDeCompra[deltronXpand.ordenesDeCompraCantidad].fecha = deltronXpand.fecha;
 
     for (int i = 0; i < productosCompradosCantidad; i++) {
 
-        deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad].productoCompradoId = deltronXpand.productosCompradosCantidad;
+        deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad].productoCompradoId = deltronXpand.productosCompradosCantidad + 1;
         deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad].productoEnAlmacenId = productosComprados[i].productoEnAlmacenId;
-        deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad].ordenDeCompraId = deltronXpand.ordenesDeCompraCantidad;
+        deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad].ordenDeCompraId = deltronXpand.ordenesDeCompraCantidad + 1;
 
         deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad].marca = productosComprados[i].marca;
         deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad].nombre = productosComprados[i].nombre;
