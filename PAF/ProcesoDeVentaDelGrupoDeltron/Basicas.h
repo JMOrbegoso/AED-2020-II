@@ -22,14 +22,14 @@ bool contieneTexto(string textoBase, string textoPorBuscar) {
 
 void esperarMostrandoTexto(string mensaje, bool esperaLarga = false) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, 236);
+    SetConsoleTextAttribute(hConsole, 2);
 
     cout << mensaje;
 
     for (int i = 0; i < 6; i++)
     {
         if (esperaLarga) {
-            Sleep(350);
+            Sleep(450);
         }
         else {
             Sleep(150);
