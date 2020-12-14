@@ -327,74 +327,128 @@ void buscarProductoPorMarca(deltronXpand deltronXpand) {
 }
 
 void crearOrdenDeCompra(deltronXpand& deltronXpand, string clienteRUC) {
+    productoDisponible productosDisponibles[100];
+    int productosDisponiblesCantidad = 0;
+
+    // Limpia la pantalla
+    system("cls");
+
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Generar orden de compra");
+
     // Pregunta el almacen
     int almacenId = pedirAlmacenId(deltronXpand);
 
-    // Muestra los productos de ese almacen
-    int fila = 1;
+    // Limpia la pantalla
+    system("cls");
+
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Generar orden de compra");
+
+    // Genera un arreglo de productos disponibles para su compra
+
     for (int i = 0; i < deltronXpand.productosEnAlmacenCantidad; i++) {
         if (deltronXpand.productosEnAlmacen[i].almacenId == almacenId) {
             for (int j = 0; j < deltronXpand.productosCantidad; j++) {
                 if (deltronXpand.productos[j].productoId == deltronXpand.productosEnAlmacen[i].productoId) {
-                    // Mostrar los productos en pantalla
-                    mostrarFilaDeListaDeProductosEnAlmacen(deltronXpand, 10 + fila, deltronXpand.productosEnAlmacen[i], deltronXpand.productos[j]);
-                    fila++;
+
+                    productosDisponibles[productosDisponiblesCantidad].productoEnAlmacenId = deltronXpand.productosEnAlmacen[i].productoEnAlmacenId;
+                    productosDisponibles[productosDisponiblesCantidad].almacenId = deltronXpand.productosEnAlmacen[i].almacenId;
+                    productosDisponibles[productosDisponiblesCantidad].productoId = deltronXpand.productosEnAlmacen[i].productoId;
+                    productosDisponibles[productosDisponiblesCantidad].stock = deltronXpand.productosEnAlmacen[i].stock;
+                    productosDisponibles[productosDisponiblesCantidad].marca = deltronXpand.productos[j].marca;
+                    productosDisponibles[productosDisponiblesCantidad].nombre = deltronXpand.productos[j].nombre;
+                    productosDisponibles[productosDisponiblesCantidad].precio = deltronXpand.productos[j].precio;
+                    productosDisponibles[productosDisponiblesCantidad].clasificacionId = deltronXpand.productos[j].clasificacionId;
+                    productosDisponibles[productosDisponiblesCantidad].tipoDeUsoId = deltronXpand.productos[j].tipoDeUsoId;
+
+                    productosDisponiblesCantidad++;
                 }
             }
         }
     }
 
-    ordenDeCompra ordenDeCompra;
-    ordenDeCompra.ordenDeCompraId = deltronXpand.ordenesDeCompraCantidad;
-    ordenDeCompra.clienteRUC = clienteRUC;
-    ordenDeCompra.fecha = deltronXpand.fecha;
+    // Genera las estructuras de la orden de compra
+    productoComprado productosComprados[100];
+    int productosCompradosCantidad = 0;
 
-    deltronXpand.ordenesDeCompra[deltronXpand.ordenesDeCompraCantidad] = ordenDeCompra;
-    deltronXpand.ordenesDeCompraCantidad++;
-
-    bool encontroProducto = false;
+    // Pide al usuario los productos a su orden
+    int productoDeseadoId = 0;
+    bool productoEncontrado = false;
     int cantidad = 0;
-    productoComprado productoComprado;
 
-    /*
-    // Pide id de producto en almacen, o 0 para dejar de mostrar. Debe de hacerse con un while
     do {
-        cout << "Ingrese el Id del producto deseado, o '0' para dejar de añadir productos a su carrito de compra.'";
+        system("cls");
+        mostrarAppTitulo();
+        mostrarTituloDeOpcion("Generar orden de compra");
+        mostrarTituloDeOpcion("Productos disponibles en el almacén seleccionado");
+
+        mostrarListaDeProductosDisponibles(deltronXpand, productosDisponibles, productosDisponiblesCantidad);
+
+        cout << endl << "Seleccione el Id del producto deseado o '0' para dejar de añadir productos a su carrito de compra." << endl;
         cin >> productoDeseadoId;
 
-        for (int i = 0; i < deltronXpand.productosEnAlmacenCantidad; i++) {
-            if (deltronXpand.productosEnAlmacen[i].productoEnAlmacenId == productoDeseadoId) {
-                // Encontró el producto
-                break;
+        if (productoDeseadoId != 0) {
+            int i;
+            for (i = 0; i < productosDisponiblesCantidad; i++) {
+                if (productoDeseadoId == productosDisponibles[i].productoEnAlmacenId) {
+                    productoEncontrado = true;
+                    break;
+                }
+            }
+
+            if (productoEncontrado) {
+                cantidad = pedirEntero("Ingrese la cantidad del producto (" + productosDisponibles[i].nombre + ")", 1, productosDisponibles[i].stock);
+
+                productosComprados[productosCompradosCantidad].productoEnAlmacenId = productosDisponibles[i].almacenId;
+                productosComprados[productosCompradosCantidad].marca = productosDisponibles[i].marca;
+                productosComprados[productosCompradosCantidad].nombre = productosDisponibles[i].nombre;
+                productosComprados[productosCompradosCantidad].precio = productosDisponibles[i].precio;
+                productosComprados[productosCompradosCantidad].cantidad = cantidad;
+
+                productosDisponibles[i].stock = productosDisponibles[i].stock - cantidad;
+
+                productosCompradosCantidad++;
+
+                cout << endl << productosDisponibles[i].nombre << " x" << cantidad << " añadido/s a su orden." << endl;
+                esperarMostrandoTexto("Puede continuar añadiendo más productos.", true);
+            }
+            else {
+                cout << endl << "Por favor ingrese un id valido." << endl;
             }
         }
-
-        if (!encontroProducto) {
-            cout << "No se encontró el Id del producto, por favor ingrese el ID de un producto existente.";
-        }
-        else {
-            productosDeseadosIds[productosDeseadosCantidad] = productoDeseadoId;
-            productosDeseadosCantidad++;
-
-            // Convertir este en una funcion independiente
-        cout << "¿Qué cantidad desea de este producto?" + endl;
-        cin >> cantidad;
-
-        productoComprado.productoCompradoId = deltronXpand.productosCompradosCantidad;
-        productoComprado. productoEnAlmacenId = productoDeseadoId;
-        productoComprado. ordenDeCompraId = ordenDeCompra.ordenDeCompraId;
-        productoComprado. cantidad = cantidad;
-        productoComprado. marca = ;
-        productoComprado. nombre = ;
-        productoComprado. precio = ;
-
-        deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad] = productoComprado;
-        deltronXpand.productosCompradosCantidad++;
-        }
     } while (productoDeseadoId != 0);
-    */
 
+    if (productosCompradosCantidad == 0) {
+        cout << endl << "Orden no creada, no introdujo ningún producto." << endl;
+        return;
+    }
 
+    // Añadir los elementos del carrito de compra a los arreglos de deltronXpand
+    deltronXpand.ordenesDeCompra[deltronXpand.ordenesDeCompraCantidad].ordenDeCompraId = deltronXpand.ordenesDeCompraCantidad;
+    deltronXpand.ordenesDeCompra[deltronXpand.ordenesDeCompraCantidad].clienteRUC = clienteRUC;
+    deltronXpand.ordenesDeCompra[deltronXpand.ordenesDeCompraCantidad].fecha = deltronXpand.fecha;
+
+    for (int i = 0; i < productosCompradosCantidad; i++) {
+
+        deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad].productoCompradoId = deltronXpand.productosCompradosCantidad;
+        deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad].productoEnAlmacenId = productosComprados[i].productoEnAlmacenId;
+        deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad].ordenDeCompraId = deltronXpand.ordenesDeCompraCantidad;
+
+        deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad].marca = productosComprados[i].marca;
+        deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad].nombre = productosComprados[i].nombre;
+        deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad].precio = productosComprados[i].precio;
+
+        deltronXpand.productosComprados[deltronXpand.productosCompradosCantidad].cantidad = productosComprados[i].cantidad;
+
+        deltronXpand.productosCompradosCantidad++;
+    }
+
+    deltronXpand.ordenesDeCompraCantidad++;
+
+    cout << endl << "Orden creada correctamente, ya puede pagar sus productos haciendo uso de una pasarela de pago." << endl;
 }
 
 void verHistorialDeOrdenes(deltronXpand deltronXpand, string clienteRUC) {
