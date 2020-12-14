@@ -448,7 +448,7 @@ void inicializarProductosComprados(deltronXpand& deltronXpand) {
     deltronXpand.productosComprados[3].nombre = "Ryzen 7 3700X";
     deltronXpand.productosComprados[3].precio = 290;
 
-    deltronXpand.productosComprados[4].productoCompradoId = 4;
+    deltronXpand.productosComprados[4].productoCompradoId = 5;
     deltronXpand.productosComprados[4].productoEnAlmacenId = 3;
     deltronXpand.productosComprados[4].ordenDeCompraId = 4;
     deltronXpand.productosComprados[4].cantidad = 1;
