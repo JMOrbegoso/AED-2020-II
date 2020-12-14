@@ -208,22 +208,40 @@ void editarProductoEnAlmacen(deltronXpand& deltronXpand) {
 }
 
 /// <summary>
-/// Muestra todos los productos disponibles en stock
+/// Muestra un buscador de productos / catalogo al usuario
 /// </summary>
 void revisarCatalogo(deltronXpand deltronXpand) {
     int almacenId;
     int clasificacionId;
 
+    // Limpia la pantalla
+    system("cls");
+
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Catalogo de productos");
+
     // Pregunta almac�n
     almacenId = pedirAlmacenId(deltronXpand);
+
+    // Limpia la pantalla
+    system("cls");
+
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Catalogo de productos");
 
     // Pregunta Clasificaci�n
     clasificacionId = pedirClasificacionId(deltronXpand);
 
-    mostrarCabeceraDeListaDeProductos(4);
+    // Limpia la pantalla
+    system("cls");
+
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Catalogo de productos");
+
+    mostrarCabeceraDeListaDeProductos(9);
 
     // Muestra productos que cumplan ese requerimiento
-    int fila = 0;
+    int fila = 1;
     for (int i = 0; i < deltronXpand.productosEnAlmacenCantidad; i++)
     {
         if (deltronXpand.productosEnAlmacen[i].almacenId == almacenId)
@@ -234,7 +252,7 @@ void revisarCatalogo(deltronXpand deltronXpand) {
                 {
                     if (deltronXpand.productos[j].clasificacionId == clasificacionId)
                     {
-                        mostrarFilaDeListaDeProductos(deltronXpand, 4 + fila, deltronXpand.productos[j]);
+                        mostrarFilaDeListaDeProductos(deltronXpand, 9 + fila, deltronXpand.productos[j]);
                         fila++;
                     }
                 }
