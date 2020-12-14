@@ -364,7 +364,11 @@ void inicializarOrdenesDeCompra(deltronXpand& deltronXpand) {
     deltronXpand.ordenesDeCompra[1].clienteRUC = "22222222222";
     deltronXpand.ordenesDeCompra[1].fecha = "2020/Febrero/15";
 
-    deltronXpand.ordenesDeCompraCantidad = 2;
+    deltronXpand.ordenesDeCompra[2].ordenDeCompraId = 3;
+    deltronXpand.ordenesDeCompra[2].clienteRUC = "11111111111";
+    deltronXpand.ordenesDeCompra[2].fecha = "2020/Agosto/24";
+
+    deltronXpand.ordenesDeCompraCantidad = 3;
 }
 
 void inicializarProductosComprados(deltronXpand& deltronXpand) {
@@ -393,7 +397,15 @@ void inicializarProductosComprados(deltronXpand& deltronXpand) {
     deltronXpand.productosComprados[2].nombre = "Ryzen 7 3700X";
     deltronXpand.productosComprados[2].precio = 300;
 
-    deltronXpand.productosCompradosCantidad = 3;
+    deltronXpand.productosComprados[2].productoCompradoId = 4;
+    deltronXpand.productosComprados[2].productoEnAlmacenId = 3;
+    deltronXpand.productosComprados[2].ordenDeCompraId = 3;
+    deltronXpand.productosComprados[2].cantidad = 1;
+    deltronXpand.productosComprados[2].marca = "AMD";
+    deltronXpand.productosComprados[2].nombre = "Ryzen 7 3700X";
+    deltronXpand.productosComprados[2].precio = 290;
+
+    deltronXpand.productosCompradosCantidad = 4;
 }
 
 void inicializacion(deltronXpand& deltronXpand) {
