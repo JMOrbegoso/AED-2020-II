@@ -307,7 +307,6 @@ void crearOrdenDeCompra(deltronXpand& deltronXpand, string clienteRUC) {
     ordenDeCompra.ordenDeCompraId = deltronXpand.ordenesDeCompraCantidad;
     ordenDeCompra.clienteRUC = clienteRUC;
     ordenDeCompra.fecha = deltronXpand.fecha;
-    ordenDeCompra.clienteRazonSocial = obtenerRazonSocialDeCliente(deltronXpand, clienteRUC);
 
     deltronXpand.ordenesDeCompra[deltronXpand.ordenesDeCompraCantidad] = ordenDeCompra;
     deltronXpand.ordenesDeCompraCantidad++;
