@@ -356,7 +356,7 @@ int pedirOpcionDelMenuEmpleadoDeVentas(string nombreEmpleadoDeVentas) {
     cout << endl;
     mostrarLineaSeparadora();
 
-    cout << endl << "¿Que desea hacer hoy?" << endl << endl;
+    cout << endl << "¿Que desea hacer?" << endl << endl;
 
     cout << "[1] Mostrar todas las ordenes" << endl;
     cout << "[2] Revisar Almacenes" << endl;
@@ -388,7 +388,7 @@ int pedirOpcionDelMenuCliente(string razonSocialCliente) {
     cout << endl;
     mostrarLineaSeparadora();
 
-    cout << endl << "¿Que desea hacer hoy?" << endl << endl;
+    cout << endl << "¿Que desea hacer?" << endl << endl;
 
     cout << "[1] Revisar catalogo de productos" << endl;
     cout << "[2] Buscar producto por nombre" << endl;
