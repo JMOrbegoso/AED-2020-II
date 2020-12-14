@@ -265,15 +265,38 @@ void buscarProductoPorNombre(deltronXpand deltronXpand) {
     int almacenId;
     string terminoDeBusqueda;
 
+    // Limpia la pantalla
+    system("cls");
+
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Buscar producto por nombre");
+
     // Pregunta el almacen
     almacenId = pedirAlmacenId(deltronXpand);
+
+    // Limpia la pantalla
+    system("cls");
+
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Buscar producto por nombre");
 
     // Pregunta el termino de busqueda
     terminoDeBusqueda = pedirTerminoDeBusqueda();
 
-    mostrarCabeceraDeListaDeProductos(4);
+    // Limpia la pantalla
+    system("cls");
 
-    int fila = 0;
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Buscar producto por nombre");
+
+    cout << endl << "Productos con nombre similar a '" + terminoDeBusqueda + "' en el almacén " + obtenerNombreDeAlmacen(deltronXpand, almacenId) << endl;
+
+    mostrarCabeceraDeListaDeProductos(12);
+
+    int fila = 1;
     // Busca el termino de busqueda en el arreglo de productos
     for (int i = 0; i < deltronXpand.productosEnAlmacenCantidad; i++)
     {
@@ -286,7 +309,7 @@ void buscarProductoPorNombre(deltronXpand deltronXpand) {
                     if (contieneTexto(convertirEnMinusculas(deltronXpand.productos[j].nombre), terminoDeBusqueda))
                     {
                         // Y los muestra en pantalla
-                        mostrarFilaDeListaDeProductos(deltronXpand, 6 + fila, deltronXpand.productos[j]);
+                        mostrarFilaDeListaDeProductos(deltronXpand, 12 + fila, deltronXpand.productos[j]);
                         fila++;
                     }
                 }
