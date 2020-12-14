@@ -375,8 +375,7 @@ void crearOrdenDeCompra(deltronXpand& deltronXpand, string clienteRUC) {
 
 void verHistorialDeOrdenes(deltronXpand deltronXpand, string clienteRUC) {
     float parcial;
-    int compraNumero = 1;
-    int fila = 0;
+    int fila = 1;
 
     // Recorre con un for todo el arreglo de ordenesDeCompra
     // Buscando las compras realizadas por un cliente con el ruc *clienteRUC*
@@ -385,6 +384,7 @@ void verHistorialDeOrdenes(deltronXpand deltronXpand, string clienteRUC) {
     system("cls");
 
     // Muestra titulo
+    mostrarAppTitulo();
     mostrarTituloDeOpcion("Historial de Ordenes");
 
     // Recorre con un for todo el arreglo de ordenesDeCompra
@@ -393,10 +393,9 @@ void verHistorialDeOrdenes(deltronXpand deltronXpand, string clienteRUC) {
         if (deltronXpand.ordenesDeCompra[i].clienteRUC == clienteRUC)
         {
             parcial = 0;
-            cout << "Compra #" << compraNumero << ":" << endl;
+            cout << endl << "[Orden #" << deltronXpand.ordenesDeCompra[i].ordenDeCompraId << "]. Realizada el día " << deltronXpand.ordenesDeCompra[i].fecha << ":" << endl;
 
-            mostrarCabeceraDeListaDeProductosComprados(5);
-            mostrarLineaSeparadora();
+            mostrarCabeceraDeListaDeProductosComprados(10 + fila);
 
             // Obtener el producto comprado desde sus propiedades originales
             for (int j = 0; j < deltronXpand.productosCompradosCantidad; j++)
@@ -407,17 +406,20 @@ void verHistorialDeOrdenes(deltronXpand deltronXpand, string clienteRUC) {
                     parcial += deltronXpand.productosComprados[j].precio * deltronXpand.productosComprados[j].cantidad;
 
                     // Se imprime en pantalla el producto
-                    mostrarFilaDeListaDeProductosComprados(deltronXpand, 7 + fila, deltronXpand.productosComprados[j]);
+                    mostrarFilaDeListaDeProductosComprados(deltronXpand, 11 + fila, deltronXpand.productosComprados[j]);
 
                     fila++;
                 }
             }
 
             // Muestra el precio total de la compra:
-            mostrarPieDePresupuesto(parcial);
-            compraNumero++;
+            mostrarPieDePresupuesto(parcial, 11 + fila);
 
-            cout << endl;
+            fila = fila + 8;
+
+            cout << endl << endl;
+
+            mostrarLineaSeparadora();
         }
     }
 }
