@@ -209,8 +209,8 @@ string pedirTerminoDeBusqueda() {
     return pedirTexto("Ingrese el termino de busqueda", 2);
 }
 
-std::string toString(auto &i){
-   std::stringstream ss;
+string toString(int &i){
+   stringstream ss;
    ss << i;
  
    return ss.str();
