@@ -175,6 +175,34 @@ void mostrarFilaDeListaDeProductosEnAlmacen(deltronXpand deltronXpand, int y, pr
 }
 
 /// <param name="y">eje-y</param>
+void mostrarCabeceraDeListaDeProductosDisponibles(int y) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, 2);
+
+    gotoxy(0, y); cout << "Id" << endl;
+    gotoxy(5, y); cout << "Marca" << endl;
+    gotoxy(20, y); cout << "Nombre" << endl;
+    gotoxy(50, y); cout << "Precio (USD)" << endl;
+    gotoxy(65, y); cout << "Stock" << endl;
+    gotoxy(75, y); cout << "Clasificación" << endl;
+    gotoxy(90, y); cout << "Tipo de Uso" << endl;
+
+    SetConsoleTextAttribute(hConsole, 15);
+}
+
+/// <param name="y">eje-y</param>
+void mostrarFilaDeListaDeProductosDisponibles(deltronXpand deltronXpand, int y, productoDisponible productoDisponible) {
+
+    gotoxy(0, y); cout << productoDisponible.productoEnAlmacenId << endl;
+    gotoxy(5, y); cout << productoDisponible.marca << endl;
+    gotoxy(20, y); cout << productoDisponible.nombre << endl;
+    gotoxy(50, y); cout << productoDisponible.precio << endl;
+    gotoxy(65, y); cout << productoDisponible.stock << endl;
+    gotoxy(75, y); cout << obtenerNombreDeClasificacion(deltronXpand, productoDisponible.clasificacionId) << endl;
+    gotoxy(90, y); cout << obtenerNombreDeTipoDeUso(deltronXpand, productoDisponible.tipoDeUsoId) << endl;
+}
+
+/// <param name="y">eje-y</param>
 void mostrarCabeceraDeListaDeProductosComprados(int y) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, 2);
@@ -195,6 +223,17 @@ void mostrarFilaDeListaDeProductosComprados(deltronXpand deltronXpand, int y, pr
     gotoxy(35, y); cout << productoComprado.precio << endl;
     gotoxy(55, y); cout << productoComprado.cantidad << endl;
     gotoxy(75, y); cout << (productoComprado.precio * productoComprado.cantidad) << endl;
+}
+
+void mostrarListaDeProductosDisponibles(deltronXpand deltronXpand, productoDisponible* productosDisponibles, int productosDisponiblesCantidad) {
+    int fila = 1;
+    mostrarCabeceraDeListaDeProductosDisponibles(12);
+    for (int i = 0; i < productosDisponiblesCantidad; i++) {
+        if (productosDisponibles[i].stock > 0) {
+            mostrarFilaDeListaDeProductosDisponibles(deltronXpand, 12 + fila, productosDisponibles[i]);
+            fila++;
+        }
+    }
 }
 
 #pragma endregion
