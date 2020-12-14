@@ -120,6 +120,36 @@ char pedirGenero() {
     return genero;
 }
 
+int pedirEntero(string mensaje, int min) {
+    int entero;
+
+    cout << mensaje << " (Mínimo " << min << ")" << endl;
+    cin >> entero;
+
+    while (!(min <= entero)) {
+        cout << "Por favor, introduzca un valor mínimo de " << min << "." << endl;
+        fflush(stdin);
+        cin >> entero;
+    }
+
+    return entero;
+}
+
+int pedirEntero(string mensaje, int min, int max) {
+    int entero;
+
+    cout << mensaje << "(Mínimo " << min << " y máximo " << max << ")" << endl;
+    cin >> entero;
+
+    while (!(min <= entero && entero <= max)) {
+        cout << "Por favor, introduzca un valor mínimo de " << min << " o máximo de " << max << "." << endl;
+        fflush(stdin);
+        cin >> entero;
+    }
+
+    return entero;
+}
+
 int pedirEdad(int edadMinima) {
     int edad;
 
