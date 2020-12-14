@@ -151,33 +151,7 @@ int pedirEntero(string mensaje, int min, int max) {
 }
 
 int pedirEdad(int edadMinima) {
-    int edad;
-
-    cout << "¿Qué edad tiene (Mínimo " << edadMinima << " años)?" << endl;
-    cin >> edad;
-
-    while (!(edadMinima <= edad)) {
-        cout << "Por favor, ingrese una edad mínima de " << edadMinima << " años." << endl;
-        fflush(stdin);
-        cin >> edad;
-    }
-
-    return edad;
-}
-
-int pedirEdad(int edadMinima, int edadMaxima) {
-    int edad;
-
-    cout << "¿Qué edad tiene (Mínimo " << edadMinima << " años y máximo " << edadMaxima << ")?" << endl;
-    cin >> edad;
-
-    while (!(edadMinima <= edad && edad <= edadMaxima)) {
-        cout << "Por favor, ingrese una edad mínima de " << edadMinima << " años y máxima de " << edadMaxima << "." << endl;
-        fflush(stdin);
-        cin >> edad;
-    }
-
-    return edad;
+    return pedirEntero("¿Cúal es su edad?", 18);
 }
 
 string pedirDNI() {
@@ -246,13 +220,7 @@ string pedirFecha() {
     string fecha;
 
     // Pide año
-    int year;
-    cout << endl << "¿En que año nos encontramos?" << endl;
-    cin >> year;
-    while (!(2000 <= year && year <= (2040))) {
-        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
-        cin >> year;
-    }
+    int year = pedirEntero("¿Cúal es el año actual?", 2000, 2050);
 
     // Pide mes
     int mesSeleccionado;
@@ -300,13 +268,7 @@ string pedirFecha() {
     }
 
     // Pide dia
-    int dia;
-    cout << endl << "¿Que día del mes es hoy?" << endl;
-    cin >> dia;
-    while (!(1 <= dia && dia <= maxDias)) {
-        cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
-        cin >> dia;
-    }
+    int dia = pedirEntero("¿Hoy que día del mes es?", 1, maxDias);
 
     return toString(year) + "/" + meses[mesSeleccionado] + "/" + toString(dia);
 }
