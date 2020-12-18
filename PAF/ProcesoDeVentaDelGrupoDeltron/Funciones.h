@@ -139,14 +139,35 @@ void mostrarOrdenes(deltronXpand deltronXpand) {
 }
 
 void revisarAlmacenes(deltronXpand deltronXpand) {
-    // Revisar el contenido de la funcion: * editarProductoEnAlmacen *, es muy parecida a esta
+    system("cls");
 
-    // Pregunta de que almacen desea revisar y lo almacena en *almacenId*
-    int almacenId = pedirTipoDeUsoId(deltronXpand);
-    // Recorre con un *for* todos los *productos en almacen*
-    // Busca los elementos de *productos en almacen* que tengan la propiedad almacenId igual que lo pedido por el usuario
-    // Cuando encuentra uno de estos elementos busca su productoId en el arreglo de productos
-    // Cuando lo encuentre lo muestra en pantalla con su stock
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Revisar almacenes");
+
+    int almacenId = pedirAlmacenId(deltronXpand);
+
+    // Primero pregunta el almacen que desea buscar usando almacenId = pedirAlmacenId(deltronXpand);
+    system("cls");
+
+    string nombreDelAlmacen = obtenerNombreDeAlmacen(deltronXpand, almacenId);
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Producto en almacén de " + nombreDelAlmacen);
+
+    mostrarCabeceraDeListaDeProductosEnAlmacen(10);
+
+    // Luego debe de mostrar los productos en ese almacen, para saber los datos debe de usar un for dentro de otro for
+    int fila = 1;
+    for (int i = 0; i < deltronXpand.productosEnAlmacenCantidad; i++) {
+        if (deltronXpand.productosEnAlmacen[i].almacenId == almacenId) {
+            for (int j = 0; j < deltronXpand.productosCantidad; j++) {
+                if (deltronXpand.productos[j].productoId == deltronXpand.productosEnAlmacen[i].productoId) {
+                    // Mostrar los productos en pantalla
+                    mostrarFilaDeListaDeProductosEnAlmacen(deltronXpand, 10 + fila, deltronXpand.productosEnAlmacen[i], deltronXpand.productos[j]);
+                    fila++;
+                }
+            }
+        }
+    }
 }
 
 void registrarProducto(deltronXpand& deltronXpand) {
