@@ -157,6 +157,11 @@ void menuEmpleadoDeVentas(deltronXpand& deltronXpand, string dniDelEmpleadoDeVen
                 system("pause");
                 break;
 
+            case 6:
+                retirarProducto(deltronXpand);
+                system("pause");
+                break;
+
             default:
                 break;
             }

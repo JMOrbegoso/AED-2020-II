@@ -228,6 +228,15 @@ void editarProductoEnAlmacen(deltronXpand& deltronXpand) {
     // FIN
 }
 
+void retirarProducto(deltronXpand& deltronXpand) {
+    // Muestra todos los productos del arreglo deltronXpand.productos
+    // Pide al usuario que ingrese el id del producto que desea retirar
+    // Borra el producto del arreglo de deltronXpand.productos removiendo todas propiedades
+    // Recorre el arreglo de deltronXpand.productosEnAlmacen buscando elementos con productoId igual al seleccionado por el usuario
+    // Los elemina
+    // FIN
+}
+
 /// <summary>
 /// Muestra un buscador de productos / catalogo al usuario
 /// </summary>

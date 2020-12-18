@@ -352,11 +352,12 @@ int pedirOpcionDelMenuEmpleadoDeVentas(string nombreEmpleadoDeVentas) {
     cout << "[3] Registrar nuevo producto" << endl;
     cout << "[4] Editar datos de producto existente" << endl;
     cout << "[5] Cambiar stock de producto en almacén" << endl;
+    cout << "[6] Retirar producto" << endl;
     cout << "[0] Cerrar Sesión" << endl;
 
     cout << endl << "Introduzca la opción deseada:" << endl;
     cin >> opcionSeleccionada;
-    while (!(0 <= opcionSeleccionada && opcionSeleccionada <= 5)) {
+    while (!(0 <= opcionSeleccionada && opcionSeleccionada <= 6)) {
         cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
         cin >> opcionSeleccionada;
     }
