@@ -92,9 +92,6 @@ void menuLoginCliente(deltronXpand& deltronXpand) {
             {
             case 2:
                 registrarCliente(deltronXpand);
-
-                esperarMostrandoTexto("Ahora ya puede iniciar sesión", true);
-
             case 1:
                 clienteRUC = loginCliente(deltronXpand);
 
