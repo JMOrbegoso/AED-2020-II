@@ -386,8 +386,10 @@ void revisarCatalogo(deltronXpand deltronXpand) {
                 {
                     if (deltronXpand.productos[j].clasificacionId == clasificacionId)
                     {
-                        mostrarFilaDeListaDeProductos(deltronXpand, 9 + fila, deltronXpand.productos[j]);
-                        fila++;
+                        if (deltronXpand.productos[j].activo) {
+                            mostrarFilaDeListaDeProductos(deltronXpand, 9 + fila, deltronXpand.productos[j]);
+                            fila++;
+                        }
                     }
                 }
             }
@@ -545,17 +547,19 @@ void crearOrdenDeCompra(deltronXpand& deltronXpand, string clienteRUC) {
             for (int j = 0; j < deltronXpand.productosCantidad; j++) {
                 if (deltronXpand.productos[j].productoId == deltronXpand.productosEnAlmacen[i].productoId) {
 
-                    productosDisponibles[productosDisponiblesCantidad].productoEnAlmacenId = deltronXpand.productosEnAlmacen[i].productoEnAlmacenId;
-                    productosDisponibles[productosDisponiblesCantidad].almacenId = deltronXpand.productosEnAlmacen[i].almacenId;
-                    productosDisponibles[productosDisponiblesCantidad].productoId = deltronXpand.productosEnAlmacen[i].productoId;
-                    productosDisponibles[productosDisponiblesCantidad].stock = deltronXpand.productosEnAlmacen[i].stock;
-                    productosDisponibles[productosDisponiblesCantidad].marca = deltronXpand.productos[j].marca;
-                    productosDisponibles[productosDisponiblesCantidad].nombre = deltronXpand.productos[j].nombre;
-                    productosDisponibles[productosDisponiblesCantidad].precio = deltronXpand.productos[j].precio;
-                    productosDisponibles[productosDisponiblesCantidad].clasificacionId = deltronXpand.productos[j].clasificacionId;
-                    productosDisponibles[productosDisponiblesCantidad].tipoDeUsoId = deltronXpand.productos[j].tipoDeUsoId;
+                    if (deltronXpand.productos[j].activo) {
+                        productosDisponibles[productosDisponiblesCantidad].productoEnAlmacenId = deltronXpand.productosEnAlmacen[i].productoEnAlmacenId;
+                        productosDisponibles[productosDisponiblesCantidad].almacenId = deltronXpand.productosEnAlmacen[i].almacenId;
+                        productosDisponibles[productosDisponiblesCantidad].productoId = deltronXpand.productosEnAlmacen[i].productoId;
+                        productosDisponibles[productosDisponiblesCantidad].stock = deltronXpand.productosEnAlmacen[i].stock;
+                        productosDisponibles[productosDisponiblesCantidad].marca = deltronXpand.productos[j].marca;
+                        productosDisponibles[productosDisponiblesCantidad].nombre = deltronXpand.productos[j].nombre;
+                        productosDisponibles[productosDisponiblesCantidad].precio = deltronXpand.productos[j].precio;
+                        productosDisponibles[productosDisponiblesCantidad].clasificacionId = deltronXpand.productos[j].clasificacionId;
+                        productosDisponibles[productosDisponiblesCantidad].tipoDeUsoId = deltronXpand.productos[j].tipoDeUsoId;
 
-                    productosDisponiblesCantidad++;
+                        productosDisponiblesCantidad++;
+                    }
                 }
             }
         }
