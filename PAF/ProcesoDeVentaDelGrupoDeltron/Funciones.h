@@ -457,11 +457,64 @@ void buscarProductoPorNombre(deltronXpand deltronXpand) {
 }
 
 void buscarProductoPorMarca(deltronXpand deltronXpand) {
+    int almacenId;
+    string terminoDeBusqueda;
+
+    // Limpia la pantalla
+    system("cls");
+
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Buscar producto por marca");
+
+    // Pregunta el almacen
+    almacenId = pedirAlmacenId(deltronXpand);
+
+    // Limpia la pantalla
+    system("cls");
+
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Buscar producto por marca");
+
     // Pregunta el termino de busqueda
+    terminoDeBusqueda = pedirTerminoDeBusqueda();
 
+    // Limpia la pantalla
+    system("cls");
+
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Buscar producto por marca");
+
+    cout << endl << "Productos con marca similar a '" + terminoDeBusqueda + "' en el almacén " + obtenerNombreDeAlmacen(deltronXpand, almacenId) << endl;
+
+    mostrarCabeceraDeListaDeProductos(12);
+
+    int fila = 1;
     // Busca el termino de busqueda en el arreglo de productos
-
-    // Proceso similar a la funcion buscarProductoPorNombre pero en lugar de comparar el nombre, compara la marca.
+    for (int i = 0; i < deltronXpand.productosEnAlmacenCantidad; i++)
+    {
+        if (deltronXpand.productosEnAlmacen[i].almacenId == almacenId)
+        {
+            for (int j = 0; j < deltronXpand.productosCantidad; j++)
+            {
+                if (deltronXpand.productos[j].productoId == deltronXpand.productosEnAlmacen[i].productoId)
+                {
+                    // Verifica si el termino de busqueda se encuentra en el marca del producto
+                    if (contieneTexto(convertirEnMinusculas(deltronXpand.productos[j].marca), terminoDeBusqueda))
+                    {
+                        // Ahora verifica si el producto está activo
+                        if (deltronXpand.productos[j].activo) {
+                            // Y los muestra en pantalla
+                            mostrarFilaDeListaDeProductos(deltronXpand, 12 + fila, deltronXpand.productos[j]);
+                            fila++;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 void crearOrdenDeCompra(deltronXpand& deltronXpand, string clienteRUC) {
