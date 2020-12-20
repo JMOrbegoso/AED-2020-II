@@ -36,6 +36,7 @@ struct producto {
 	float precio;
 	int clasificacionId;
 	int tipoDeUsoId;
+	bool activo;
 };
 
 struct productoEnAlmacen {

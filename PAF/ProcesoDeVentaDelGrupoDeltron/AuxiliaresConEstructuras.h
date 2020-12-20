@@ -355,6 +355,7 @@ void inicializarProductos(deltronXpand& deltronXpand) {
     deltronXpand.productos[0].precio = 150;
     deltronXpand.productos[0].clasificacionId = 4;
     deltronXpand.productos[0].tipoDeUsoId = 2;
+    deltronXpand.productos[0].activo = true;
 
     deltronXpand.productos[1].productoId = 2;
     deltronXpand.productos[1].marca = "AMD";
@@ -362,6 +363,7 @@ void inicializarProductos(deltronXpand& deltronXpand) {
     deltronXpand.productos[1].precio = 210;
     deltronXpand.productos[1].clasificacionId = 4;
     deltronXpand.productos[1].tipoDeUsoId = 2;
+    deltronXpand.productos[1].activo = true;
 
     deltronXpand.productos[2].productoId = 3;
     deltronXpand.productos[2].marca = "AMD";
@@ -369,6 +371,7 @@ void inicializarProductos(deltronXpand& deltronXpand) {
     deltronXpand.productos[2].precio = 320;
     deltronXpand.productos[2].clasificacionId = 4;
     deltronXpand.productos[2].tipoDeUsoId = 2;
+    deltronXpand.productos[2].activo = true;
 
     deltronXpand.productosCantidad = 3;
 }
