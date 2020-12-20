@@ -154,15 +154,48 @@ void registrarPersonalDeVentas(deltronXpand& deltronXpand) {
 }
 
 void registrarCliente(deltronXpand& deltronXpand) {
-    // Pide la razï¿½n social
-    // Pide RUC (11 caracteres)
+    string razonSocial, ruc, clave;
+
+    // Limpia la pantalla
+    system("cls");
+
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Registrar cliente");
+
+    // Pide razon social
+    razonSocial = pedirTexto("¿Cúal es su razón social?", 1);
+    // Pide ruc (11 caracteres)
+    ruc = pedirRUC();
     // Pide la clave (minimo 6 caracteres)
-    // Verifica con un "for" si el RUC del nuevo cliente ya estï¿½ en uso por otro cliente ya registrado
-    //
-    //      Si ya existe alguno registrado muestra un texto diciendo que el RUC usado ya estï¿½ en uso
-    //
-    //      Si no encontrï¿½ el RUC, aï¿½ade el cliente al arreglo de clientes
-    //      Le muestra un mensaje diciendo que fue registrado exitosamente y ya puede iniciar sesiï¿½n
+    clave = pedirClave();
+
+    // Verifica con un "for" si el ruc del nuevo cliente ya estï¿½ en uso por otro cliente ya registrado
+    bool usuarioYaExiste = false;
+    for (int i = 0; i < deltronXpand.clientesCantidad; i++) {
+        if (deltronXpand.clientes[i].ruc == ruc) {
+            usuarioYaExiste = true;
+            break;
+        }
+    }
+
+    if (usuarioYaExiste) {
+        // Si ya existe alguno registrado muestra un texto diciendo que el RUC usado ya estï¿½ en uso
+        system("cls");
+        cout << "Usted ya se habia registrado con su ruc, por favor inicie sesión." << endl;
+        esperarMostrandoTexto("Por favor inicie sesión", true);
+    }
+    else {
+        // Si no encontrï¿½ el ruc, aï¿½ade el empleado de ventas al arreglo de empleados de ventas
+        deltronXpand.clientes[deltronXpand.clientesCantidad].razonSocial = razonSocial;
+        deltronXpand.clientes[deltronXpand.clientesCantidad].ruc = ruc;
+        deltronXpand.clientes[deltronXpand.clientesCantidad].clave = clave;
+        deltronXpand.clientesCantidad++;
+
+        // Le muestra un mensaje diciendo que fue registrado exitosamente y ya puede iniciar sesiï¿½n
+        cout << "Fue registrado exitosamente" << endl;
+        esperarMostrandoTexto("Ahora ya puede iniciar sesión", true);
+    }
 }
 
 void mostrarOrdenes(deltronXpand deltronXpand) {
