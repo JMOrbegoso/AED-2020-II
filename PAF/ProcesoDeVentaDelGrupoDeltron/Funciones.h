@@ -440,11 +440,15 @@ void buscarProductoPorNombre(deltronXpand deltronXpand) {
             {
                 if (deltronXpand.productos[j].productoId == deltronXpand.productosEnAlmacen[i].productoId)
                 {
+                    // Verifica si el termino de busqueda se encuentra en el nombre del producto
                     if (contieneTexto(convertirEnMinusculas(deltronXpand.productos[j].nombre), terminoDeBusqueda))
                     {
-                        // Y los muestra en pantalla
-                        mostrarFilaDeListaDeProductos(deltronXpand, 12 + fila, deltronXpand.productos[j]);
-                        fila++;
+                        // Ahora verifica si el producto está activo
+                        if (deltronXpand.productos[j].activo) {
+                            // Y los muestra en pantalla
+                            mostrarFilaDeListaDeProductos(deltronXpand, 12 + fila, deltronXpand.productos[j]);
+                            fila++;
+                        }
                     }
                 }
             }
