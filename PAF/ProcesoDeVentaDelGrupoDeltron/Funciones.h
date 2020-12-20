@@ -70,16 +70,51 @@ string loginCliente(deltronXpand deltronXpand) {
 }
 
 void registrarPersonalDeVentas(deltronXpand& deltronXpand) {
+    // Limpia la pantalla
+    system("cls");
+
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Registrar personal de ventas");
+
+    string nombre, apellido, dni, clave;
+
+    cout << "\tSe registrará como empleado de ventas" << endl << endl;
     // Pide nombres
+    nombre = pedirTexto("¿Cúal es el nombre del personal de ventas?", 1);
     // Pide apellidos
+    apellido = pedirTexto("¿Cúal es el apellido del personal de ventas?", 2);
     // Pide DNI (8 caracteres)
+    dni = pedirDNI();
     // Pide la clave (minimo 6 caracteres)
+    clave = pedirClave();
+
+    bool usuarioYaExiste = false;
+
     // Verifica con un "for" si el DNI del nuevo empleadoDeVentas ya estï¿½ en uso por otro empleadoDeVentas ya registrado
-    //
-    //      Si ya existe alguno registrado muestra un texto diciendo que el DNI usado ya estï¿½ en uso
-    //
-    //      Si no encontrï¿½ el DNI, aï¿½ade el empleado de ventas al arreglo de empleados de ventas
-    //      Le muestra un mensaje diciendo que fue registrado exitosamente y ya puede iniciar sesiï¿½n
+    for (int i = 0; i < deltronXpand.empleadosDeVentasCantidad; i++) {
+        if (deltronXpand.empleadosDeVentas[i].dni == dni) {
+            usuarioYaExiste = true;
+            break;
+        }
+    }
+
+    if (usuarioYaExiste) {
+        // Si ya existe alguno registrado muestra un texto diciendo que el RUC usado ya estï¿½ en uso
+        system("cls");
+        cout << "Usted ya se habia registrado con su DNI, por favor inicie sesión." << endl;
+    }
+    else {
+        // Si no encontrï¿½ el DNI, aï¿½ade el empleado de ventas al arreglo de empleados de ventas
+        deltronXpand.empleadosDeVentas[deltronXpand.empleadosDeVentasCantidad].nombre = nombre;
+        deltronXpand.empleadosDeVentas[deltronXpand.empleadosDeVentasCantidad].apellido = apellido;
+        deltronXpand.empleadosDeVentas[deltronXpand.empleadosDeVentasCantidad].dni = dni;
+        deltronXpand.empleadosDeVentas[deltronXpand.empleadosDeVentasCantidad].clave = clave;
+        deltronXpand.empleadosDeVentasCantidad++;
+
+        // Le muestra un mensaje diciendo que fue registrado exitosamente y ya puede iniciar sesiï¿½n
+        cout << "Fue registrado exitosamente, ya puede iniciar sesión " << endl;
+    }
 }
 
 void registrarCliente(deltronXpand& deltronXpand) {
