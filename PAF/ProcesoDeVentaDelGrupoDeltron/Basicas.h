@@ -73,7 +73,7 @@ void mostrarPieDePresupuesto(float precioParcial, int y) {
 
 void mostrarTituloDeOpcion(string titulo) {
     mostrarLineaSeparadora();
-    cout << "\t\t" << titulo << endl;
+    cout << "\t\t\t\t" << titulo << endl;
     mostrarLineaSeparadora();
 }
 
