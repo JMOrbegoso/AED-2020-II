@@ -56,9 +56,6 @@ void menuLoginEmpleadoDeVentas(deltronXpand& deltronXpand) {
             {
             case 2:
                 registrarPersonalDeVentas(deltronXpand);
-
-                esperarMostrandoTexto("Ahora ya puede iniciar sesión", true);
-
             case 1:
                 empleadoDeVentasDNI = loginPersonalDeVentas(deltronXpand);
 

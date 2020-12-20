@@ -105,6 +105,9 @@ string loginCliente(deltronXpand deltronXpand) {
 }
 
 void registrarPersonalDeVentas(deltronXpand& deltronXpand) {
+
+    string nombre, apellido, dni, clave;
+
     // Limpia la pantalla
     system("cls");
 
@@ -112,21 +115,17 @@ void registrarPersonalDeVentas(deltronXpand& deltronXpand) {
     mostrarAppTitulo();
     mostrarTituloDeOpcion("Registrar personal de ventas");
 
-    string nombre, apellido, dni, clave;
-
-    cout << "\tSe registrará como empleado de ventas" << endl << endl;
     // Pide nombres
-    nombre = pedirTexto("¿Cúal es el nombre del personal de ventas?", 1);
+    nombre = pedirTexto("¿Cúal es su nombre?", 1);
     // Pide apellidos
-    apellido = pedirTexto("¿Cúal es el apellido del personal de ventas?", 2);
+    apellido = pedirTexto("¿Cúal es su apellido?", 2);
     // Pide DNI (8 caracteres)
     dni = pedirDNI();
     // Pide la clave (minimo 6 caracteres)
     clave = pedirClave();
 
-    bool usuarioYaExiste = false;
-
     // Verifica con un "for" si el DNI del nuevo empleadoDeVentas ya estï¿½ en uso por otro empleadoDeVentas ya registrado
+    bool usuarioYaExiste = false;
     for (int i = 0; i < deltronXpand.empleadosDeVentasCantidad; i++) {
         if (deltronXpand.empleadosDeVentas[i].dni == dni) {
             usuarioYaExiste = true;
@@ -138,6 +137,7 @@ void registrarPersonalDeVentas(deltronXpand& deltronXpand) {
         // Si ya existe alguno registrado muestra un texto diciendo que el RUC usado ya estï¿½ en uso
         system("cls");
         cout << "Usted ya se habia registrado con su DNI, por favor inicie sesión." << endl;
+        esperarMostrandoTexto("Por favor inicie sesión", true);
     }
     else {
         // Si no encontrï¿½ el DNI, aï¿½ade el empleado de ventas al arreglo de empleados de ventas
@@ -148,7 +148,8 @@ void registrarPersonalDeVentas(deltronXpand& deltronXpand) {
         deltronXpand.empleadosDeVentasCantidad++;
 
         // Le muestra un mensaje diciendo que fue registrado exitosamente y ya puede iniciar sesiï¿½n
-        cout << "Fue registrado exitosamente, ya puede iniciar sesión " << endl;
+        cout << "Fue registrado exitosamente" << endl;
+        esperarMostrandoTexto("Ahora ya puede iniciar sesión", true);
     }
 }
 
