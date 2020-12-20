@@ -48,25 +48,53 @@ string loginPersonalDeVentas(deltronXpand deltronXpand) {
 }
 
 string loginCliente(deltronXpand deltronXpand) {
+
+    // Limpia la pantalla
+    system("cls");
+
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Inicio de Sesión de cliente");
+
     // Pide RUC (11 caracteres)
+    string rucIngresado = pedirRUC();
     // Pide la clave (minimo 6 caracteres)
+    string claveIngresada = pedirClave();
+
+    bool encontroCliente = false;
+
     // Buscar que el RUC sea exactamente igual al de un cliente existente
-    //
-    //      No encontro el RUC (El cliente no existe):
-    //      Muestra texto diciendo que el client ingresado no existe
-    //      Retorna ""
-    //
-    //      Si encontró el RUC (El cliente si existe):
-    //      Verfica con un "if" si la clave ingresada es la misma del cliente guardado
-    //
-    //          Si es la misma clave:
-    //          Muestra texto diciendo bienvenid@ *nombre del cliente*
-    //          Retorna el RUC del cliente
-    //
-    //          No es la misma clave
-    //          Muestra texto diciendo que la clave es incorrecta
-    //          Retorna ""
-    return "11111111111";
+    for (int i = 0; i < deltronXpand.clientesCantidad; i++) {
+        if (deltronXpand.clientes[i].ruc == rucIngresado) {
+            // Se encontro un cliente con ese RUC
+            // Significa que el cliente fue encontrado
+            encontroCliente = true;
+
+            // Verfica con un "if" si la clave ingresada es la misma del cliente guardado
+            if (claveIngresada == deltronXpand.clientes[i].clave) {
+                // Significa que el usuario ingreso su clave correctamente.
+                system("cls");
+
+                gotoxy(10, 15); cout << "Bienvenid@ " << obtenerRazonSocialDeCliente(deltronXpand, rucIngresado) << endl;
+
+                gotoxy(0, 30); esperarMostrandoTexto("Ingresando", true);
+
+                return deltronXpand.clientes[i].ruc;
+            }
+            else {
+                // Significa que el usuario NO ingreso su clave correctamente.
+                cout << "Contraseña incorrecta, por favor corrijala" << endl;
+                return "";
+            }
+        }
+    }
+
+    // Verfica si no se encontro ningun cliente como ese DNI
+    if (encontroCliente == false) {
+        cout << "No fue encontrado su DNI. Usuario no existe" << endl;
+    }
+
+    return "";
 }
 
 void registrarPersonalDeVentas(deltronXpand& deltronXpand) {
