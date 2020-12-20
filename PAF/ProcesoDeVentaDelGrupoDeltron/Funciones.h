@@ -6,6 +6,13 @@ using namespace std;
 
 string loginPersonalDeVentas(deltronXpand deltronXpand) {
 
+    // Limpia la pantalla
+    system("cls");
+
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Inicio de Sesión de personal de ventas");
+
     // Pide DNI (8 caracteres)
     string dniIngresado = pedirDNI();
     // Pide la clave (minimo 6 caracteres)
