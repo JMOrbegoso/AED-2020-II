@@ -366,14 +366,230 @@ void inicializarProductos(deltronXpand& deltronXpand) {
     deltronXpand.productos[1].activo = true;
 
     deltronXpand.productos[2].productoId = 3;
-    deltronXpand.productos[2].marca = "AMD";
-    deltronXpand.productos[2].nombre = "Ryzen 7 3700X";
-    deltronXpand.productos[2].precio = 320;
-    deltronXpand.productos[2].clasificacionId = 4;
-    deltronXpand.productos[2].tipoDeUsoId = 2;
+    deltronXpand.productos[2].marca = "DELL";
+    deltronXpand.productos[2].nombre = "NOTEBOOK DELL LATITUDE CORE I7";
+    deltronXpand.productos[2].precio = 3404;
+    deltronXpand.productos[2].clasificacionId = 2;
+    deltronXpand.productos[2].tipoDeUsoId = 1;
     deltronXpand.productos[2].activo = true;
 
-    deltronXpand.productosCantidad = 3;
+    deltronXpand.productos[3].productoId = 4;
+    deltronXpand.productos[3].marca = "HP";
+    deltronXpand.productos[3].nombre = "AII-IN-ONE CORE i7";
+    deltronXpand.productos[3].precio = 3497.68;
+    deltronXpand.productos[3].clasificacionId = 2;
+    deltronXpand.productos[3].tipoDeUsoId = 1;
+    deltronXpand.productos[3].activo = true;
+
+    deltronXpand.productos[4].productoId = 5;
+    deltronXpand.productos[4].marca = "LG";
+    deltronXpand.productos[4].nombre = "Computadora All-In-One Core i7 ";
+    deltronXpand.productos[4].precio = 5021.75;
+    deltronXpand.productos[4].clasificacionId = 2;
+    deltronXpand.productos[4].tipoDeUsoId = 1;
+    deltronXpand.productos[4].activo = true;
+
+    deltronXpand.productos[5].productoId = 6;
+    deltronXpand.productos[5].marca = "ADVANCE";
+    deltronXpand.productos[5].nombre = "Computadora All-In-One Core i7";
+    deltronXpand.productos[5].precio = 3797.36;
+    deltronXpand.productos[5].clasificacionId = 2;
+    deltronXpand.productos[5].tipoDeUsoId = 1;
+    deltronXpand.productos[5].activo = true;
+
+    deltronXpand.productos[6].productoId = 7;
+    deltronXpand.productos[6].marca = "DELL";
+    deltronXpand.productos[6].nombre = "Computadora All-In-One Core i7";
+    deltronXpand.productos[6].precio = 5539.74;
+    deltronXpand.productos[6].clasificacionId = 2;
+    deltronXpand.productos[6].tipoDeUsoId = 1;
+    deltronXpand.productos[6].activo = true;
+
+    deltronXpand.productos[7].productoId = 8;
+    deltronXpand.productos[7].marca = "LENOVO";
+    deltronXpand.productos[7].nombre = "Computadora All-In-One Core i7 - THINKPAD";
+    deltronXpand.productos[7].precio = 4108.15;
+    deltronXpand.productos[7].clasificacionId = 2;
+    deltronXpand.productos[7].tipoDeUsoId = 1;
+    deltronXpand.productos[7].activo = true;
+
+    deltronXpand.productos[8].productoId = 9;
+    deltronXpand.productos[8].marca = "LENOVO";
+    deltronXpand.productos[8].nombre = "Computadora All-In-One Core i7 - THINKCENTER M920z";
+    deltronXpand.productos[8].precio = 5638.23;
+    deltronXpand.productos[8].clasificacionId = 2;
+    deltronXpand.productos[8].tipoDeUsoId = 1;
+    deltronXpand.productos[8].activo = true;
+
+    deltronXpand.productos[9].productoId = 10;
+    deltronXpand.productos[9].marca = "ADVANCE";
+    deltronXpand.productos[9].nombre = "Computadora All-In-One Core i5";
+    deltronXpand.productos[9].precio = 2418.84;
+    deltronXpand.productos[9].clasificacionId = 2;
+    deltronXpand.productos[9].tipoDeUsoId = 1;
+    deltronXpand.productos[9].activo = true;
+
+    deltronXpand.productos[10].productoId = 11;
+    deltronXpand.productos[10].marca = "ADVANCE";
+    deltronXpand.productos[10].nombre = "Computadora All-in-One Advance AIO AI8670";
+    deltronXpand.productos[10].precio = 4259.96;
+    deltronXpand.productos[10].clasificacionId = 2;
+    deltronXpand.productos[10].tipoDeUsoId = 1;
+    deltronXpand.productos[10].activo = true;
+
+    deltronXpand.productos[11].productoId = 12;
+    deltronXpand.productos[11].marca = "ADVANCE";
+    deltronXpand.productos[11].nombre = "ADV1060, Slim, 250W, Negro, USB 3.0/2.0, Audio.";
+    deltronXpand.productos[11].precio = 115.61;
+    deltronXpand.productos[11].clasificacionId = 1;
+    deltronXpand.productos[11].tipoDeUsoId = 2;
+    deltronXpand.productos[11].activo = true;
+
+    deltronXpand.productos[12].productoId = 13;
+    deltronXpand.productos[12].marca = "BOOMER";
+    deltronXpand.productos[12].nombre = "ATX P4 Version 1.1";
+    deltronXpand.productos[12].precio = 107.05;
+    deltronXpand.productos[12].clasificacionId = 1;
+    deltronXpand.productos[12].tipoDeUsoId = 2;
+    deltronXpand.productos[12].activo = true;
+
+    deltronXpand.productos[13].productoId = 14;
+    deltronXpand.productos[13].marca = "BOOMER";
+    deltronXpand.productos[13].nombre = "ATX P4 Version 1.1";
+    deltronXpand.productos[13].precio = 93.12;
+    deltronXpand.productos[13].clasificacionId = 1;
+    deltronXpand.productos[13].tipoDeUsoId = 2;
+    deltronXpand.productos[13].activo = true;
+
+    deltronXpand.productos[14].productoId = 15;
+    deltronXpand.productos[14].marca = "WESTERN DIGITAL";
+    deltronXpand.productos[14].nombre = "WD Black, 2TB, SATA 6 Gb/s, 7200 RPM, 3.5'.";
+    deltronXpand.productos[14].precio = 521.87;
+    deltronXpand.productos[14].clasificacionId = 3;
+    deltronXpand.productos[14].tipoDeUsoId = 2;
+    deltronXpand.productos[14].activo = true;
+
+    deltronXpand.productos[15].productoId = 16;
+    deltronXpand.productos[15].marca = "HP";
+    deltronXpand.productos[15].nombre = "SSD - HP-COMPAQ CONSUMO STORAGE";
+    deltronXpand.productos[15].precio = 509.47;
+    deltronXpand.productos[15].clasificacionId = 3;
+    deltronXpand.productos[15].tipoDeUsoId = 2;
+    deltronXpand.productos[15].activo = true;
+
+    deltronXpand.productos[16].productoId = 17;
+    deltronXpand.productos[16].marca = "HP";
+    deltronXpand.productos[16].nombre = "HP S750, 256GB, SATA III 6.0 Gb/s, 2.5''";
+    deltronXpand.productos[16].precio = 149.39;
+    deltronXpand.productos[16].clasificacionId = 3;
+    deltronXpand.productos[16].tipoDeUsoId = 2;
+    deltronXpand.productos[16].activo = true;
+
+    deltronXpand.productos[17].productoId = 18;
+    deltronXpand.productos[17].marca = "kingston";
+    deltronXpand.productos[17].nombre = "KC2500, 250GB, M.2 2280, NVMe PCIe Gen 3.0 x4.";
+    deltronXpand.productos[17].precio = 232.46;
+    deltronXpand.productos[17].clasificacionId = 3;
+    deltronXpand.productos[17].tipoDeUsoId = 2;
+    deltronXpand.productos[17].activo = true;
+
+    deltronXpand.productos[18].productoId = 19;
+    deltronXpand.productos[18].marca = "Intel";
+    deltronXpand.productos[18].nombre = "Core i9-10900X, 3.70 GHz, 19.25 MB Caché L3, LGA2066, 165W, 14 nm.";
+    deltronXpand.productos[18].precio = 3200.68;
+    deltronXpand.productos[18].clasificacionId = 4;
+    deltronXpand.productos[18].tipoDeUsoId = 2;
+    deltronXpand.productos[18].activo = true;
+
+    deltronXpand.productos[19].productoId = 20;
+    deltronXpand.productos[19].marca = "Intel";
+    deltronXpand.productos[19].nombre = "Core i9-10920X, 3.50 GHz, 19.25 MB Caché L3, LGA2066, 165W, 14 nm.";
+    deltronXpand.productos[19].precio = 2996.77;
+    deltronXpand.productos[19].clasificacionId = 4;
+    deltronXpand.productos[19].tipoDeUsoId = 2;
+    deltronXpand.productos[19].activo = true;
+
+    deltronXpand.productos[20].productoId = 21;
+    deltronXpand.productos[20].marca = "Intel";
+    deltronXpand.productos[20].nombre = "Core i5-9600K, 3.70 GHz, 9 MB Caché L3, LGA1151, 95W, 14 nm.";
+    deltronXpand.productos[20].precio = 1125.95;
+    deltronXpand.productos[20].clasificacionId = 4;
+    deltronXpand.productos[20].tipoDeUsoId = 2;
+    deltronXpand.productos[20].activo = true;
+
+    deltronXpand.productos[21].productoId = 22;
+    deltronXpand.productos[21].marca = "Intel";
+    deltronXpand.productos[21].nombre = "Core i3-9100, 3.60 GHz, 6 MB Caché L3, LGA1151, 65W, 14 nm.";
+    deltronXpand.productos[21].precio = 520.16;
+    deltronXpand.productos[21].clasificacionId = 4;
+    deltronXpand.productos[21].tipoDeUsoId = 2;
+    deltronXpand.productos[21].activo = true;
+
+    deltronXpand.productos[22].productoId = 23;
+    deltronXpand.productos[22].marca = "Intel";
+    deltronXpand.productos[22].nombre = "Core i3-9100F, 3.60 GHz, 6 MB Caché L3, LGA1151, 65W, 14 nm.";
+    deltronXpand.productos[22].precio = 331.80;
+    deltronXpand.productos[22].clasificacionId = 4;
+    deltronXpand.productos[22].tipoDeUsoId = 2;
+    deltronXpand.productos[22].activo = true;
+
+    deltronXpand.productos[23].productoId = 24;
+    deltronXpand.productos[23].marca = "Intel";
+    deltronXpand.productos[23].nombre = "Core i7-9700K, 3.60 GHz, 12 MB Caché L3, LGA1151, 95W, 14 nm.";
+    deltronXpand.productos[23].precio = 1686.75;
+    deltronXpand.productos[23].clasificacionId = 4;
+    deltronXpand.productos[23].tipoDeUsoId = 2;
+    deltronXpand.productos[23].activo = true;
+
+    deltronXpand.productos[24].productoId = 25;
+    deltronXpand.productos[24].marca = "Intel";
+    deltronXpand.productos[24].nombre = "Core i7-9700F, 3.00 GHz, 12 MB Caché L3, LGA1151, 65W, 14 nm.";
+    deltronXpand.productos[24].precio = 1340.08;
+    deltronXpand.productos[24].clasificacionId = 4;
+    deltronXpand.productos[24].tipoDeUsoId = 2;
+    deltronXpand.productos[24].activo = true;
+
+    deltronXpand.productos[25].productoId = 26;
+    deltronXpand.productos[25].marca = "MSI";
+    deltronXpand.productos[25].nombre = "GEFORCE GTX 1650";
+    deltronXpand.productos[25].precio = 850.75;
+    deltronXpand.productos[25].clasificacionId = 5;
+    deltronXpand.productos[25].tipoDeUsoId = 2;
+    deltronXpand.productos[25].activo = true;
+
+    deltronXpand.productos[26].productoId = 27;
+    deltronXpand.productos[26].marca = "MSI";
+    deltronXpand.productos[26].nombre = "GEFORCE GTX 1050";
+    deltronXpand.productos[26].precio = 600.05;
+    deltronXpand.productos[26].clasificacionId = 5;
+    deltronXpand.productos[26].tipoDeUsoId = 2;
+    deltronXpand.productos[26].activo = true;
+
+    deltronXpand.productos[27].productoId = 28;
+    deltronXpand.productos[27].marca = "RADEON";
+    deltronXpand.productos[27].nombre = "RADEON RX 568";
+    deltronXpand.productos[27].precio = 450.78;
+    deltronXpand.productos[27].clasificacionId = 5;
+    deltronXpand.productos[27].tipoDeUsoId = 2;
+    deltronXpand.productos[27].activo = true;
+
+    deltronXpand.productos[28].productoId = 29;
+    deltronXpand.productos[28].marca = "MSI";
+    deltronXpand.productos[28].nombre = "SLI Bridge L MSI, 2-WAY";
+    deltronXpand.productos[28].precio = 100.95;
+    deltronXpand.productos[28].clasificacionId = 5;
+    deltronXpand.productos[28].tipoDeUsoId = 2;
+    deltronXpand.productos[28].activo = true;
+
+    deltronXpand.productos[29].productoId = 30;
+    deltronXpand.productos[29].marca = "AMD";
+    deltronXpand.productos[29].nombre = "Ryzen 7 3700X";
+    deltronXpand.productos[29].precio = 320;
+    deltronXpand.productos[29].clasificacionId = 4;
+    deltronXpand.productos[29].tipoDeUsoId = 2;
+    deltronXpand.productos[29].activo = true;
+
+    deltronXpand.productosCantidad = 30;
 }
 
 void inicializarProductosEnAlmacen(deltronXpand& deltronXpand) {
