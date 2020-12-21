@@ -11,6 +11,9 @@ int main()
     // Inicializacion
     inicializacion(deltronXpand);
 	
+    // Muestra la presentacion y creditos de la app
+    mostrarPresentacionCreditosEInstrucciones();
+
     // Muestra el titulo de la app
     mostrarAppTitulo();
     mostrarTituloDeOpcion("Por favor introduzca la fecha:");
