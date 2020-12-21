@@ -242,22 +242,22 @@ void mostrarListaDeProductosDisponibles(deltronXpand deltronXpand, productoDispo
 
 void inicializarEmpleadosDeVentas(deltronXpand& deltronXpand) {
 
-    deltronXpand.empleadosDeVentas[0].apellido = "Descalzi Tenorio";
+    deltronXpand.empleadosDeVentas[0].apellido = "Descalzi";
     deltronXpand.empleadosDeVentas[0].nombre = "Yessica Rubí";
     deltronXpand.empleadosDeVentas[0].dni = "11111111";
     deltronXpand.empleadosDeVentas[0].clave = "123456";
 
-    deltronXpand.empleadosDeVentas[1].apellido = "Sanchez Sanchez";
+    deltronXpand.empleadosDeVentas[1].apellido = "Sanchez";
     deltronXpand.empleadosDeVentas[1].nombre = "Joselyn";
     deltronXpand.empleadosDeVentas[1].dni = "22222222";
     deltronXpand.empleadosDeVentas[1].clave = "123456";
 
-    deltronXpand.empleadosDeVentas[2].apellido = "Zavala Salazar";
+    deltronXpand.empleadosDeVentas[2].apellido = "Zavala";
     deltronXpand.empleadosDeVentas[2].nombre = "Edward Daniel";
     deltronXpand.empleadosDeVentas[2].dni = "33333333";
     deltronXpand.empleadosDeVentas[2].clave = "123456";
 
-    deltronXpand.empleadosDeVentas[3].apellido = "Orbegoso Rosas";
+    deltronXpand.empleadosDeVentas[3].apellido = "Orbegoso";
     deltronXpand.empleadosDeVentas[3].nombre = "Juan Manuel";
     deltronXpand.empleadosDeVentas[3].dni = "44444444";
     deltronXpand.empleadosDeVentas[3].clave = "123456";
