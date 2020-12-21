@@ -91,9 +91,11 @@ void mostrarPresentacion() {
 void mostrarInstrucciones() {
     mostrarLineaSeparadora();
     cout << "\t" << "Instrucciones:" << endl << endl;
-    cout << "->\tPara iniciar sesión como empleado de ventas puede usar los DNI: '11111111', '22222222', '33333333' o '44444444'" << endl;
-    cout << "->\tPara iniciar sesión como cliente puede usar los RUC: '11111111111', '22222222222', '33333333333'" << endl;
-    cout << "->\tLa clave de estas cuentas de usuario es '123456'" << endl;
+    cout << "->\tPara iniciar sesión como empleado de ventas puede registrarse o usar una de las cuentas ya registradas:" << endl;
+    cout << "\t\tDNI: '11111111', '22222222', '33333333' o '44444444'." << endl;
+    cout << "->\tPara iniciar sesión como cliente puede registrarse o usar una de las cuentas ya registradas:" << endl;
+    cout << "\t\tRUC: '11111111111', '22222222222', '33333333333'." << endl;
+    cout << "->\tLa clave de estas cuentas de usuario es '123456'." << endl;
     mostrarLineaSeparadora();
 }
 
