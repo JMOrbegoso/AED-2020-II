@@ -399,12 +399,36 @@ void editarProductoEnAlmacen(deltronXpand& deltronXpand) {
 }
 
 void retirarProducto(deltronXpand& deltronXpand) {
-    // Muestra todos los productos del arreglo deltronXpand.productos
-    // Pide al usuario que ingrese el id del producto que desea retirar
-    // Borra el producto del arreglo de deltronXpand.productos removiendo todas propiedades
-    // Recorre el arreglo de deltronXpand.productosEnAlmacen buscando elementos con productoId igual al seleccionado por el usuario
-    // Los elemina
-    // FIN
+    int productoIdPorRemover;
+
+    // Limpia la pantalla
+    system("cls");
+
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Remover producto");
+
+    mostrarCabeceraDeListaDeProductos(10);
+    int fila = 0;
+    for (int i = 0; i < deltronXpand.productosCantidad; i++) {
+        mostrarFilaDeListaDeProductos(deltronXpand, 12 + fila, deltronXpand.productos[i]);
+        fila++;
+    }
+
+    cout << "¿Cual es el Id del producto que desea remover?" << endl;
+    cin >> productoIdPorRemover;
+
+    // Valida si el Id ingresado es valido
+    for (int i = 0; i < deltronXpand.productosCantidad; i++) {
+        if (deltronXpand.productos[i].productoId == productoIdPorRemover) {
+            // Encontró el producto, entonces lo remueve
+            deltronXpand.productos[i].activo = false;
+            cout << "Borró el producto correctamente." << endl;
+            return;
+        }
+    }
+
+    cout << "No se encontró el producto a borrar." << endl;
 }
 
 /// <summary>
