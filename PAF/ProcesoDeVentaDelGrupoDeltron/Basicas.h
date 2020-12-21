@@ -77,6 +77,39 @@ void mostrarTituloDeOpcion(string titulo) {
     mostrarLineaSeparadora();
 }
 
+void mostrarPresentacion() {
+    mostrarLineaSeparadora();
+    cout << "\t\t\t\t" << "Bienvenid@ al PAF del curso de AED-2020-II" << endl << endl;
+    cout << "\t" << "Desarrollado por el Grupo #03:" << endl << endl;
+    cout << "->\tOrbegoso Rosas Juan Manuel" << endl;
+    cout << "->\tDescalzi Tenorio Yessica Rubí" << endl;
+    cout << "->\tZavala Salazar Edward Daniel" << endl;
+    cout << "->\tSánchez Sánchez Joselyn" << endl;
+    mostrarLineaSeparadora();
+}
+
+void mostrarInstrucciones() {
+    mostrarLineaSeparadora();
+    cout << "\t" << "Instrucciones:" << endl << endl;
+    cout << "->\tPara iniciar sesión como empleado de ventas puede usar los DNI: '11111111', '22222222', '33333333' o '44444444'" << endl;
+    cout << "->\tPara iniciar sesión como cliente puede usar los RUC: '11111111111', '22222222222', '33333333333'" << endl;
+    cout << "->\tLa clave de estas cuentas de usuario es '123456'" << endl;
+    mostrarLineaSeparadora();
+}
+
+void mostrarPresentacionCreditosEInstrucciones() {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, 3);
+
+    mostrarPresentacion();
+    mostrarInstrucciones();
+
+    SetConsoleTextAttribute(hConsole, 15);
+    system("Pause");
+    esperarMostrandoTexto("Abriendo aplicación", true);
+    system("cls");
+}
+
 #pragma endregion
 
 #pragma region Funciones básicas de entrada de datos
