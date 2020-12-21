@@ -284,9 +284,9 @@ void registrarProducto(deltronXpand& deltronXpand) {
 
     // Agrega un nuevo producto preguntando al usuario
     deltronXpand.productos[deltronXpand.productosCantidad].productoId = deltronXpand.productosCantidad;
-    deltronXpand.productos[deltronXpand.productosCantidad].marca = pedirTexto("Ingrese la nueva marca del producto", 2);
-    deltronXpand.productos[deltronXpand.productosCantidad].nombre = pedirTexto("Ingrese el nuevo nombre del producto", 2);
-    deltronXpand.productos[deltronXpand.productosCantidad].precio = pedirDinero("Ingrese el nuevo costo del producto", 1);
+    deltronXpand.productos[deltronXpand.productosCantidad].marca = pedirTexto("Ingrese la marca del producto", 2);
+    deltronXpand.productos[deltronXpand.productosCantidad].nombre = pedirTexto("Ingrese el nombre del producto", 2);
+    deltronXpand.productos[deltronXpand.productosCantidad].precio = pedirDinero("Ingrese el costo del producto", 1);
     deltronXpand.productos[deltronXpand.productosCantidad].clasificacionId = pedirClasificacionId(deltronXpand);
     deltronXpand.productos[deltronXpand.productosCantidad].tipoDeUsoId = pedirTipoDeUsoId(deltronXpand);
     deltronXpand.productos[deltronXpand.productosCantidad].activo = true;
