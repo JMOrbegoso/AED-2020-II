@@ -275,8 +275,46 @@ void revisarAlmacenes(deltronXpand deltronXpand) {
 }
 
 void registrarProducto(deltronXpand& deltronXpand) {
+    // Limpia la pantalla
+    system("cls");
+
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Registrar producto");
+
     // Agrega un nuevo producto preguntando al usuario
+    deltronXpand.productos[deltronXpand.productosCantidad].productoId = deltronXpand.productosCantidad;
+    deltronXpand.productos[deltronXpand.productosCantidad].marca = pedirTexto("Ingrese la nueva marca del producto", 2);
+    deltronXpand.productos[deltronXpand.productosCantidad].nombre = pedirTexto("Ingrese el nuevo nombre del producto", 2);
+    deltronXpand.productos[deltronXpand.productosCantidad].precio = pedirDinero("Ingrese el nuevo costo del producto", 1);
+    deltronXpand.productos[deltronXpand.productosCantidad].clasificacionId = pedirClasificacionId(deltronXpand);
+    deltronXpand.productos[deltronXpand.productosCantidad].tipoDeUsoId = pedirTipoDeUsoId(deltronXpand);
+    deltronXpand.productos[deltronXpand.productosCantidad].activo = true;
+    deltronXpand.productosCantidad++;
+
     // Cuando termine de agregarlo debe de mostrar un menu pidiendo que añada el stock del producto en los almacenes deseados
+
+    int almacenId = 0;
+    int stock = 0;
+
+    do {
+        cout << "Especifique el almacen donde desea añadir su producto, o ingrese 0 para dejar de añadir:";
+        cout << almacenId;
+
+        if (almacenId == 0) {
+            return;
+        }
+
+        almacenId = pedirAlmacenId(deltronXpand);
+        stock = pedirEntero("Ingrese el stock", 0);
+
+        deltronXpand.productosEnAlmacen[deltronXpand.productosEnAlmacenCantidad].productoEnAlmacenId = deltronXpand.productosEnAlmacenCantidad;
+        deltronXpand.productosEnAlmacen[deltronXpand.productosEnAlmacenCantidad].almacenId = almacenId;
+        deltronXpand.productosEnAlmacen[deltronXpand.productosEnAlmacenCantidad].productoId = deltronXpand.productosCantidad - 1;
+        deltronXpand.productosEnAlmacen[deltronXpand.productosEnAlmacenCantidad].stock = stock;
+        deltronXpand.productosEnAlmacenCantidad++;
+
+    } while (almacenId != 0);
 }
 
 void editarProducto(deltronXpand& deltronXpand) {
