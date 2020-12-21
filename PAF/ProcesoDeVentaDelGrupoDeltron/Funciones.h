@@ -298,22 +298,19 @@ void registrarProducto(deltronXpand& deltronXpand) {
     int stock = 0;
 
     do {
-        cout << "Especifique el almacen donde desea añadir su producto, o ingrese 0 para dejar de añadir:";
-        cout << almacenId;
+        cout << "Añadirá su nuevo producto a un almacen." << endl;
+        almacenId = pedirAlmacenId(deltronXpand, true);
+        if (almacenId != 0) {
+            stock = pedirEntero("Ingrese el stock", 0);
 
-        if (almacenId == 0) {
-            return;
+            deltronXpand.productosEnAlmacen[deltronXpand.productosEnAlmacenCantidad].productoEnAlmacenId = deltronXpand.productosEnAlmacenCantidad;
+            deltronXpand.productosEnAlmacen[deltronXpand.productosEnAlmacenCantidad].almacenId = almacenId;
+            deltronXpand.productosEnAlmacen[deltronXpand.productosEnAlmacenCantidad].productoId = deltronXpand.productosCantidad - 1;
+            deltronXpand.productosEnAlmacen[deltronXpand.productosEnAlmacenCantidad].stock = stock;
+            deltronXpand.productosEnAlmacenCantidad++;
+
+            cout << "Se añadió correctamente el nuevo producto." << endl;
         }
-
-        almacenId = pedirAlmacenId(deltronXpand);
-        stock = pedirEntero("Ingrese el stock", 0);
-
-        deltronXpand.productosEnAlmacen[deltronXpand.productosEnAlmacenCantidad].productoEnAlmacenId = deltronXpand.productosEnAlmacenCantidad;
-        deltronXpand.productosEnAlmacen[deltronXpand.productosEnAlmacenCantidad].almacenId = almacenId;
-        deltronXpand.productosEnAlmacen[deltronXpand.productosEnAlmacenCantidad].productoId = deltronXpand.productosCantidad - 1;
-        deltronXpand.productosEnAlmacen[deltronXpand.productosEnAlmacenCantidad].stock = stock;
-        deltronXpand.productosEnAlmacenCantidad++;
-
     } while (almacenId != 0);
 }
 
