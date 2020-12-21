@@ -45,7 +45,7 @@ int pedirAlmacenId(deltronXpand deltronXpand) {
 
     cout << endl << "Introduzca la opción deseada:" << endl;
     cin >> opcionSeleccionada;
-    while (!(1 <= opcionSeleccionada && opcionSeleccionada <= (deltronXpand.almacenesCantidad - 1))) {
+    while (!(1 <= opcionSeleccionada && opcionSeleccionada <= deltronXpand.almacenesCantidad)) {
         cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
         cin >> opcionSeleccionada;
     }
@@ -65,7 +65,7 @@ int pedirClasificacionId(deltronXpand deltronXpand) {
 
     cout << endl << "Introduzca la opción deseada:" << endl;
     cin >> opcionSeleccionada;
-    while (!(1 <= opcionSeleccionada && opcionSeleccionada <= (deltronXpand.clasificacionesCantidad - 1))) {
+    while (!(1 <= opcionSeleccionada && opcionSeleccionada <= deltronXpand.clasificacionesCantidad)) {
         cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
         cin >> opcionSeleccionada;
     }
@@ -85,7 +85,7 @@ int pedirTipoDeUsoId(deltronXpand deltronXpand) {
 
     cout << endl << "Introduzca la opción deseada:" << endl;
     cin >> opcionSeleccionada;
-    while (!(1 <= opcionSeleccionada && opcionSeleccionada <= (deltronXpand.tiposDeUsoCantidad - 1))) {
+    while (!(1 <= opcionSeleccionada && opcionSeleccionada <= deltronXpand.tiposDeUsoCantidad)) {
         cout << "Introdujo una opción inválida, por favor seleccione una opción válida:" << endl;
         cin >> opcionSeleccionada;
     }
