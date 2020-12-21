@@ -361,6 +361,8 @@ void editarProducto(deltronXpand& deltronXpand) {
 }
 
 void editarProductoEnAlmacen(deltronXpand& deltronXpand) {
+    int productoIdPorEditar;
+
     system("cls");
 
     mostrarAppTitulo();
@@ -390,12 +392,26 @@ void editarProductoEnAlmacen(deltronXpand& deltronXpand) {
             }
         }
     }
+
     // Se le pide al usuario que escoja ingrese el ID del *producto en almacen* a editar
+    cout << "¿Cual es el Id del producto a editar?" << endl;
+    cin >> productoIdPorEditar;
+
     // Busca en el arreglo de *productos en almacen* el elemento que tenga ese productoEnAlmacenId
-    // Conociendo cual es ese elemento pide que ingrese:
-    //      int stock.
-    // Edita el producto en almacen
-    // FIN
+
+    // Valida si el Id ingresado es valido
+    for (int i = 0; i < deltronXpand.productosEnAlmacenCantidad; i++) {
+        if (deltronXpand.productosEnAlmacen[i].productoEnAlmacenId == productoIdPorEditar) {
+            // Encontró el producto, entonces lo edita
+            // stock;
+            deltronXpand.productosEnAlmacen[i].stock = pedirEntero("Ingrese el nuevo stock del producto", 0);
+
+            cout << "Editó el producto correctamente." << endl;
+            return;
+        }
+    }
+
+    cout << "No se encontró el producto por editar." << endl;
 }
 
 void retirarProducto(deltronXpand& deltronXpand) {
