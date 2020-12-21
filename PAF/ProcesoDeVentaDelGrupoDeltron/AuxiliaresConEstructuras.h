@@ -128,7 +128,7 @@ void mostrarCabeceraDeListaDeProductos(int y) {
     gotoxy(0, y); cout << "Id" << endl;
     gotoxy(5, y); cout << "Marca" << endl;
     gotoxy(20, y); cout << "Nombre" << endl;
-    gotoxy(40, y); cout << "Precio (USD)" << endl;
+    gotoxy(40, y); cout << "Precio (S/)" << endl;
     gotoxy(60, y); cout << "Clasificación" << endl;
     gotoxy(80, y); cout << "Tipo de Uso" << endl;
 
@@ -154,7 +154,7 @@ void mostrarCabeceraDeListaDeProductosEnAlmacen(int y) {
     gotoxy(0, y); cout << "Id" << endl;
     gotoxy(5, y); cout << "Marca" << endl;
     gotoxy(20, y); cout << "Nombre" << endl;
-    gotoxy(50, y); cout << "Precio (USD)" << endl;
+    gotoxy(50, y); cout << "Precio (S/)" << endl;
     gotoxy(65, y); cout << "Stock" << endl;
     gotoxy(75, y); cout << "Clasificación" << endl;
     gotoxy(90, y); cout << "Tipo de Uso" << endl;
@@ -182,7 +182,7 @@ void mostrarCabeceraDeListaDeProductosDisponibles(int y) {
     gotoxy(0, y); cout << "Id" << endl;
     gotoxy(5, y); cout << "Marca" << endl;
     gotoxy(20, y); cout << "Nombre" << endl;
-    gotoxy(50, y); cout << "Precio (USD)" << endl;
+    gotoxy(50, y); cout << "Precio (S/)" << endl;
     gotoxy(65, y); cout << "Stock" << endl;
     gotoxy(75, y); cout << "Clasificación" << endl;
     gotoxy(90, y); cout << "Tipo de Uso" << endl;
@@ -209,9 +209,9 @@ void mostrarCabeceraDeListaDeProductosComprados(int y) {
 
     gotoxy(0, y); cout << "Marca" << endl;
     gotoxy(15, y); cout << "Nombre" << endl;
-    gotoxy(35, y); cout << "Precio (USD)" << endl;
+    gotoxy(35, y); cout << "Precio (S/)" << endl;
     gotoxy(55, y); cout << "Cantidad" << endl;
-    gotoxy(75, y); cout << "Parcial (USD)" << endl;
+    gotoxy(75, y); cout << "Parcial (S/)" << endl;
 
     SetConsoleTextAttribute(hConsole, 15);
 }
@@ -352,7 +352,7 @@ void inicializarProductos(deltronXpand& deltronXpand) {
     deltronXpand.productos[0].productoId = 1;
     deltronXpand.productos[0].marca = "AMD";
     deltronXpand.productos[0].nombre = "Ryzen 3 3100";
-    deltronXpand.productos[0].precio = 150;
+    deltronXpand.productos[0].precio = 650;
     deltronXpand.productos[0].clasificacionId = 4;
     deltronXpand.productos[0].tipoDeUsoId = 2;
     deltronXpand.productos[0].activo = true;
@@ -360,7 +360,7 @@ void inicializarProductos(deltronXpand& deltronXpand) {
     deltronXpand.productos[1].productoId = 2;
     deltronXpand.productos[1].marca = "AMD";
     deltronXpand.productos[1].nombre = "Ryzen 5 3600";
-    deltronXpand.productos[1].precio = 210;
+    deltronXpand.productos[1].precio = 910;
     deltronXpand.productos[1].clasificacionId = 4;
     deltronXpand.productos[1].tipoDeUsoId = 2;
     deltronXpand.productos[1].activo = true;
@@ -584,7 +584,7 @@ void inicializarProductos(deltronXpand& deltronXpand) {
     deltronXpand.productos[29].productoId = 30;
     deltronXpand.productos[29].marca = "AMD";
     deltronXpand.productos[29].nombre = "Ryzen 7 3700X";
-    deltronXpand.productos[29].precio = 320;
+    deltronXpand.productos[29].precio = 1520;
     deltronXpand.productos[29].clasificacionId = 4;
     deltronXpand.productos[29].tipoDeUsoId = 2;
     deltronXpand.productos[29].activo = true;
