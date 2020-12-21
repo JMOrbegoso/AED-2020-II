@@ -318,18 +318,46 @@ void registrarProducto(deltronXpand& deltronXpand) {
 }
 
 void editarProducto(deltronXpand& deltronXpand) {
-    // Primero muestra en pantalla una lista con todos los productos del arreglo *deltronXpand.productos*
-    // Luego le pregunta al usuario el ID del producto que desea editar
-    // Con un *for* se recorre el arreglo *deltronXpand.productos* buscando el que tenga el productoId igual que el que ingreso el usuario
-    // Conociendo el producto que desea editar pedir que ingrese:
-    //      string marca;
-    //      string nombre;
-    //      float precio;
-    //      int clasificacionId;
-    //      int tipoDeUsoId;
-    // Recordar que en Basicas.h y en AuxiliaresConEstructuras.h ya hay algunas funciones para pedir el precio, la clasificacionId o tipoDeUsoId.
-    // Editar el producto
-    // FIN
+    int productoIdPorEditar;
+
+    // Limpia la pantalla
+    system("cls");
+
+    // Muestra titulo
+    mostrarAppTitulo();
+    mostrarTituloDeOpcion("Editar producto");
+
+    mostrarCabeceraDeListaDeProductos(10);
+    int fila = 0;
+    for (int i = 0; i < deltronXpand.productosCantidad; i++) {
+        mostrarFilaDeListaDeProductos(deltronXpand, 12 + fila, deltronXpand.productos[i]);
+        fila++;
+    }
+
+    cout << "¿Cual es el Id del producto a editar?" << endl;
+    cin >> productoIdPorEditar;
+
+    // Valida si el Id ingresado es valido
+    for (int i = 0; i < deltronXpand.productosCantidad; i++) {
+        if (deltronXpand.productos[i].productoId == productoIdPorEditar) {
+            // Encontró el producto, entonces lo edita
+            //      string marca;
+            deltronXpand.productos[i].marca = pedirTexto("Ingrese la nueva marca del producto", 2);
+            //      string nombre;
+            deltronXpand.productos[i].nombre = pedirTexto("Ingrese el nuevo nombre del producto", 2);
+            //      float precio;
+            deltronXpand.productos[i].precio = pedirDinero("Ingrese el nuevo costo del producto", 1);
+            //      int clasificacionId;
+            deltronXpand.productos[i].clasificacionId = pedirClasificacionId(deltronXpand);
+            //      int tipoDeUsoId;
+            deltronXpand.productos[i].tipoDeUsoId = pedirTipoDeUsoId(deltronXpand);
+
+            cout << "Editó el producto correctamente." << endl;
+            return;
+        }
+    }
+
+    cout << "No se encontró el producto por editar." << endl;
 }
 
 void editarProductoEnAlmacen(deltronXpand& deltronXpand) {
